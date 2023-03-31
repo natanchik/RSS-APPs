@@ -1,13 +1,22 @@
 .header {
-    position: fixed;
+    position: fixed;    
+    top: 30px;
+    padding: 0 40px;
 }
 
 .logo__block {
     display: flex;
-    Justify-content: space-between;
+    justify-content: space-between;
+    align-content: center;
 }
 
-.logo__image {
+.logo__image {        
     width: 184px;
-    height: 60px;
+    height: 60px;    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
 }
