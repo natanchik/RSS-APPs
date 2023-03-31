@@ -46,6 +46,20 @@ h3 {
   margin: auto;
 }
 
+.header {
+  position: fixed;
+}
+
+.logo__block {
+  display: flex;
+  Justify-content: space-between;
+}
+
+.logo__image {
+  width: 184px;
+  height: 60px;
+}
+
 .promo {
   background: linear-gradient(#5B483A, #211F20);
 }
