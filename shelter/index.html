@@ -4,33 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shelter</title>    
+    <link rel="stylesheet" href="./sass/style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="wrapper">
-            <img class="logo" scr="./images/logo.svg" alt="Logo Cozy House">            
-            <nav class="header__navigation">
-                <ul class="navigation">
-                    <li>About the shelter</li>
-                    <li>Our pets</li>
-                    <li>Help the shelter</li>
-                    <li>Contacts</li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
     <main>
+        <header class="header">   
+            <div class="wrapper">    
+                <div class="logo__block">       
+                    <div><img class="logo__image" scr="./images/logo.svg" alt="Logotype Cozy House"></div>        
+                    <nav class="nav">
+                        <ul class="nav__list">
+                            <li class="nav__item">About the shelter</li>
+                            <li class="nav__item">Our pets</li>
+                            <li class="nav__item">Help the shelter</li>
+                            <li class="nav__item">Contacts</li>
+                        </ul>
+                    </nav> 
+                </div>    
+            </div>          
+        </header>  
+
         <section class="promo"> 
-            <div class="wrapper">
+            <div class="wrapper">                       
                 <div class="promo__content">
-                    <h2>Not only people need a house</h2>
-                    <p>We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
-                    <button class="button button_colored">Make a friend</button>
-                </div>
+                    <div class="promo__text">
+                        <h2>Not only people need a house</h2>
+                        <p>We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
+                        <button class="button button_colored">Make a friend</button>
+                    </div>
+                    <p class="promo__image"><img scr="./images/start-screen-puppy.png" alt="Puppy"></p>
+                </div>                
             </div>
         </section>
+
         <section class="about"> 
             <div class="wrapper">
                 <div class="about__content">
@@ -96,19 +103,18 @@
                         <li>
                             <img scr="./images/help-icons/icon-vitamins.svg" alt="Vitamins">
                             <p>Vitamins</p>
-                            <li>
-                                <img scr="./images/help-icons/icon-medicines.svg" alt="Medicines">
-                                <p>Medicines</p>
-                            </li>
-                            <li>
-                                <img scr="./images/help-icons/icon-collars-leashes.svg" alt="Collars / leashes">
-                                <p>Collars / leashes</p>
-                            </li>
-                            <li>
-                                <img scr="./images/help-icons/icon-sleeping-area.svg" alt="Sleeping areas">
-                                <p>Sleeping areas</p>
-                            </li>
+                        <li>
+                            <img scr="./images/help-icons/icon-medicines.svg" alt="Medicines">
+                            <p>Medicines</p>
                         </li>
+                        <li>
+                            <img scr="./images/help-icons/icon-collars-leashes.svg" alt="Collars / leashes">
+                            <p>Collars / leashes</p>
+                        </li>
+                        <li>
+                            <img scr="./images/help-icons/icon-sleeping-area.svg" alt="Sleeping areas">
+                            <p>Sleeping areas</p>
+                        </li>                        
                     </ul>
                 </div>
             </div>
