@@ -3,15 +3,16 @@
     padding: 30px, 0, 0;
 }
 
-
 h2 {
     color: $color-header-light;
 }
 
-.promo__content {
+.promo_content {
     display: flex;
     flex-wrap: no-wrap;
     color: $color-text-light;
+    @extend %font-arial;      
+    @include font( , 15px, 24px, 400, 0px, left);    
 }
 
 .promo__text {

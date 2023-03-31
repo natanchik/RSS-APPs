@@ -2,41 +2,20 @@ html {
     font-size: 10px;
 }
 
-body {
+body {    
+    @extend %font-georgia;
     font-size: 1.6rem;
-    font-family: Arial, Verdana, sans-serif;
+    padding: 0 40px;
 }
 
-h2 {
-    font-family: Georgia, serif;
-    font-size: 44px;
-    font-weight: 400;
-    line-height: 57px;
-    letter-spacing: 0em;
-    text-align: left;
+h2 {    
+    @extend %font-georgia;
+    @include font( , 44px, 57px, 400, 0em, left);
 }
 
-h3 {   
-    font-family: Georgia, Tinos, serif;
-    font-size: 35px;
-    font-weight: 400;
-    line-height: 45px;
-    letter-spacing: 0.06em;    
+h3 { 
+    @extend %font-georgia;      
+    @include font( , 35px, 45px, 400, 0.06em);
 }
 
-h3  {
-    font-family: Georgia, Tinos, serif;
-    font-style: Regular;
-    font-size: 35px;
-    line-height: 45px;
-    letter-spacing: 6%;
-}
-
-.promo_content {   
-    font-family: Arial, Verdana, sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0px;
-    text-align: left;
-}
+//@include font(family, , size, height, weight, space, align);
