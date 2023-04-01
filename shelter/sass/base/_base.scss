@@ -10,12 +10,33 @@ body {
 
 h2 {    
     @extend %font-georgia;
-    @include font( , 44px, 57px, 400, 0em, left);
+    @include font(44px, 57.2px, 400, 0em);
 }
 
 h3 { 
     @extend %font-georgia;      
-    @include font( , 35px, 45px, 400, 0.06em);
+    @include font(35px, 45.5px, 400, 0.06em);
 }
 
-//@include font(family, , size, height, weight, space, align);
+h4 {
+    @extend %font-georgia;
+    @include font(20px, 23px, 400, 0.06em);
+}
+
+h5 {
+    @extend %font-georgia;
+    @include font(15px, 16.5px, 400, 0.06em);
+}
+//@include font(size, height, weight, space);
+
+.font-p-L {
+    @extend %font-arial;
+    @include font(15px, 24px, 400);
+}
+
+.font-p-S {
+    @extend %font-arial;
+    font-style: italic;
+    @include font(12px, 18px, 400);
+}
+

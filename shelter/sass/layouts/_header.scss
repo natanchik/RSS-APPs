@@ -1,16 +1,16 @@
 .header {
     position: fixed;    
-    top: 30px;
-    padding: 0 40px;
+    top: 30px;       
 }
 
-.logo__block {
-    display: flex;
+.header__wrapper {
+    display: flex;    
     justify-content: space-between;
     align-content: center;
 }
 
-.logo__image {        
+.logo__image {  
+    display: inline;      
     width: 184px;
     height: 60px;    
 }

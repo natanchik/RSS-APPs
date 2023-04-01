@@ -1,5 +1,10 @@
 .navbar {
-    display: flex;
+    display: inline;    
     justify-content: space-between;
-    align-content: center;
+    align-content: center;    
+}
+
+.navbar__item {
+    display: inline;
+    margin-right: 35px;
 }

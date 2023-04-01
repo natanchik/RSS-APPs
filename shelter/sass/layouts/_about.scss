@@ -1,0 +1,16 @@
+.about__content {
+    display: flex;    
+    justify-content: space-around;
+}
+
+
+.about__image {
+    display: inline-block;
+    width: 300px;    
+    height: calc(408/300*width)px;
+}
+
+.about__text {
+    display: inline-block;
+    width: 430px;    
+}
