@@ -1,16 +1,18 @@
 .header {
     position: fixed;    
-    top: 30px;       
+    top: 30px;  
+    left: calc((100vw - 1200px) / 2);  
+           
 }
 
-.header__wrapper {
-    display: flex;    
-    justify-content: space-between;
-    align-content: center;
+.header__wrapper {    
+    display: flex;  
+    flex-wrap: wrap;  
+    align-items: center;   
+    justify-content: space-between;     
 }
 
-.logo__image {  
-    display: inline;      
+.logo__image {         
     width: 184px;
     height: 60px;    
 }

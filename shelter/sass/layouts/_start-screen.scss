@@ -1,29 +1,33 @@
 .promo {
+    height: 100%vh;
     background: $color-bg-start-screen;    
-    padding: 30px 0 0;
-}
-
-h2 {
-    color: $color-header-light;
+    padding: 180px 0 0;
 }
 
 .promo_content {
     display: flex;  
-    flex-wrap: wrap;  
+    flex-wrap: no-wrap;  
     justify-content: space-between;
-    align-content: center;    
-    color: $color-text-light;
-    @extend %font-arial;      
-    @include font(, 15px, 24px, 400, 0px, left);    
+    text-align: center;             
 }
 
 .promo__text {    
-    max-width: 460px;
-    max-height: 322px;
+    display: inline-block;
+    margin: 0, 42px, 0, 0;
+    padding: 163px, 0, 243px, 0;  
+    max-width: 460px;  
+    h2 {
+        color: $color-header-light;
+    }
+    p {
+        color: $color-text-light;
+    }
+    align-content: center; 
 }
 
 .promo__image {
+    display: inline-block;
     max-width: 698px;
-    max-height: 729px;
+    height: 100%;
     margin: 0;
 }

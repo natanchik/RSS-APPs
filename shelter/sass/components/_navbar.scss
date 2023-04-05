@@ -1,10 +1,18 @@
-.navbar {
-    display: inline;    
-    justify-content: space-between;
-    align-content: center;    
+.navbar {   
+    display: flex;  
+    flex-wrap: wrap; 
+    list-style: none;       
 }
 
-.navbar__item {
-    display: inline;
-    margin-right: 35px;
+.navbar__item {    
+    margin-left: 35px;       
+}   
+
+.navbar__link {
+    color: $color-text-light;  
+    text-decoration: none;  
+    &:hover, &:focus, &:active {
+        color: $color-card;
+        text-decoration: underline;
+    }
 }
