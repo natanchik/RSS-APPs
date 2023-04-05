@@ -16,16 +16,20 @@ h2 {
 h3 { 
     @extend %font-georgia;      
     @include font(35px, 45.5px, 400, 0.06em);
+    color: $color-header-dark;
+    margin: 0;
 }
 
 h4 {
     @extend %font-georgia;
-    @include font(20px, 23px, 400, 0.06em);
+    @include font(20px, 23px, 400, 0.06em);  
+    margin: 0;  
 }
 
 h5 {
     @extend %font-georgia;
     @include font(15px, 16.5px, 400, 0.06em);
+    margin: 0;
 }
 //@include font(size, height, weight, space);
 

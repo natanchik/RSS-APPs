@@ -4,15 +4,15 @@
     list-style: none;       
 }
 
-.navbar__item {    
-    margin-left: 35px;       
-}   
-
 .navbar__link {
+    margin-left: 35px;
     color: $color-text-light;  
-    text-decoration: none;  
+    text-decoration: none; 
     &:hover, &:focus, &:active {
         color: $color-card;
         text-decoration: underline;
+        text-underline-offset: 7px;
+        text-decoration-thickness: 3px;
+        text-decoration-color: $color-primary;
     }
 }

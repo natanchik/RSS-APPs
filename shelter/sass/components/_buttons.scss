@@ -8,10 +8,20 @@
     color: $color-btn-text;
     &-colored {
         background-color: $color-primary;
+        border: none;
     }
     &-uncolored {
         border: $color-primary solid 1px;
     }
 }
 
-
+.button__bank { 
+    display: inline-flex;
+    flex-wrap: no-wrap;  
+    cursor: pointer;  
+    border-radius: 9px;
+    padding: 10px 15px;
+    color: $color-btn-text;
+    background-color: $color-primary;
+    border: none;        
+}

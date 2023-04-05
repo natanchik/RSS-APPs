@@ -19,6 +19,8 @@ h3 {
   line-height: 45.5px;
   font-weight: 400;
   letter-spacing: 0.06em;
+  color: #545454;
+  margin: 0;
 }
 
 h4 {
@@ -26,6 +28,7 @@ h4 {
   line-height: 23px;
   font-weight: 400;
   letter-spacing: 0.06em;
+  margin: 0;
 }
 
 h5 {
@@ -33,6 +36,7 @@ h5 {
   line-height: 16.5px;
   font-weight: 400;
   letter-spacing: 0.06em;
+  margin: 0;
 }
 
 .font-p-L {
@@ -71,9 +75,21 @@ h5 {
 }
 .button-colored {
   background-color: #F1CDB3;
+  border: none;
 }
 .button-uncolored {
   border: #F1CDB3 solid 1px;
+}
+
+.button__bank {
+  display: inline-flex;
+  flex-wrap: no-wrap;
+  cursor: pointer;
+  border-radius: 9px;
+  padding: 10px 15px;
+  color: #292929;
+  background-color: #F1CDB3;
+  border: none;
 }
 
 .navbar {
@@ -82,17 +98,28 @@ h5 {
   list-style: none;
 }
 
-.navbar__item {
-  margin-left: 35px;
-}
-
 .navbar__link {
+  margin-left: 35px;
   color: #CDCDCD;
   text-decoration: none;
 }
 .navbar__link:hover, .navbar__link:focus, .navbar__link:active {
   color: #FAFAFA;
   text-decoration: underline;
+  text-underline-offset: 7px;
+  text-decoration-thickness: 3px;
+  text-decoration-color: #F1CDB3;
+}
+
+.card {
+  display: inline-block;
+  width: 270px;
+  height: 100%;
+  background-color: #FAFAFA;
+  text-align: center;
+}
+.card * {
+  margin-bottom: 30px;
 }
 
 .wrapper {
@@ -112,6 +139,9 @@ h5 {
   align-items: center;
   justify-content: space-between;
 }
+.header__wrapper nav {
+  display: inline-block;
+}
 
 .logo__image {
   width: 184px;
@@ -121,7 +151,7 @@ h5 {
 .promo {
   height: 100% vh;
   background: linear-gradient(#5B483A, #211F20);
-  padding: 180px 0 0;
+  padding-top: 180px;
 }
 
 .promo_content {
@@ -134,7 +164,6 @@ h5 {
 .promo__text {
   display: inline-block;
   margin: 0, 42px, 0, 0;
-  padding: 163px, 0, 243px, 0;
   max-width: 460px;
   align-content: center;
 }
@@ -149,19 +178,117 @@ h5 {
   display: inline-block;
   max-width: 698px;
   height: 100%;
-  margin: 0;
+}
+
+.about {
+  background-color: #ffffff;
 }
 
 .about__content {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 80px 175px 100px;
 }
 
 .about__image {
+  display: inline-block;
+  margin: 0;
   width: 300px;
   height: 100%;
 }
 
 .about__text {
+  display: inline-block;
   width: 430px;
+  padding: 14px 0px;
+}
+.about__text h3 {
+  margin: 0;
+  padding: 0;
+}
+.about__text p {
+  margin: 25px 0 0;
+  color: #4C4C4C;
+}
+
+.friends {
+  background-color: #F6F6F6;
+  padding: 80px 0 100px;
+}
+
+.friends__content {
+  text-align: center;
+}
+.friends__content h3 {
+  display: inline-block;
+  width: 400px;
+  text-align: center;
+  margin: 0;
+}
+
+.slider {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 105px;
+}
+
+.help {
+  background-color: #FAFAFA;
+  padding: 80px 0 100px;
+}
+
+.help__content {
+  text-align: center;
+}
+.help__content h3 {
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+}
+
+.help__list {
+  padding: 60px 27px 45px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.help__item {
+  margin: 0 60px 55px;
+}
+
+.donation {
+  background-color: #F6F6F6;
+}
+
+.donation__content {
+  padding: 80px 182px 100px 183px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.donation__content p {
+  margin: 0;
+}
+
+.donation__image {
+  margin: 11px 0 10px;
+}
+
+.donation__text {
+  display: inline-block;
+  width: 380px;
+}
+.donation__text p, .donation__text h5, .donation__text button {
+  margin-top: 20px;
+}
+.donation__text h5 {
+  color: #545454;
+}
+.donation__text p {
+  color: #B2B2B2;
+}
+
+.icon__card {
+  display: inline-block;
 }/*# sourceMappingURL=style.css.map */

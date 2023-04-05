@@ -1,19 +1,22 @@
 .header {
     position: fixed;    
     top: 30px;  
-    left: calc((100vw - 1200px) / 2);  
-           
+    left: calc((100vw - 1200px) / 2);     
 }
 
 .header__wrapper {    
     display: flex;  
     flex-wrap: wrap;  
     align-items: center;   
-    justify-content: space-between;     
+    justify-content: space-between; 
+    nav {
+        display: inline-block;
+    }    
 }
 
 .logo__image {         
     width: 184px;
     height: 60px;    
 }
+
 

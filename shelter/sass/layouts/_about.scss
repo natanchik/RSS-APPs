@@ -1,14 +1,31 @@
-.about__content {
+.about {
+    background-color: $color-header-light;
+}
+
+.about__content {    
     display: flex;        
-    justify-content: space-around;
+    justify-content: space-between; 
+    padding: 80px 175px 100px;   
 }
 
 
-.about__image {    
+.about__image { 
+    display: inline-block;
+    margin: 0;
     width: 300px;    
     height: 100%;
 }
 
 .about__text {    
-    width: 430px;    
+    display: inline-block;    
+    width: 430px; 
+    padding: 14px 0px; 
+    h3 {
+        margin: 0;
+        padding: 0;        
+    }
+    p {
+        margin: 25px 0 0;
+        color: $color-text-dark;
+    }  
 }
