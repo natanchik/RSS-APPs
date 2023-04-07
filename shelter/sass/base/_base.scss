@@ -6,11 +6,16 @@ body {
     @extend %font-georgia;
     font-size: 1.6rem;
     padding: 0 40px;
+    margin: 0;
 }
 
 h2 {    
     @extend %font-georgia;
     @include font(44px, 57.2px, 400, 0em);
+    color: $color-header-light;
+    @include media-mobile-small {
+        @include font(25px, 32px, 400, 0.06em);
+    }
 }
 
 h3 { 

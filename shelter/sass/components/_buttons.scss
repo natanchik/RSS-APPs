@@ -6,13 +6,18 @@
     @extend %font-georgia;    
     @include font(17px, 22.1px, 400, 0.06em);
     color: $color-btn-text;
+    a {
+        text-decoration: none;
+        color: $color-btn-text;
+    }
     &-colored {
         background-color: $color-primary;
         border: none;
     }
     &-uncolored {
+        background-color: $color-card;
         border: $color-primary solid 1px;
-    }
+    }    
 }
 
 .button__bank { 
@@ -24,4 +29,32 @@
     color: $color-btn-text;
     background-color: $color-primary;
     border: none;        
+}
+
+.arrow {
+    margin: 0;
+}
+
+.button-circle {
+    cursor: pointer;
+    height: 52px;
+    width: 52px;
+    border-radius: 100px;
+    color: $color-btn-text;
+    &-colored {
+        background-color: $color-primary;
+        border: none;
+    }
+    &-uncolored {
+        border: $color-primary solid 1px;        
+    }
+    &-inactive {
+        color: $color-text-light;
+        border: $color-text-light solid 1px;
+    }
+}
+
+.buttons { 
+    display: flex;   
+    gap: 20px;
 }

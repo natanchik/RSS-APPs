@@ -10,28 +10,30 @@
 </head>
 <body>    
     <header class="header">   
-        <div class="wrapper header__wrapper">                              
-            <div class="logo__image">
-                <a href="#promo">
-                    <img src="./images/logo.svg" alt="Logotype Cozy House">
-                </a>
-            </div>     
-            <nav>  
-                <ul class="navbar">               
-                    <li class="navbar__item">
-                        <a href="#about" class="navbar__link font-p-L">About the shelter</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#friends" class="navbar__link font-p-L">Our pets</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#help" class="navbar__link font-p-L">Help the shelter</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#contacts" class="navbar__link font-p-L">Contacts</a>
-                    </li>                     
-            </ul>
-            </nav>                   
+        <div class="wrapper">             
+            <div class="header__block">                        
+                <div class="logo__image">
+                    <a href="#promo">
+                        <img src="./images/logo.svg" alt="Logotype Cozy House">
+                    </a>
+                </div>     
+                <nav>  
+                    <ul class="navbar">               
+                        <li class="navbar__item">
+                            <a href="#about" class="navbar__link font-p-L">About the shelter</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#friends" class="navbar__link font-p-L">Our pets</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#help" class="navbar__link font-p-L">Help the shelter</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#contacts" class="navbar__link font-p-L">Contacts</a>
+                        </li>                     
+                    </ul>
+                </nav>      
+            </div>               
         </div>          
     </header>  
     <main>
@@ -63,9 +65,12 @@
 
         <section class="friends" id="friends"> 
             <div class="wrapper">
-                <div class="friends__content">                    
-                    <h3>Our friends who<br> are looking for a house</h3>                    
-                    <div class="slider">
+                <h3>Our friends who<br> are looking for a house</h3>
+                <div class="friends__content">
+                    <div class="arrow">
+                        <img src="./images/arrows/button_arrow_left.svg" alt="Scroll left">
+                    </div>
+                    <div class="slider">                        
                         <div class="card">
                             <img class="friends__image" src="./images/pets/katrine.png" alt="Katrine">
                             <h4>Katrine</h4>
@@ -80,10 +85,13 @@
                             <img class="friends__image" src="./images/pets/woody.png" alt="Woody">
                             <h4>Woody</h4>
                             <button class="button button-uncolored">Learn more</button>
-                        </div>
+                        </div>                        
                     </div>
-                    <button class="button button-colored">Get to know the rest</button>
+                    <div class="arrow">
+                        <img src="./images/arrows/button_arrow_right.svg" alt="Scroll right">
+                    </div>
                 </div>
+                <button class="button button-colored"><a href="./pets.html">Get to know the rest</a></button>            
             </div>
         </section>
 
@@ -146,19 +154,37 @@
             </div>
         </section>
         
-        <footer>
+        <footer class="footer">
             <div class="wrapper">
-                <div class="contacts" id="contacts">
-                    <h3>For questions and suggestions</h3>
-                    <h4><a href="mailto:email@shelter.com"><img src="./images/icon-email.svg"></a>email@shelter.com</h4>
-                    <h4><a href="tel:+136745677554"><img src="./images/icon-phone.svg"></a>+13 674 567 75 54</h4>
+                <div class="footer__block">
+                    <div class="footer__item">
+                        <div class="contacts" id="contacts">
+                            <h3>For questions<br> and suggestions</h3>
+                            <div class="contacts__item">
+                                <span><a href="mailto:email@shelter.com"><img src="./images/icon-email.svg" alt="Email"></a></span>
+                                <h4>email@shelter.com</h4>
+                            </div>
+                            <div class="contacts__item">    
+                                <span><a href="tel:+136745677554"><img src="./images/icon-phone.svg" alt="Phone"></a></span>
+                                <h4>+13 674 567 75 54</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__item">
+                        <div class="contacts">
+                            <h3>We are waiting<br> for your visit</h3>
+                            <div class="contacts__item">
+                                <span><img src="./images/pin.svg" alt="Address"></span>
+                                <h4>1 Central Street, Boston (entrance from the store)</h4>
+                            </div>
+                            <div class="contacts__item">
+                                <span><img src="./images/pin.svg" alt="Address"></span>
+                                <h4>18 South Park, London</h4>
+                            </div>
+                        </div>
+                    </div>    
+                    <p class="footer__image"><img src="./images/footer-puppy.png" alt="Puppy"></p>
                 </div>
-                <div class="address">
-                    <h3>We are waiting for your visit</h3>
-                    <h4><img src="./images/pin.svg"> 1 Central Street, Boston (entrance from the store)</h4>
-                    <h4><img src="./images/pin.svg"> 18 South Park, London</h4>
-                </div>
-                <p><img class="footer__image" src="./images/footer-puppy.png" alt="Puppy"></p>
             </div>
         </footer>            
     </main>

@@ -1,6 +1,6 @@
 .help {
     background-color: $color-card;
-    padding: 80px 0 100px;
+    padding: 80px 40px 45px;    
 }
 
 
@@ -14,13 +14,17 @@
 }
     
 .help__list {    
-    padding: 60px 27px 45px;
+    padding-top: 60px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    list-style: none;    
+    justify-content: center;    
+    list-style: none; 
+    gap: 120px;   
+    @include media-tablet {            
+        gap: 60px;      
+    }   
 }
 
 .help__item {
-    margin: 0 60px 55px;
+    margin-bottom: 55px;
 }

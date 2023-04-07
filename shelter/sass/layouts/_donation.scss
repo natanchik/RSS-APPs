@@ -3,16 +3,23 @@
 }
 
 .donation__content {
-    padding: 80px 182px 100px 183px; 
+    padding: 80px 0 100px; 
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     p {
         margin: 0;
+    }
+    @include media-tablet {
+        padding: 80px 0 100px;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 60px;
     }    
 }
 
 .donation__image {
-    margin: 11px 0 10px;
+    margin: 11px 30px 10px 0;
 }
 
 .donation__text {    

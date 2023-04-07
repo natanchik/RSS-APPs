@@ -1,4 +1,4 @@
-$color-bg-start-screen: linear-gradient(#5B483A, #211F20);
+$color-bg-promo: linear-gradient(#5B483A, #211F20);
 $color-primary: #F1CDB3;
 $color-header-light: #ffffff;
 $color-header-dark: #545454;
@@ -10,6 +10,8 @@ $color-card: #FAFAFA;
 $color-text-small: #B2B2B2;
 $color-bg-footer: linear-gradient(#513D2F, #211F20);
 
-$content-width: 1280px;
-$tablet-wisth: 768px;
-$mobile-width: 320px;
+$laptop-width: 1280px;
+$tablet-width: 768px;
+$mobile-width: 375px;
+$mobile-small-width: 320px;
+

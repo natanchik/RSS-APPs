@@ -3,9 +3,16 @@
 }
 
 .about__content {    
-    display: flex;        
+    display: flex;  
+    flex-wrap: wrap;      
     justify-content: space-between; 
     padding: 80px 175px 100px;   
+    @include media-tablet {
+        padding: 80px 165px 100px;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 80px;
+    }
 }
 
 
@@ -21,11 +28,12 @@
     width: 430px; 
     padding: 14px 0px; 
     h3 {
+        width: 370px;
         margin: 0;
         padding: 0;        
     }
     p {
         margin: 25px 0 0;
         color: $color-text-dark;
-    }  
+    }      
 }
