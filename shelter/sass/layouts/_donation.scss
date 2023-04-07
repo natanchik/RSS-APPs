@@ -1,0 +1,41 @@
+.donation {
+    background-color: $color-bg-friends;
+}
+
+.donation__content {
+    padding: 80px 0 100px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    p {
+        margin: 0;
+    }
+    @include media-tablet {
+        padding: 80px 0 100px;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 60px;
+    }    
+}
+
+.donation__image {
+    margin: 11px 30px 10px 0;
+}
+
+.donation__text {    
+    display: inline-block;    
+    width: 380px;  
+    p, h5, button {
+        margin-top: 20px;
+    };
+    h5 {
+        color: $color-header-dark;
+    };  
+    p {        
+        color: $color-text-small;
+    }; 
+}
+
+.icon__card {
+    display: inline-block;    
+}

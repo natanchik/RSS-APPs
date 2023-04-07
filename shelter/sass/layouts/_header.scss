@@ -1,0 +1,34 @@
+.header {
+    position: fixed;    
+    top: 0;  
+    left: 0; 
+    width: 100%;           
+}
+
+.pets__header {
+    background-color: $color-header-light;
+}
+
+.header__block {  
+    margin: 30px 40px;  
+    display: flex;  
+    flex-wrap: wrap;  
+    align-items: center;   
+    justify-content: space-between;          
+}
+
+nav {
+    display: inline-block;        
+    margin: 0;    
+    @include media-mobile {
+        display: none;
+    }     
+    } 
+
+.logo__image {   
+    display: inline-block;         
+    width: 184px;
+    height: 60px;      
+}
+
+
