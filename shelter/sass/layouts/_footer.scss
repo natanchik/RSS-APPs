@@ -1,5 +1,5 @@
 .footer {
-    background-color: #211F20;  
+    background: $color-bg-footer //#211F20;  
 }
 
 .footer__block {    
@@ -9,16 +9,20 @@
     margin: 0;
     padding: 40px 40px 0;
     @include media-tablet {
-        padding: 80px 0 100px;
-        flex-direction: column-reverse;
-        align-items: center;
+        padding: 30px 30px 0;        
+        justify-content: center;
+        align-content: center;
         gap: 60px;
-    }        
+    }  
+    @include media-mobile {
+        padding: 42px 10px 0;        
+        align-content: center;
+        gap: 30px;
+    }           
 }
 
 .footer__item {
-    display: inline-block; 
-    
+    display: inline-block;     
 }
 
 .contacts {    
@@ -37,7 +41,7 @@
     } 
     img {        
         margin-right: 20px;        
-    } 
+    }        
 }
 
 .contacts__item {
@@ -50,4 +54,7 @@
     width: 300px;
     height: 100%;
     margin: 0;
+    @include media-mobile {
+        width: 260px;        
+    }     
 }

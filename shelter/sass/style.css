@@ -4,62 +4,69 @@ html {
 
 body {
   font-size: 1.6rem;
-  padding: 0 40px;
   margin: 0;
 }
 
 h2 {
-  font-size: 44px;
-  line-height: 57.2px;
+  font-size: 4.4rem;
+  line-height: 5.72rem;
   font-weight: 400;
   letter-spacing: 0em;
   color: #ffffff;
 }
 @media (max-width: 320px) {
   h2 {
-    font-size: 25px;
-    line-height: 32px;
+    font-size: 2.5rem;
+    line-height: 3.2rem;
     font-weight: 400;
     letter-spacing: 0.06em;
   }
 }
 
 h3 {
-  font-size: 35px;
-  line-height: 45.5px;
+  font-size: 3.5rem;
+  line-height: 4.55rem;
   font-weight: 400;
   letter-spacing: 0.06em;
   color: #545454;
   margin: 0;
 }
+@media (max-width: 320px) {
+  h3 {
+    font-size: 2.5rem;
+    line-height: 3.2rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+  }
+}
 
 h4 {
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 2rem;
+  line-height: 2.3rem;
   font-weight: 400;
   letter-spacing: 0.06em;
   margin: 0;
 }
 
 h5 {
-  font-size: 15px;
-  line-height: 16.5px;
+  font-size: 1.5rem;
+  line-height: 1.65rem;
   font-weight: 400;
   letter-spacing: 0.06em;
   margin: 0;
 }
 
 .font-p-L {
-  font-size: 15px;
-  line-height: 24px;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
   font-weight: 400;
   letter-spacing: 0em;
 }
 
 .font-p-S {
   font-style: italic;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
   font-weight: 400;
   letter-spacing: 0em;
 }
@@ -189,6 +196,16 @@ h5 {
   max-width: 1280px;
   margin: 0 auto;
 }
+@media (max-width: 768px) {
+  .wrapper {
+    max-width: 768px;
+  }
+}
+@media (max-width: 320px) {
+  .wrapper {
+    max-width: 320px;
+  }
+}
 
 .header {
   position: fixed;
@@ -213,7 +230,7 @@ nav {
   display: inline-block;
   margin: 0;
 }
-@media (max-width: 375px) {
+@media (max-width: 320px) {
   nav {
     display: none;
   }
@@ -226,18 +243,22 @@ nav {
 }
 
 .promo {
-  background: linear-gradient(#5B483A, #211F20);
+  background: linear-gradient(to right, #5B483A, #211F20);
   margin: 0;
   overflow: hidden;
+  padding: 180px 40px 0;
+}
+@media (max-width: 768px) {
+  .promo {
+    padding: 150px 30px 0;
+  }
 }
 
 .promo_content {
-  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   vertical-align: center;
-  margin-top: 180px;
 }
 
 .promo__text {
@@ -252,6 +273,7 @@ nav {
   .promo__text {
     width: 569px;
     height: 1015px;
+    margin: 0 124px 100px;
   }
 }
 @media (max-width: 320px) {
@@ -264,18 +286,19 @@ nav {
 .promo__image {
   display: inline-block;
   width: 698px;
-  margin-top: 180px;
 }
 @media (max-width: 768px) {
   .promo__image {
     width: 569px;
     height: 593px;
+    margin-top: 100px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 320px) {
   .promo__image {
     width: 260px;
     height: 272px;
+    justify-content: right;
   }
 }
 
@@ -287,7 +310,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 80px 175px 100px;
+  padding: 80px 215px 100px;
 }
 @media (max-width: 768px) {
   .about__content {
@@ -297,12 +320,25 @@ nav {
     gap: 80px;
   }
 }
+@media (max-width: 320px) {
+  .about__content {
+    padding: 42px 25px 42px;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 42px;
+  }
+}
 
 .about__image {
   display: inline-block;
   margin: 0;
   width: 300px;
   height: 100%;
+}
+@media (max-width: 320px) {
+  .about__image {
+    width: 260px;
+  }
 }
 
 .about__text {
@@ -319,10 +355,23 @@ nav {
   margin: 25px 0 0;
   color: #4C4C4C;
 }
+@media (max-width: 768px) {
+  .about__text {
+    padding: 0;
+  }
+}
+@media (max-width: 320px) {
+  .about__text {
+    width: 270px;
+  }
+  .about__text p {
+    text-align: justify;
+  }
+}
 
 .friends {
   background-color: #F6F6F6;
-  padding: 80px 0 100px;
+  padding: 80px 40px 100px;
   text-align: center;
   align-content: center;
 }
@@ -334,6 +383,19 @@ nav {
 }
 .friends .pets__h3 {
   margin-top: 200px;
+}
+@media (max-width: 768px) {
+  .friends {
+    padding: 80px 30px 100px;
+  }
+}
+@media (max-width: 768px) {
+  .friends {
+    padding: 42px 25px;
+  }
+  .friends h3 {
+    width: 300px;
+  }
 }
 
 .friends__content {
@@ -348,6 +410,24 @@ nav {
   gap: 90px;
   padding: 60px 0 30px;
   margin: 0 53px;
+}
+@media (max-width: 768px) {
+  .slider {
+    gap: 40px;
+    margin: 0 12px;
+  }
+  .slider:nth-child(3) {
+    display: none;
+  }
+}
+@media (max-width: 320px) {
+  .slider {
+    gap: 40px;
+    margin: 0 12px;
+  }
+  .slider:nth-child(2) {
+    display: none;
+  }
 }
 
 .pet__slider {
@@ -365,6 +445,11 @@ nav {
   background-color: #FAFAFA;
   padding: 80px 40px 45px;
 }
+@media (max-width: 320px) {
+  .help {
+    padding: 42px 15px 12px;
+  }
+}
 
 .help__content {
   text-align: center;
@@ -376,7 +461,7 @@ nav {
 }
 
 .help__list {
-  padding-top: 60px;
+  padding: 60px 87px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -385,12 +470,25 @@ nav {
 }
 @media (max-width: 768px) {
   .help__list {
+    padding: 60px 30px 0;
     gap: 60px;
+  }
+}
+@media (max-width: 320px) {
+  .help__list {
+    padding: 42px 0 0;
+    justify-content: space-between;
+    gap: 30px;
   }
 }
 
 .help__item {
   margin-bottom: 55px;
+}
+@media (max-width: 320px) {
+  .help__item {
+    margin-bottom: 30px;
+  }
 }
 
 .donation {
@@ -418,6 +516,13 @@ nav {
 .donation__image {
   margin: 11px 30px 10px 0;
 }
+@media (max-width: 320px) {
+  .donation__image {
+    margin: 0;
+    width: 260px;
+    height: 100%;
+  }
+}
 
 .donation__text {
   display: inline-block;
@@ -438,7 +543,7 @@ nav {
 }
 
 .footer {
-  background-color: #211F20;
+  background: linear-gradient(to right, #513D2F, #211F20);
 }
 
 .footer__block {
@@ -450,10 +555,17 @@ nav {
 }
 @media (max-width: 768px) {
   .footer__block {
-    padding: 80px 0 100px;
-    flex-direction: column-reverse;
-    align-items: center;
+    padding: 30px 30px 0;
+    justify-content: center;
+    align-content: center;
     gap: 60px;
+  }
+}
+@media (max-width: 320px) {
+  .footer__block {
+    padding: 42px 10px 0;
+    align-content: center;
+    gap: 30px;
   }
 }
 
@@ -490,4 +602,9 @@ nav {
   width: 300px;
   height: 100%;
   margin: 0;
+}
+@media (max-width: 320px) {
+  .footer__image {
+    width: 260px;
+  }
 }/*# sourceMappingURL=style.css.map */

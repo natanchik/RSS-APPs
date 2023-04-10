@@ -1,6 +1,6 @@
 .friends {
     background-color: $color-bg-friends;
-    padding: 80px 0 100px;
+    padding: 80px 40px 100px;
     text-align: center;
     align-content: center;
     h3 { 
@@ -12,6 +12,15 @@
     .pets__h3 {
         margin-top: 200px;
     }  
+    @include media-tablet {
+        padding: 80px 30px 100px;        
+    }
+    @include media-tablet {
+        padding: 42px 25px;  
+        h3 {
+            width: 300px;
+        }      
+    }
 } 
 
 .friends__content {
@@ -26,13 +35,28 @@
     gap: 90px;
     padding: 60px 0 30px;  
     margin: 0 53px;  
+    @include media-tablet {        
+        &:nth-child(3) {
+            display: none;
+        } 
+        gap: 40px;
+        margin: 0 12px;  
+    }
+    @include media-mobile {        
+        &:nth-child(2) {
+            display: none;
+        } 
+        gap: 40px;
+        margin: 0 12px;  
+    }
 }
 
 .pet__slider {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 45px 40px 30px;    
+    padding: 45px 40px 30px;   
+
 }
 
 .button__block {

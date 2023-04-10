@@ -4,48 +4,50 @@ html {
 
 body {    
     @extend %font-georgia;
-    font-size: 1.6rem;
-    padding: 0 40px;
+    font-size: 1.6rem;    
     margin: 0;
 }
 
 h2 {    
     @extend %font-georgia;
-    @include font(44px, 57.2px, 400, 0em);
+    @include font(4.4rem, 5.72rem, 400, 0em);
     color: $color-header-light;
-    @include media-mobile-small {
-        @include font(25px, 32px, 400, 0.06em);
+    @include media-mobile {
+        @include font(2.5rem, 3.2rem, 400, 0.06em);
     }
 }
 
 h3 { 
     @extend %font-georgia;      
-    @include font(35px, 45.5px, 400, 0.06em);
+    @include font(3.5rem, 4.55rem, 400, 0.06em);
     color: $color-header-dark;
     margin: 0;
+    @include media-mobile {
+        @include font(2.5rem, 3.2rem, 400, 0.06em);
+    }
 }
 
 h4 {
     @extend %font-georgia;
-    @include font(20px, 23px, 400, 0.06em);  
+    @include font(2.0rem, 2.3rem, 400, 0.06em);  
     margin: 0;  
 }
 
 h5 {
     @extend %font-georgia;
-    @include font(15px, 16.5px, 400, 0.06em);
+    @include font(1.5rem, 1.65rem, 400, 0.06em);
     margin: 0;
 }
 //@include font(size, height, weight, space);
 
 .font-p-L {
     @extend %font-arial;
-    @include font(15px, 24px, 400, 0em);
+    @include font(1.5rem, 2.4rem, 400, 0em);
 }
 
 .font-p-S {
     @extend %font-arial;
     font-style: italic;
-    @include font(12px, 18px, 400, 0em);
+    @include font(1.2rem, 1.8rem, 400, 0em);
 }
 
