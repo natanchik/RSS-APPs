@@ -20,6 +20,11 @@
 
 .donation__image {
     margin: 11px 30px 10px 0;
+    @include media-mobile {
+        margin: 0;
+        width: 260px;
+        height: 100%;
+    }    
 }
 
 .donation__text {    
