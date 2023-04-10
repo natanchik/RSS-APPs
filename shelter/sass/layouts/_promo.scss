@@ -2,16 +2,19 @@
     // height: 100vh;
     background: $color-bg-promo;  // #211F20;    
     margin: 0;   
-    overflow: hidden;        
+    overflow: hidden; 
+    padding: 180px 40px 0; 
+    @include media-tablet {
+        padding: 150px 30px 0;
+    }      
 }
 
 .promo_content {
-    height: 100vh;
+    // height: 100vh;    
     display: flex;  
     flex-wrap: wrap;  
     justify-content: space-between; 
-    vertical-align: center;  
-    margin-top: 180px;      
+    vertical-align: center;          
 }
 
 .promo__text {    
@@ -24,8 +27,9 @@
     @include media-tablet {
         width: 569px;
         height: 1015px;
+        margin: 0 124px 100px;        
     }
-    @include media-mobile-small {
+    @include media-mobile {
         width: 300px;
         text-align: center;
     }    
@@ -33,14 +37,15 @@
 
 .promo__image {  
     display: inline-block;
-    width: 698px;
-    margin-top: 180px;
+    width: 698px;    
     @include media-tablet {
         width: 569px;
         height: 593px;
+        margin-top: 100px;
     }     
     @include media-mobile {
         width: 260px;
         height: 272px;
+        justify-content: right;        
     }    
 }

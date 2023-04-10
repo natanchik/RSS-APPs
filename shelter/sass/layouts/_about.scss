@@ -6,21 +6,29 @@
     display: flex;  
     flex-wrap: wrap;      
     justify-content: space-between; 
-    padding: 80px 175px 100px;   
+    padding: 80px 215px 100px;   
     @include media-tablet {
         padding: 80px 165px 100px;
         flex-direction: column-reverse;
         align-items: center;
-        gap: 80px;
+        gap: 80px;    
+    }
+    @include media-mobile {
+        padding: 42px 25px 42px;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 42px;    
     }
 }
-
 
 .about__image { 
     display: inline-block;
     margin: 0;
     width: 300px;    
     height: 100%;
+    @include media-mobile {
+        width: 260px; 
+    }
 }
 
 .about__text {    
@@ -30,10 +38,19 @@
     h3 {
         width: 370px;
         margin: 0;
-        padding: 0;        
+        padding: 0;              
     }
     p {
         margin: 25px 0 0;
-        color: $color-text-dark;
-    }      
+        color: $color-text-dark;        
+    }  
+    @include media-tablet {
+        padding: 0;
+    }  
+    @include media-mobile {
+        width: 270px; 
+        p {
+            text-align: justify;
+        }  
+    }
 }
