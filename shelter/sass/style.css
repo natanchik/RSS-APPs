@@ -114,10 +114,6 @@ h5 {
   border: none;
 }
 
-.arrow {
-  margin: 0;
-}
-
 .button-circle {
   cursor: pointer;
   height: 52px;
@@ -130,16 +126,21 @@ h5 {
   border: none;
 }
 .button-circle-uncolored {
-  border: #F1CDB3 solid 1px;
+  border: #F1CDB3 solid 2px;
 }
 .button-circle-inactive {
   color: #CDCDCD;
-  border: #CDCDCD solid 1px;
+  border: #CDCDCD solid 2px;
 }
 
 .buttons {
   display: flex;
   gap: 20px;
+}
+
+#burger {
+  border: none;
+  background: none;
 }
 
 .navbar {
@@ -185,11 +186,147 @@ h5 {
   margin-bottom: 30px;
 }
 
-.hamburger {
+.hamburger__line, .hamburger-icon::after, .hamburger-icon::before {
   display: inline-block;
-  background-image: url("./images/burger.svg");
+  content: "";
+  position: absolute;
+  background-color: #F1CDB3;
+  height: 2px;
+  width: 100%;
+}
+
+.hamburger-icon {
+  display: none;
+  position: relative;
   width: 30px;
-  height: 30px;
+  height: 22px;
+  z-index: 2;
+  transition: transform 0.5s;
+}
+.hamburger-icon::before {
+  top: 0;
+  left: 0;
+}
+.hamburger-icon::after {
+  bottom: 0;
+  left: 0;
+}
+
+.hamburger__line {
+  top: calc(50% - 1px);
+  left: 0;
+}
+
+@media (max-width: 375px) {
+  .hamburger-icon {
+    display: block;
+  }
+  .header.open .hamburger-icon {
+    transform: rotate(90deg);
+  }
+  nav {
+    display: none;
+  }
+  .navbar {
+    display: none;
+  }
+  .header.open nav {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #292929;
+    width: 320px;
+    height: 823px;
+  }
+  .header.open .navbar {
+    display: block;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    text-align: center;
+  }
+  .header.open .navbar__link {
+    display: block;
+    margin-bottom: 40px;
+    font-size: 3rem;
+    line-height: 4.8rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+  .header.open .pets__navbar__link {
+    display: block;
+    color: #CDCDCD;
+  }
+  .header.open .pets__navbar__link:hover, .header.open .pets__navbar__link:focus, .header.open .pets__navbar__link:active {
+    color: #FAFAFA;
+  }
+}
+.slider {
+  display: flex;
+  justify-content: space-between;
+  gap: 90px;
+  width: 990px;
+  height: 435px;
+  padding: 0 40px;
+  margin: 60px 53px;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .slider {
+    gap: 40px;
+    margin: 0 12px;
+  }
+  .slider:nth-child(3) {
+    display: none;
+  }
+}
+@media (max-width: 320px) {
+  .slider {
+    gap: 40px;
+    margin: 0 12px;
+  }
+  .slider:nth-child(2) {
+    display: none;
+  }
+}
+
+.pet__slider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 45px 40px 30px;
+}
+
+@keyframes move-right {
+  from {
+    left: -990px;
+  }
+  to {
+    left: 0px;
+  }
+}
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 5s;
+}
+
+@keyframes move-left {
+  from {
+    left: -990px;
+  }
+  to {
+    left: -1980px;
+  }
+}
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 5s;
+}
+
+.notdisplay {
+  display: none;
 }
 
 .wrapper {
@@ -242,6 +379,12 @@ nav {
   height: 60px;
 }
 
+@media (max-width: 320px) {
+  .header nav {
+    display: none;
+  }
+}
+
 .promo {
   background: linear-gradient(to right, #5B483A, #211F20);
   margin: 0;
@@ -289,15 +432,14 @@ nav {
 }
 @media (max-width: 768px) {
   .promo__image {
-    width: 569px;
+    width: 100%;
     height: 593px;
     margin-top: 100px;
   }
 }
 @media (max-width: 320px) {
   .promo__image {
-    width: 260px;
-    height: 272px;
+    width: 100%;
     justify-content: right;
   }
 }
@@ -402,39 +544,7 @@ nav {
   display: flex;
   align-items: center;
   text-align: center;
-}
-
-.slider {
-  display: flex;
-  justify-content: space-between;
-  gap: 90px;
-  padding: 60px 0 30px;
-  margin: 0 53px;
-}
-@media (max-width: 768px) {
-  .slider {
-    gap: 40px;
-    margin: 0 12px;
-  }
-  .slider:nth-child(3) {
-    display: none;
-  }
-}
-@media (max-width: 320px) {
-  .slider {
-    gap: 40px;
-    margin: 0 12px;
-  }
-  .slider:nth-child(2) {
-    display: none;
-  }
-}
-
-.pet__slider {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 45px 40px 30px;
+  position: relative;
 }
 
 .button__block {

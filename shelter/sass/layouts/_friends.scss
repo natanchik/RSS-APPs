@@ -26,38 +26,9 @@
 .friends__content {
     display: flex;
     align-items: center;   
-    text-align: center;    
-}
-    
-.slider {
-    display: flex;    
-    justify-content: space-between;    
-    gap: 90px;
-    padding: 60px 0 30px;  
-    margin: 0 53px;  
-    @include media-tablet {        
-        &:nth-child(3) {
-            display: none;
-        } 
-        gap: 40px;
-        margin: 0 12px;  
-    }
-    @include media-mobile {        
-        &:nth-child(2) {
-            display: none;
-        } 
-        gap: 40px;
-        margin: 0 12px;  
-    }
-}
-
-.pet__slider {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 45px 40px 30px;   
-
-}
+    text-align: center;   
+    position: relative; 
+} 
 
 .button__block {
     display: inline-block;

@@ -1,7 +1,77 @@
-.hamburger {
+%hamburger-line {
     display: inline-block;
-    background-image: url("./images/burger.svg");
-    width: 30px;
-    height: 30px;
+    content: "";
+    position: absolute;
+    background-color: $color-primary;    
+    height: 2px;
+    width: 100%;
 }
 
+.hamburger-icon {
+    display: none;
+    position: relative;    
+    width: 30px;
+    height: 22px; 
+    z-index: 2;  
+    transition: transform 0.5s; 
+    &::before {
+        @extend %hamburger-line;
+        top: 0;
+        left: 0;
+    }
+    &::after {
+        @extend %hamburger-line;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.hamburger__line {
+    @extend %hamburger-line;
+    top: calc( 50% - 1px );
+    left: 0;
+}
+
+@include media-mobile-big {
+    .hamburger-icon {
+        display: block;
+    }
+    .header.open .hamburger-icon {
+        transform: rotate(90deg);
+    }
+    nav {
+        display: none;               
+    }
+    .navbar {
+        display: none;
+    }
+    .header.open nav {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: $color-btn-text;        
+        width: 320px;
+        height: 823px; 
+    }
+    .header.open .navbar {
+        display: block; 
+        position: absolute;
+        right: 50%;
+        top: 50%;  
+        transform: translate(50%, -50%);      
+        text-align: center;  
+    }
+    .header.open .navbar__link {
+        display: block;
+        margin-bottom: 40px;
+        @include font(3rem, 4.8rem, 400, 0em);
+    }   
+    .header.open .pets__navbar__link {
+        display: block;
+        color: $color-text-light;
+        &:hover, &:focus, &:active {
+            color: $color-card;
+        }
+    }   
+}
