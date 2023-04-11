@@ -42,6 +42,9 @@
     nav {
         display: none;               
     }
+    .navbar {
+        display: none;
+    }
     .header.open nav {
         display: block;
         position: absolute;
@@ -64,5 +67,11 @@
         margin-bottom: 40px;
         @include font(3rem, 4.8rem, 400, 0em);
     }   
-    
+    .header.open .pets__navbar__link {
+        display: block;
+        color: $color-text-light;
+        &:hover, &:focus, &:active {
+            color: $color-card;
+        }
+    }   
 }
