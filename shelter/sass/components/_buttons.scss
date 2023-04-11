@@ -31,10 +31,6 @@
     border: none;        
 }
 
-.arrow {
-    margin: 0;
-}
-
 .button-circle {
     cursor: pointer;
     height: 52px;
@@ -46,15 +42,20 @@
         border: none;
     }
     &-uncolored {
-        border: $color-primary solid 1px;        
+        border: $color-primary solid 2px;        
     }
     &-inactive {
         color: $color-text-light;
-        border: $color-text-light solid 1px;
+        border: $color-text-light solid 2px;
     }
 }
 
 .buttons { 
     display: flex;   
     gap: 20px;
+}
+
+#burger {
+    border: none;
+    background: none;
 }
