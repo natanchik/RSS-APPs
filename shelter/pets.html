@@ -36,17 +36,18 @@
                 <button class="hamburger-icon" id="burger"><span class="hamburger__line"></span></button>     
             </div>               
         </div>          
-    </header>  
+    </header> 
+
     <main>
         <section class="friends" id="pets__friends"> 
             <div class="wrapper">                
                 <h3 class="pets__h3">Our friends who<br> are looking for a house</h3>   
                 <div class="pet__slider">
-                    <div class="card" id="card1">
+                    <div class="card" id="card1">                        
                         <img class="friends__image" src="./images/pets/katrine.png" alt="Katrine">
                         <h4>Katrine</h4>
-                        <button class="button button-uncolored">Learn more</button>
-                    </div>
+                        <button class="button button-uncolored" id="open-modal-btn">Learn more</button>
+                    </div>                    
                     <div class="card" id="card2">
                         <img class="friends__image" src="./images/pets/jennifer.png" alt="Jennifer">
                         <h4>Jennifer</h4>
@@ -83,6 +84,7 @@
                         <button class="button button-uncolored">Learn more</button>
                     </div>
                 </div>
+
                 <div class="button__block">
                     <div class="buttons">
                         <button class="button-circle button-circle-inactive"><<</button>
@@ -90,8 +92,24 @@
                         <button class="button-circle button-circle-colored">1</button> 
                         <button class="button-circle button-circle-uncolored">></button>
                         <button class="button-circle button-circle-uncolored">>></button>
-                    </div> 
-                </div>           
+                    </div>                     
+                </div> 
+
+                <div class="modal" id="modal">                        
+                    <div class="modal__box" id="card1">
+                        <button class="button-circle button-circle-uncolored modal__close-btn" id="close-modal-btn">x</button>
+                        <div><img src="./images/pets/katrine.png" alt="Katrine"></div>
+                        <div class="modal__text">
+                            <h3>Katrine</h3>
+                            <h4>Cat - British Shorthair</h4>
+                            <h5>Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations. </h5>
+                            <h5>&#8226  <b>Age:</b> 2 months
+                            <br><br>&#8226  <b>Inoculations:</b> none
+                            <br><br>&#8226  <b>Diseases:</b> none
+                            <br><br>&#8226  <b>Parasites:</b> none</h5>                            
+                        </div>    
+                    </div>  
+                </div>          
             </div>
         </section>
     </main>
