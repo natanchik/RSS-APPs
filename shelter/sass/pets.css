@@ -227,6 +227,9 @@ h5 {
   nav {
     display: none;
   }
+  .navbar {
+    display: none;
+  }
   .header.open nav {
     display: block;
     position: absolute;
@@ -251,6 +254,13 @@ h5 {
     line-height: 4.8rem;
     font-weight: 400;
     letter-spacing: 0em;
+  }
+  .header.open .pets__navbar__link {
+    display: block;
+    color: #CDCDCD;
+  }
+  .header.open .pets__navbar__link:hover, .header.open .pets__navbar__link:focus, .header.open .pets__navbar__link:active {
+    color: #FAFAFA;
   }
 }
 .slider {
