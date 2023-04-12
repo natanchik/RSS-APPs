@@ -32,7 +32,7 @@
     left: 0;
 }
 
-@include media-mobile-big {
+@include media-tablet {
     .hamburger-icon {
         display: block;
     }
