@@ -217,7 +217,7 @@ h5 {
   left: 0;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 768px) {
   .hamburger-icon {
     display: block;
   }
