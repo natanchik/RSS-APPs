@@ -89,7 +89,7 @@ function calcMinesAround(mineList, boardWidth, boardHeight) {
       const sumMineAround= mineAround.length;      
       if (sumMineAround !== 0) {
         cell.innerText = sumMineAround;      
-        cell.setAttribute('color', colorNumbers[sumMineAround]);   
+        cell.setAttribute('style', `color: ${colorNumbers[sumMineAround]}`);   
       } else {
         cell.classList.add('empty');
       }
