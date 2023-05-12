@@ -2,7 +2,7 @@
 
 // Create tablo
 
-let counter = 100;
+let counter = 0;
 let timer = 0;
 
 const tablo = document.createElement('div');
@@ -102,15 +102,24 @@ function calcMinesAround(mineList, boardWidth, boardHeight) {
 
 mine(totalMineAmount);
 calcMinesAround(mineList, boardWidth, boardHeight);
+const timerUp = setInterval(() => {
+  timer++;
+  timerBlock.innerText = timer
+}, 1000)
 
 // Game
 
 function mouseDown(event) {
   const { target } = event;
-  if (target.classList.contains('cell')) {    
-    target.classList.add('opened'); 
+  if (target.classList.contains('cell')) {  
+    if (!target.classList.contains('opened')) {
+      counter++; 
+      counterBlock.innerText = counter;
+      target.classList.add('opened');      
+    }      
     if (target.classList.contains('mined')) {
       alert('You lose');
+      clearInterval(timerUp);
     }
   }
 }

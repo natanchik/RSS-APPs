@@ -20,6 +20,15 @@ body {
   box-shadow: 7px 7px 0px 0px #c3c1c1;  
 }
 
+.counter,
+.timer {
+  display: inline-block;
+  width: 100px;
+  border: 3px solid #747070;
+  color: red;
+  background: black;
+}
+
 .board {
   display: block;
   width: 500px;
@@ -42,7 +51,7 @@ body {
   float: left;
   width: 50px;
   height: 50px;  
-  font: normal bold 20px 'Orbitron', sans-serif;
+  font: normal bold 0px 'Orbitron', sans-serif;
   line-height: 50px;
   text-align: center;
   color: #ffffff;   
@@ -79,5 +88,9 @@ body {
 }
 
 .mined {
-  color: red;
+  color: black;  
+}
+
+.mined.opened {  
+  background: red;
 }
