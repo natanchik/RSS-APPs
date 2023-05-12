@@ -73,7 +73,10 @@ function mine(totalMineAmount) {
   }  
 }
 
-const colorNumbers = {1: '#0000FF', 2: '#00FF00', 3: '#FF4500', 4: '#9932CC', 5: '#FFA500', 6: '#FFFF00', 7: '#FF1493', 8: '#00FFFF' }
+const colorNumbers = {1: '#0000FF', 2: '#00FF00', 3: '#FF00FF', 4: '#FFFF00', 
+                      5: '#FFA500', 6: '#00FFFF', 7: '#800000', 8: '#008080' }
+// {1: 'blue', 2: 'lime', 3: 'fuchsia', 4: 'yellow', 
+//  5: 'orange', 6: 'cyan', 7: 'maroon', 8: 'teal' } 
 
 function calcMinesAround(mineList, boardWidth, boardHeight) { 
   for (let i = 0; i < boardWidth; i++) {
