@@ -1,21 +1,17 @@
 // import './style.css';
-
-// Create tablo
+import { tablo } from './js/tablo.js';
+import { boardWidth, boardHeight, createBoard } from './js/createBoard.js';
+import { totalMineAmount, mine, calcMinesAround, mineList } from './js/startGame.js';;
 
 let counter = 0;
 let timer = 0;
 
-const tablo = document.createElement('div');
-tablo.classList.add('tablo');
-document.body.appendChild(tablo);
-
-const counterBlock = document.createElement('div');
+let counterBlock = document.createElement('div');
 counterBlock.classList.add('counter');
 counterBlock.innerText = counter;
 tablo.appendChild(counterBlock);
 
-const startButton = document.createElement('div');
-startButton.classList.add('cell');
+let startButton = document.createElement('div');
 startButton.classList.add('startButton');
 startButton.innerHTML = '<span class="smile"> &#128578; </span>';
 tablo.appendChild(startButton);
@@ -25,89 +21,18 @@ timerBlock.classList.add('timer');
 timerBlock.innerText = timer;
 tablo.appendChild(timerBlock);
 
-// Create board
+let timerUp;
 
-let boardWidth = 10;
-let boardHeight = 10;
-let boardArea = boardWidth * boardHeight;
-
-function createBoard(boardWidth, boardHeight) {
-  const board = document.createElement('div');
-  board.classList.add('board');
-  board.setAttribute('id', 'board');
-  document.body.appendChild(board);
-  for (let i = 0; i < boardHeight; i++) {
-    const row = document.createElement('div');
-    row.classList.add('row');
-    board.appendChild(row);
-    for (let j = 0; j < boardWidth; j++) {
-      let cell = document.createElement('div');
-      cell.classList.add('cell');
-      cell.setAttribute('id', `${i}-${j}`);    
-      row.appendChild(cell);
-    }
-  } 
+function deleteBoard() {
+  let board = document.getElementById('board');
+  if (board) {       
+    let cells = board.querySelectorAll('.cell');
+    for (let i = 0; i < cells.length; i++) { cells[i].remove() }  
+    let rows = document.querySelectorAll('.row');
+    for (let i = 0; i < rows.length; i++) { rows[i].remove() }
+    board.remove(); 
+  }
 }
-
-createBoard(boardWidth, boardHeight)
-
-// Start the game
-
-let mineList;
-let totalMineAmount = 10;
-
-function mine(totalMineAmount) {
-  mineList = [];
-  for (let i = 0; i < totalMineAmount; i++) {
-    let mineX = Math.floor(Math.random() * boardWidth);
-    let mineY = Math.floor(Math.random() * boardHeight);
-    let mineCell = document.getElementById(`${mineX}-${mineY}`);
-    while (mineCell.classList.contains('mined')) {
-      mineX = Math.floor(Math.random() * boardWidth);
-      mineY = Math.floor(Math.random() * boardHeight);
-      mineCell = document.getElementById(`${mineX}-${mineY}`);
-    } 
-    mineCell.classList.add('mined');       
-    mineCell.innerHTML = '<span> &#10038; </span>';
-    mineList.push(`${mineX}-${mineY}`);
-  }  
-}
-
-const colorNumbers = {1: '#0000FF', 2: '#00FF00', 3: '#FF00FF', 4: '#FFFF00', 
-                      5: '#FFA500', 6: '#00FFFF', 7: '#800000', 8: '#008080' }
-// {1: 'blue', 2: 'lime', 3: 'fuchsia', 4: 'yellow', 
-//  5: 'orange', 6: 'cyan', 7: 'maroon', 8: 'teal' } 
-
-function calcMinesAround(mineList, boardWidth, boardHeight) { 
-  for (let i = 0; i < boardWidth; i++) {
-    for (let j = 0; j < boardHeight; j++) { 
-      const cell = document.getElementById(`${i}-${j}`);
-      if (cell.classList.contains('mined')) {
-        continue;
-      }  
-      let cellsAround = [`${i-1}-${j-1}`, `${i-1}-${j}`, `${i-1}-${j+1}`, 
-                         `${i}-${j-1}`, `${i}-${j+1}`,
-                         `${i+1}-${j-1}`, `${i+1}-${j}`, `${i+1}-${j+1}`];
-      const mineAround = mineList.filter(el => cellsAround.includes(el));  
-      const sumMineAround= mineAround.length;      
-      if (sumMineAround !== 0) {
-        cell.innerText = sumMineAround;      
-        cell.setAttribute('style', `color: ${colorNumbers[sumMineAround]}`);   
-      } else {
-        cell.classList.add('empty');
-      }
-    }
-  }  
-}
-
-mine(totalMineAmount);
-calcMinesAround(mineList, boardWidth, boardHeight);
-const timerUp = setInterval(() => {
-  timer++;
-  timerBlock.innerText = timer
-}, 1000)
-
-// Game
 
 function mouseDown(event) {
   const { target } = event;
@@ -119,12 +44,28 @@ function mouseDown(event) {
     }      
     if (target.classList.contains('mined')) {
       alert('You lose');
-      clearInterval(timerUp);
+      clearInterval(timerUp);   
+      let minedCells = document.querySelectorAll('.mined');  
+      for (let i = 0; i < minedCells.length; i++) {
+        minedCells[i].classList.add('other');        
+      }
+      board.onmousedown = () => {};                      
     }
   }
 }
 
-tablo.onmousedown = function (event) { mouseDown(event); };
+function game() {   
+  deleteBoard();
+  createBoard(boardWidth, boardHeight);
+  mine(totalMineAmount);
+  calcMinesAround(mineList, boardWidth, boardHeight);
+  counter = 0;
+  timer = 0;
+  timerUp = setInterval(() => timerBlock.innerText = timer++, 1000);
+  let board = document.getElementById('board');
+  board.onmousedown = function (event) { mouseDown(event); };
+}
 
-let board = document.getElementById('board');
-board.onmousedown = function (event) { mouseDown(event); };
+startButton.onmousedown = () => game();
+
+game(boardWidth, boardHeight);
