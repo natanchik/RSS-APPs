@@ -34,22 +34,30 @@ function deleteBoard() {
   }
 }
 
+function stopGame() {
+  clearInterval(timerUp);   
+  let minedCells = document.querySelectorAll('.mined');  
+  for (let i = 0; i < minedCells.length; i++) {
+    minedCells[i].classList.add('other');        
+  }
+  board.onmousedown = () => {};  
+}
+
 function mouseDown(event) {
   const { target } = event;
   if (target.classList.contains('cell')) {  
     if (!target.classList.contains('opened')) {
       counter++; 
       counterBlock.innerText = counter;
-      target.classList.add('opened');      
+      target.classList.add('opened');
+      if (counter === boardWidth * boardHeight - totalMineAmount) {
+        stopGame();
+        alert('You won');  
+      }    
     }      
-    if (target.classList.contains('mined')) {
-      alert('You lose');
-      clearInterval(timerUp);   
-      let minedCells = document.querySelectorAll('.mined');  
-      for (let i = 0; i < minedCells.length; i++) {
-        minedCells[i].classList.add('other');        
-      }
-      board.onmousedown = () => {};                      
+    if (target.classList.contains('mined')) {      
+      stopGame();
+      alert('You lose');                    
     }
   }
 }
