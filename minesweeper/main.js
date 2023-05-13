@@ -53,17 +53,19 @@ function mouseDown(event) {
       if (counter === boardWidth * boardHeight - totalMineAmount) {
         stopGame();
         alert('You won');  
+        startButton.innerHTML = '<span class="smile"> &#129321; </span>';
       }    
     }      
     if (target.classList.contains('mined')) {      
       stopGame();
+      startButton.innerHTML = '<span class="smile"> &#128565; </span>';
       alert('You lose');                    
     }
   }
 }
 
 function game() {   
-  deleteBoard();
+  deleteBoard();  
   createBoard(boardWidth, boardHeight);
   mine(totalMineAmount);
   calcMinesAround(mineList, boardWidth, boardHeight);
@@ -74,6 +76,9 @@ function game() {
   board.onmousedown = function (event) { mouseDown(event); };
 }
 
-startButton.onmousedown = () => game();
+startButton.onmousedown = () => {
+  startButton.innerHTML = '<span class="smile"> &#128578; </span>';
+  game();
+}
 
 game(boardWidth, boardHeight);
