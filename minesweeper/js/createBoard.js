@@ -1,11 +1,7 @@
 let boardWidth = 10;
 let boardHeight = 10;
 
-function createBoard(boardWidth, boardHeight) {
-  const board = document.createElement('div');
-  board.classList.add('board');
-  board.setAttribute('id', 'board'); 
-  document.body.appendChild(board); 
+function createBoard(boardWidth, boardHeight) {  
   for (let i = 0; i < boardHeight; i++) {
     const row = document.createElement('div');
     row.classList.add('row');
