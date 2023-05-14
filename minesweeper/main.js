@@ -74,10 +74,22 @@ function openEmpty(cell) {
   }
 }
 
+function startGame(event) {
+  const { target } = event;
+  counter++; 
+  counterBlock.innerText = counter;
+  target.classList.add('opened');
+  mine(totalMineAmount);
+  calcMinesAround(mineList, boardWidth, boardHeight);
+  if (target.classList.contains('empty')) {
+    openEmpty(target);
+  }
+}
+
 function mouseDown(event) {
   const { target } = event;
   if (target.classList.contains('cell')) {  
-    if (!target.classList.contains('opened')) {
+    if (event.button === 0 && !target.classList.contains('opened')) {
       counter++; 
       counterBlock.innerText = counter;
       target.classList.add('opened');
@@ -95,18 +107,29 @@ function mouseDown(event) {
         startButton.innerHTML = '<span> &#128565; </span>';
         alert('Game over. Try again');                    
       }                
-    }     
+    } /*
+    if (event.button === 2) {
+      if (!target.classList.contains('flagged')) {
+        target.classList.add('flagged');
+        target.innerHTML = '<span> &#9873; </span>';
+      } else {
+        target.classList.remove('flagged');
+      }      
+    }*/
   }
 }
 
 function game() {   
   deleteBoard();  
   createBoard(boardWidth, boardHeight);
-  mine(totalMineAmount);
-  calcMinesAround(mineList, boardWidth, boardHeight);   
-  timerUp = setInterval(() => timerBlock.innerText = timer++, 1000);
   let board = document.getElementById('board');
-  board.onmousedown = function (event) { mouseDown(event); };
+  board.onmousedown = function (event) { 
+    if (event.target.classList.contains('cell')) {
+      startGame(event);  
+      timerUp = setInterval(() => timerBlock.innerText = timer++, 1000);
+      board.onmousedown = function (event) { mouseDown(event); }; 
+    }
+  }   
 }
 
 startButton.onmousedown = () => {

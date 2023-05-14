@@ -16,7 +16,7 @@ function mine(totalMineAmount) {
     let mineX = Math.floor(Math.random() * boardWidth);
     let mineY = Math.floor(Math.random() * boardHeight);
     let mineCell = document.getElementById(`${mineX}-${mineY}`);
-    while (mineCell.classList.contains('mined')) {
+    while (mineCell.classList.contains('mined') || mineCell.classList.contains('opened')) {
       mineX = Math.floor(Math.random() * boardWidth);
       mineY = Math.floor(Math.random() * boardHeight);
       mineCell = document.getElementById(`${mineX}-${mineY}`);
