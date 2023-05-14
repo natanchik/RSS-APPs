@@ -1,7 +1,7 @@
 // import './style.css';
 import { tablo } from './js/tablo.js';
 import { boardWidth, boardHeight, createBoard } from './js/createBoard.js';
-import { totalMineAmount, mine, calcMinesAround, mineList } from './js/startGame.js';;
+import { totalMineAmount, mine, getCellsAround, calcMinesAround, mineList } from './js/startGame.js';;
 
 const instruction = document.createElement('h1');
 instruction.classList.add('h1');
@@ -53,6 +53,27 @@ function stopGame() {
   board.onmousedown = () => {};  
 }
 
+function openEmpty(cell) {
+  let idCell = cell.id.split('-');
+  let i = +idCell[0];
+  let j = +idCell[1];  
+  let idCellsAround = getCellsAround(i, j);   
+  for (let el of idCellsAround) {
+    let row = el.split('-')[0];
+    let col = el.split('-')[1]; 
+    if (el.includes('--') || el.startsWith('-') || +row >= boardHeight || +col >= boardWidth ) {
+      continue;
+    }
+    let cellAround = document.getElementById(`${el}`);
+    if (!cellAround.classList.contains('opened')) {  
+      cellAround.classList.add('opened');
+      if (cellAround.classList.contains('empty')) {        
+      openEmpty(cellAround);
+      }
+    }   
+  };   
+}
+
 function mouseDown(event) {
   const { target } = event;
   if (target.classList.contains('cell')) {  
@@ -60,17 +81,20 @@ function mouseDown(event) {
       counter++; 
       counterBlock.innerText = counter;
       target.classList.add('opened');
+      if (target.classList.contains('empty')) {
+        openEmpty(target);
+      }
       if (counter === boardWidth * boardHeight - totalMineAmount) {
         stopGame();
         startButton.innerHTML = '<span> &#129321; </span>';
         alert(`Hooray! You found all mines in ${timer} seconds and ${counter} moves!`);          
-      }    
-    }      
-    if (target.classList.contains('mined')) {      
+      } 
+      if (target.classList.contains('mined')) {      
       stopGame();
       startButton.innerHTML = '<span> &#128565; </span>';
       alert('Game over. Try again');                    
-    }
+      }    
+    }   
   }
 }
 
