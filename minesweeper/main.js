@@ -71,7 +71,7 @@ function openEmpty(cell) {
       openEmpty(cellAround);
       }
     }   
-  };   
+  }
 }
 
 function mouseDown(event) {
@@ -84,17 +84,18 @@ function mouseDown(event) {
       if (target.classList.contains('empty')) {
         openEmpty(target);
       }
-      if (counter === boardWidth * boardHeight - totalMineAmount) {
+      let openedCells = document.querySelectorAll('.opened');
+      if (openedCells.length === boardWidth * boardHeight - totalMineAmount) {
         stopGame();
         startButton.innerHTML = '<span> &#129321; </span>';
         alert(`Hooray! You found all mines in ${timer} seconds and ${counter} moves!`);          
       } 
       if (target.classList.contains('mined')) {      
-      stopGame();
-      startButton.innerHTML = '<span> &#128565; </span>';
-      alert('Game over. Try again');                    
-      }    
-    }   
+        stopGame();
+        startButton.innerHTML = '<span> &#128565; </span>';
+        alert('Game over. Try again');                    
+      }                
+    }     
   }
 }
 
