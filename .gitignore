@@ -1,4 +1,5 @@
 node_modules/
+minesweeper/dist
 
 # Logs
 logs
