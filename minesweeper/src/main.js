@@ -1,8 +1,15 @@
-// import './style.css';
-import { tablo } from './js/tablo.js';
-import { levelBlock, submitButton } from './js/choiceLevel.js';
-import { boardWidth, boardHeight, createBoard } from './js/createBoard.js';
-import { totalMineAmount, mine, getCellsAround, calcMinesAround, mineList } from './js/startGame.js';
+import './style.css';
+import { tablo, counterBlock, timerBlock, startButton } from './js/tablo.js';
+import { levelBlock, submitButton } from './js/levelBlock.js';
+import { menu } from './js/menu.js';
+import { board, createBoard } from './js/createBoard.js';
+import { getCellsAround, mine, calcMinesAround, mineList } from './js/startGame.js';
+
+let boardWidth = 10; 
+let boardHeight = 10;
+let totalMineAmount = 10;
+
+document.body.appendChild(menu);
 
 const instruction = document.createElement('h1');
 instruction.classList.add('h1');
@@ -14,38 +21,19 @@ mainBlock.classList.add('mainBlock');
 document.body.appendChild(mainBlock);
 mainBlock.appendChild(levelBlock);
 
-const board = document.createElement('div');
-board.classList.add('board');
-board.setAttribute('id', 'board'); 
+let counter = 0;
+let timer = 0;
+let timerUp;
 mainBlock.appendChild(board); 
+board.appendChild(tablo);
+counterBlock.innerText = counter;
+timerBlock.innerText = timer;
 
 const lastGames = document.createElement('div');
 lastGames.classList.add('lastGames');
 lastGames.setAttribute('id', 'lastGames'); 
 lastGames.innerHTML = '<p>Last games:</p>';
 mainBlock.appendChild(lastGames);
-
-let counter = 0;
-let timer = 0;
-
-board.appendChild(tablo);
-
-let counterBlock = document.createElement('div');
-counterBlock.classList.add('counter');
-counterBlock.innerText = counter;
-tablo.appendChild(counterBlock);
-
-let startButton = document.createElement('div');
-startButton.classList.add('startButton');
-startButton.innerHTML = '<span> &#128578; </span>';
-tablo.appendChild(startButton);
-
-const timerBlock = document.createElement('div');
-timerBlock.classList.add('timer');
-timerBlock.innerText = timer;
-tablo.appendChild(timerBlock);
-
-let timerUp;
 
 function prepareToGame() {
   startButton.innerHTML = '<span> &#128578; </span>';
@@ -111,13 +99,13 @@ function lose(target) {
   } 
 }
 
-function startGame(event, totalMineAmount) {
+function startGame(event, minesAmount, width, height) {
   const { target } = event;
   counter++; 
   counterBlock.innerText = counter;
   target.classList.add('opened');
-  mine(totalMineAmount);
-  calcMinesAround(mineList, boardWidth, boardHeight);
+  mine(minesAmount, width, height);
+  calcMinesAround(mineList, width, height);
   if (target.classList.contains('empty')) {
     openEmpty(target);
   }
@@ -148,53 +136,34 @@ function mouseDown(event) {
   }
 }
 
-function game(boardWidth, boardHeight, totalMineAmount) {   
+function game(width, height, minesAmount) {   
   deleteBoard();  
-  createBoard(boardWidth, boardHeight);
+  createBoard(width, height);
   let board = document.getElementById('board');
   board.onmousedown = function (event) { 
     if (event.target.classList.contains('cell')) {
-      startGame(event, totalMineAmount);  
+      startGame(event, minesAmount, width, height);  
       timerUp = setInterval(() => timerBlock.innerText = timer++, 1000);
       board.onmousedown = function (event) { mouseDown(event); }; 
     }
   }   
 }
 
+game(boardWidth, boardHeight, totalMineAmount);
+
 startButton.onmousedown = () => {
   prepareToGame();  
   game(boardWidth, boardHeight, totalMineAmount);
 }
 
-game(boardWidth, boardHeight, totalMineAmount);
-
-
 // Input custom's choice
 
 submitButton.addEventListener("click", function() {
-  
-  console.log('inputMine', inputMine);
-  console.log('inputMine.value', inputMine.value);
-  console.log('totalMineAmount', totalMineAmount);
-   
-  const chosenLevel = document.querySelectorAll('.radio:checked');
-  console.log('chosenLevel', chosenLevel);
-  console.log('chosenLevel.length', chosenLevel.length);
-  console.log('chosenLevel[0].value', chosenLevel[0].value);
-  console.log('chosenLevel[0].id', chosenLevel[0].id);
-  console.log("chosenLevel[0].id == 'easy'", chosenLevel[0].id == 'easy');
-  
-  let side;
-
-  if (chosenLevel[0].id === 'medium') { side = 15;
-  } else if (chosenLevel[0].id === 'hard') { side = 25;
-  } else { side = 10 }
-   
-  console.log('side', side);
-  
-  
+  totalMineAmount = inputMine.value;
+  const chosenLevel = document.querySelector('.radio:checked'); 
+  if (chosenLevel.id === 'medium') { boardWidth = boardHeight = 15;
+  } else if (chosenLevel.id === 'hard') { boardWidth = boardHeight = 25;
+  } else { boardWidth = boardHeight = 10 }   
   prepareToGame();  
-  game(side, side, inputMine.value); 
-  return false; 
+  game(boardWidth, boardHeight, totalMineAmount);   
 });
-

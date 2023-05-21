@@ -1,6 +1,6 @@
 // Form for choose level and amount of mines
 
-let levelBlock = document.createElement("FORM");
+let levelBlock = document.createElement("div");
 levelBlock.setAttribute("name", "levelBlock");
 levelBlock.classList.add("levelBlock");
 levelBlock.setAttribute("id", "levelBlock");
@@ -9,7 +9,6 @@ levelBlock.innerHTML = '<p>You can choose level <br>and amount of mines: </p>';
 let easy = document.createElement("INPUT");
 easy.setAttribute("type", "radio");
 easy.setAttribute("name", "size");
-easy.setAttribute("value", "easy");
 easy.setAttribute("id", "easy");
 easy.setAttribute("class", "radio");
 easy.setAttribute("Checked", 'true');
@@ -22,7 +21,6 @@ easyLabel.appendChild(easy);
 let medium = document.createElement("INPUT");
 medium.setAttribute("type", "radio");
 medium.setAttribute("name", "size");
-medium.setAttribute("value", "medium ");
 medium.setAttribute("id", "medium");
 medium.setAttribute("class", "radio");
 let mediumLabel = document.createElement("LABEL");
@@ -34,7 +32,6 @@ mediumLabel.appendChild(medium);
 let hard = document.createElement("INPUT");
 hard.setAttribute("type", "radio");
 hard.setAttribute("name", "size");
-hard.setAttribute("value", "hard");
 hard.setAttribute("id", "hard");
 hard.setAttribute("class", "radio");
 let hardLabel = document.createElement("LABEL");
@@ -57,7 +54,7 @@ levelBlock.appendChild(inputLabel);
 inputLabel.appendChild(inputMine);
 
 let submitButton = document.createElement("button");
-submitButton.setAttribute("type", "sumbit");
+// submitButton.setAttribute("type", "button");
 submitButton.setAttribute("name", "sumbit");
 submitButton.setAttribute("id", "submit");
 submitButton.setAttribute("class", "submit");

@@ -1,6 +1,5 @@
 const menu = document.createElement('div');
 menu.classList.add('menu');
-document.body.appendChild(menu);
 
 const settingButton = document.createElement("button");
 settingButton.setAttribute("id", "settingButton");
@@ -16,7 +15,7 @@ menu.appendChild(lastGamesButton);
 
 // Adaptive for form
 
-document.getElementById("settingButton").onclick = () => {
+settingButton.onclick = () => {
   document.getElementById("levelBlock").classList.toggle('called');
 }
 
@@ -53,3 +52,5 @@ window.onclick = function(event) {
     }    
   }
 }*/
+
+export { menu, settingButton, lastGamesButton }
