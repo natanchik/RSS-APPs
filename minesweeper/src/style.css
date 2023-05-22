@@ -126,7 +126,7 @@ body {
   cursor: pointer;
   width: 40px;
   height: 40px;  
-  font: normal bold 10px 'Orbitron', sans-serif;
+  font: normal bold 0px 'Orbitron', sans-serif;
   line-height: 50px;
   text-align: center;  
   background: #a3a1a1;    
