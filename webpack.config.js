@@ -4,12 +4,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const EslingPlugin = require('eslint-webpack-plugin');
 
-const baseConfig = {
+const baseConfig = {    
     entry: path.resolve(__dirname, 'migration-newip-to-ts', 'src', 'index'),
     mode: 'development',
     module: {
         rules: [
-            { test: /\.ts$/i, use: 'ts-loader' },
+            { 
+                test: /\.ts$/i, 
+                use: 'ts-Loader',
+                exclude: /(node_modules)/,
+                include: [path.resolve(__dirname, 'migration-newip-to-ts', 'src')]
+            },
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
@@ -17,9 +22,10 @@ const baseConfig = {
         ],
     },
     resolve: {
-        extensions: ['.ts', '.js'],
+        extensions: ['.ts', '.js', 'json'],
     },
     output: {
+        publicPath: 'dist',
         filename: 'index.js',
         path: path.resolve(__dirname, 'migration-newip-to-ts', 'dist'),
     },
