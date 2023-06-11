@@ -1,7 +1,7 @@
 import './news.css';
 import { Article } from '../../../types/types';
 
-class News {
+class News extends Array {
   static draw(data: Article[]): void {
     const news = data.length >= 10 ? data.filter((_item: Article, idx: number) => idx < 10) : data;
 
