@@ -1,3 +1,30 @@
+export interface MainReqParams {
+  apiKey: string;
+  q?: string;
+  searchIn?: 'title' | 'description' | 'content';
+  sources?: string;
+  domains?: string;
+  excludeDomains?: string;
+  from?: string;
+  to?: string;
+  language?: Language;
+  sortBy?: 'relevancy' | 'popularity' | 'publishedAt';
+  pageSize?: number;
+  page?: number;
+}
+
+export interface SourcesReqParams {
+  apiKey: string;
+  category?: Category;
+  language?: Language;
+  country?: Country;
+}
+
+export interface SourcesResObj {
+  status: string;
+  sources: Source[];
+}
+
 export interface Source {
   id: string;
   name: string;
@@ -8,9 +35,33 @@ export interface Source {
   country: Country;
 }
 
-export interface ResponseObject {
-  status: string;
-  sources: Source[];
+export interface ArticleReqParams {
+  apiKey?: string;
+  country?: Country;
+  category?: Category;
+  sources?: string;
+  q?: string;
+  pageSize?: number;
+  page?: number;
+}
+
+export interface ArticlesResObj extends Response {
+  totalResults: number;
+  articles: Article[];
+}
+
+export interface Article {
+  source: {
+    id: string | null;
+    name: string;
+  };
+  author: string;
+  title: string;
+  description: string;
+  url: string;
+  urlToImage: string;
+  publishedAt: string;
+  content: string;
 }
 
 const categories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'] as const;
@@ -79,17 +130,3 @@ const countries = [
 ] as const;
 
 export type Country = (typeof countries)[number];
-
-export interface Article {
-  source: {
-    id: string;
-    name: string;
-  };
-  author: string;
-  title: string;
-  description: string;
-  url: string;
-  urlToImage: string;
-  publishedAt: string;
-  content: string;
-}
