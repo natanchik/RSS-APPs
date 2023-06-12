@@ -1,4 +1,4 @@
-export interface MainReqParams {
+export interface EvethingReqParams {
   apiKey: string;
   q?: string;
   searchIn?: 'title' | 'description' | 'content';
@@ -14,15 +14,10 @@ export interface MainReqParams {
 }
 
 export interface SourcesReqParams {
-  apiKey: string;
+  apiKey?: string;
   category?: Category;
   language?: Language;
   country?: Country;
-}
-
-export interface SourcesResObj {
-  status: string;
-  sources: Source[];
 }
 
 export interface Source {
@@ -33,21 +28,6 @@ export interface Source {
   category: Category;
   language: Language;
   country: Country;
-}
-
-export interface ArticleReqParams {
-  apiKey?: string;
-  country?: Country;
-  category?: Category;
-  sources?: string;
-  q?: string;
-  pageSize?: number;
-  page?: number;
-}
-
-export interface ArticlesResObj extends Response {
-  totalResults: number;
-  articles: Article[];
 }
 
 export interface Article {
@@ -63,6 +43,26 @@ export interface Article {
   publishedAt: string;
   content: string;
 }
+
+// export interface SourcesResObj {
+//   status: string;
+//   sources: Source[];
+// }
+
+// export interface HeadlinesReqParams {
+//   apiKey?: string;
+//   country?: Country;
+//   category?: Category;
+//   sources?: string;
+//   q?: string;
+//   pageSize?: number;
+//   page?: number;
+// }
+
+// export interface ArticlesResObj extends Response {
+//   totalResults: number;
+//   articles: Article[];
+// }
 
 export type Endpoints = 'sources' | 'everything';
 

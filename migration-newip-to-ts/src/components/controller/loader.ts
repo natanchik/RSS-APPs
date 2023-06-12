@@ -1,11 +1,11 @@
-import { MainReqParams, ArticleReqParams } from '../../types/types';
+import { EvethingReqParams, SourcesReqParams } from '../../types/types';
 
 class Loader {
   baseLink: string;
 
-  options: MainReqParams;
+  options: EvethingReqParams;
 
-  constructor(baseLink: string, options: MainReqParams) {
+  constructor(baseLink: string, options: EvethingReqParams) {
     this.baseLink = baseLink;
     this.options = options;
   }
@@ -19,16 +19,15 @@ class Loader {
     this.load('GET', endpoint, callback, options);
   }
 
-  static errorHandler(res: Response): Response {
-    if (!res.ok) {
-      if (res.status === 401 || res.status === 404)
-        process.stderr.write(`Sorry, but there is ${res.status} error: ${res.statusText}`);
-      throw Error(res.statusText);
-    }
-    return res;
+  load(method: string, endpoint: string, callback: () => void, options: SourcesReqParams): void {
+    fetch(this.makeUrl(options, endpoint), { method })
+      .then(Loader.errorHandler)
+      .then((res) => res.json)
+      .then((data) => callback())
+      .catch((err) => process.stderr.write(err));
   }
 
-  makeUrl(options: ArticleReqParams, endpoint: string) {
+  makeUrl(options: SourcesReqParams, endpoint: string) {
     const urlOptions = { ...this.options, ...options };
     let url = `${this.baseLink}${endpoint}?`;
 
@@ -39,12 +38,13 @@ class Loader {
     return url.slice(0, -1);
   }
 
-  load(method: string, endpoint: string, callback: () => void, options: ArticleReqParams): void {
-    fetch(this.makeUrl(options, endpoint), { method })
-      .then(Loader.errorHandler)
-      .then((res) => res.json)
-      .then((data) => callback(data))
-      .catch((err) => process.stderr.write(err));
+  static errorHandler(res: Response): Response {
+    if (!res.ok) {
+      if (res.status === 401 || res.status === 404)
+        process.stderr.write(`Sorry, but there is ${res.status} error: ${res.statusText}`);
+      throw Error(res.statusText);
+    }
+    return res;
   }
 }
 
