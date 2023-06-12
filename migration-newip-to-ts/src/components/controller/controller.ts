@@ -20,7 +20,7 @@ class AppController extends AppLoader {
         const sourceId = target.getAttribute('data-source-id') as string;
         if (newsContainer.getAttribute('data-source') !== sourceId) {
           newsContainer.setAttribute('data-source', sourceId);
-          super.getResp(
+          super.getResp<Article[]>(
             {
               endpoint: 'everything',
               options: {
