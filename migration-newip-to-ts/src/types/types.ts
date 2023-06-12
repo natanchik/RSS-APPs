@@ -59,10 +59,10 @@ export interface Article {
 //   page?: number;
 // }
 
-// export interface ArticlesResObj extends Response {
-//   totalResults: number;
-//   articles: Article[];
-// }
+export interface ArticlesResObj extends Response {
+  totalResults: number;
+  articles: Article[];
+}
 
 export type Endpoints = 'sources' | 'everything';
 

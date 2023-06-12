@@ -1,4 +1,4 @@
-import { EvethingReqParams, SourcesReqParams } from '../../types/types';
+import { EvethingReqParams, SourcesReqParams, Article } from '../../types/types';
 
 class Loader {
   baseLink: string;
@@ -12,18 +12,18 @@ class Loader {
 
   getResp(
     { endpoint = '', options = {} },
-    callback = () => {
+    callback: (data: Article[]) => void = () => {
       process.stderr.write('No callback for GET response');
     },
   ) {
     this.load('GET', endpoint, callback, options);
   }
 
-  load(method: string, endpoint: string, callback: () => void, options: SourcesReqParams): void {
+  load(method: string, endpoint: string, callback: (data: Article[]) => void, options: SourcesReqParams): void {
     fetch(this.makeUrl(options, endpoint), { method })
       .then(Loader.errorHandler)
       .then((res) => res.json)
-      .then(() => callback())
+      .then(() => callback)
       .catch((err) => process.stderr.write(err));
   }
 
