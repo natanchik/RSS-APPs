@@ -12,9 +12,9 @@ class App {
   }
 
   start() {
-    document
-      .querySelector('.sources')!
-      .addEventListener('click', (e) => this.controller.getNews(e, (data) => AppView.drawNews(data)));
+    (document.querySelector('.sources') as HTMLElement).addEventListener('click', (e) =>
+      this.controller.getNews(e, (data) => AppView.drawNews(data)),
+    );
     this.controller.getSources((data) => AppView.drawSources(data));
   }
 }
