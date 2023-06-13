@@ -53,27 +53,38 @@ export interface ArticlesResObj extends Response {
   articles: Article[];
 }
 
-// export interface HeadlinesReqParams {
-//   apiKey?: string;
-//   country?: Country;
-//   category?: Category;
-//   sources?: string;
-//   q?: string;
-//   pageSize?: number;
-//   page?: number;
-// }
+enum Categories {
+  'business',
+  'entertainment',
+  'general',
+  'health',
+  'science',
+  'sports',
+  'technology',
+}
 
-export type Endpoints = 'sources' | 'everything';
+export type Category = (typeof Categories)[number];
 
-const categories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'] as const;
+enum Languages {
+  'ar',
+  'de',
+  'en',
+  'es',
+  'fr',
+  'he',
+  'it',
+  'nl',
+  'no',
+  'pt',
+  'ru',
+  'sv',
+  'ud',
+  'zh',
+}
 
-export type Category = (typeof categories)[number];
+export type Language = (typeof Languages)[number];
 
-const languages = ['ar', 'de', 'en', 'es', 'fr', 'he', 'it', 'nl', 'no', 'pt', 'ru', 'sv', 'ud', 'zh'] as const;
-
-export type Language = (typeof languages)[number];
-
-const countries = [
+enum Countries {
   'ae',
   'ar',
   'at',
@@ -128,6 +139,6 @@ const countries = [
   'us',
   've',
   'za',
-] as const;
+}
 
-export type Country = (typeof countries)[number];
+export type Country = (typeof Countries)[number];
