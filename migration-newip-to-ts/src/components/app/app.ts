@@ -2,16 +2,16 @@ import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
 
 class App {
-  controller;
+  private controller;
 
-  view;
+  private view;
 
   constructor() {
     this.controller = new AppController();
     this.view = new AppView();
   }
 
-  start() {
+  public start() {
     (document.querySelector('.sources') as HTMLElement).addEventListener('click', (e) =>
       this.controller.getNews(e, (data) => this.view.drawNews(data)),
     );
