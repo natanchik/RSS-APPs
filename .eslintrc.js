@@ -25,6 +25,8 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'error',
         '@typescript-eslint/array-type': [
             'error', { default: 'array'}
-        ]
+        ],
+        'no-console': 'off',
+        'class-methods-use-this': 'off'
     }
 }

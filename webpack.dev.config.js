@@ -4,6 +4,6 @@ module.exports = {
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
-        static: path.resolve(__dirname, 'migration-newip-to-ts', 'dist'),
+        contentBase: path.resolve(__dirname, 'migration-newip-to-ts', 'dist'),
     },
 };
