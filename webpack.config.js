@@ -18,10 +18,14 @@ const baseConfig = {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },            
         ],
     },
     resolve: {
-        extensions: ['.js', '.ts', 'json'],
+        extensions: ['.js', '.ts', '.json'],
     },
     output: {
         filename: 'index.js',
@@ -32,7 +36,7 @@ const baseConfig = {
             template: path.resolve(__dirname, 'migration-newip-to-ts', 'src', 'index.html'),
             filename: 'index.html',
         }),
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin(),        
     ],
 };
 

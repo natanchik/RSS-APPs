@@ -1,12 +1,16 @@
 body {
     color: #fff;
-    background: #17181c;
+    background: url('./img/news_placeholder.jpg');
+    background-size: cover;
     font-family: sans-serif;
 }
 
 header {
-    padding: 10px 30px;
-    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 30px;
+    text-align: center;    
 }
 
 header h1 {
@@ -15,21 +19,26 @@ header h1 {
 }
 
 footer {
-    height: 100px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px solid #30c5ff;
 }
 footer .copyright {
     font-size: 14px;
-    color: #333;
+    color: #30c5ff;
     text-align: center;
 }
 footer .copyright a {
-    color: #444;
+    color: #30c5ff;
 }
 footer .copyright a:hover {
-    color: #555;
+    color: #69db7e;
 }
 footer .copyright:before {
     content: '©';
