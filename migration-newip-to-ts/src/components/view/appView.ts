@@ -1,26 +1,26 @@
 import News from './news/news';
 import Sources from './sources/sources';
-import { Article, Source } from '../../types/types';
+import { SourcesResObj, ArticlesResObj, Article, Source } from '../../types/types';
 
 export class AppView {
-  news: Article[];
+    news;
 
-  sources: Source[];
+    sources;
 
-  constructor() {
-    this.news = new News();
-    this.sources = new Sources();
-  }
+    constructor() {
+        this.news = new News();
+        this.sources = new Sources();
+    }
 
-  static drawNews(data: Article[]) {
-    const values = data || [];
-    News.draw(values);
-  }
+    drawNews(data: ArticlesResObj) {
+        const values: Article[] | null = data?.articles ? data?.articles : [];
+        this.news.draw(values);
+    }
 
-  static drawSources(data: Source[]) {
-    const values = data || [];
-    Sources.draw(values);
-  }
+    drawSources(data: SourcesResObj) {
+        const values: Source[] | null = data?.sources ? data?.sources : [];
+        this.sources.draw(values);
+    }
 }
 
 export default AppView;
