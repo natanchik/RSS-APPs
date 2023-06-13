@@ -10,7 +10,7 @@
     align-items: center;
     font: 300 1em 'Fira Sans', sans-serif;
     justify-content: space-between;
-    background: linear-gradient(45deg, rgb(8, 23, 53, 0.6), rgb(36, 141, 250, 0.5));     
+    background: linear-gradient(90deg, rgb(8, 23, 53, 0.6), rgb(36, 141, 250, 0.5));   
     z-index: 10;
 }
 
