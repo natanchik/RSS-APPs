@@ -63,7 +63,7 @@ enum Categories {
   'technology',
 }
 
-export type Category = (typeof Categories)[number];
+export type Category = keyof typeof Categories;
 
 enum Languages {
   'ar',
@@ -82,7 +82,7 @@ enum Languages {
   'zh',
 }
 
-export type Language = (typeof Languages)[number];
+export type Language = keyof typeof Languages;
 
 enum Countries {
   'ae',
@@ -141,4 +141,4 @@ enum Countries {
   'za',
 }
 
-export type Country = (typeof Countries)[number];
+export type Country = keyof typeof Countries;
