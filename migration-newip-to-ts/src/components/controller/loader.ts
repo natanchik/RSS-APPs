@@ -29,7 +29,7 @@ class Loader {
     return res;
   }
 
-  public makeUrl(options: SourcesReqParams, endpoint: string) {
+  public makeUrl(options: Partial<SourcesReqParams>, endpoint: string) {
     const urlOptions = { ...this.options, ...options };
     let url = `${this.baseLink}${endpoint}?`;
 
@@ -40,7 +40,7 @@ class Loader {
     return url.slice(0, -1);
   }
 
-  public load<T>(method: string, endpoint: string, callback: (data: T) => void, options: SourcesReqParams = {}) {
+  public load<T>(method: string, endpoint: string, callback: (data: T) => void, options: Partial<SourcesReqParams> = {}) {
     fetch(this.makeUrl(options, endpoint), { method })
       .then(this.errorHandler)
       .then((res) => res.json())

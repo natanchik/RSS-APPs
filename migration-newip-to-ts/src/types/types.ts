@@ -1,5 +1,5 @@
 export interface EvethingReqParams {
-  apiKey: string;
+  readonly apiKey: string;
   q?: string;
   searchIn?: 'title' | 'description' | 'content';
   sources?: string;
@@ -14,10 +14,10 @@ export interface EvethingReqParams {
 }
 
 export interface SourcesReqParams {
-  apiKey?: string;
-  category?: Category;
-  language?: Language;
-  country?: Country;
+  readonly apiKey: string;
+  category: Category;
+  language: Language;
+  country: Country;
 }
 
 export interface Source {
