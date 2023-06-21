@@ -7,4 +7,7 @@
 [Self-introduction](https://rolling-scopes-school.github.io/natanchik-JSFE2023Q1/self-introduction/)
 
 
-[Migration NewsAPI to Typescript](https://rolling-scopes-school.github.io/natanchik-JSFE2023Q1/migration-newip-to-ts/)
+[Migration News API to Typescript](https://rolling-scopes-school.github.io/natanchik-JSFE2023Q1/migration-newip-to-ts/)
+
+
+[RSS-CSS-Selectors](https://rolling-scopes-school.github.io/natanchik-JSFE2023Q1/rss-css-selectors/)
