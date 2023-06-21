@@ -1,0 +1,30 @@
+.footer {
+  display: flex;
+  width: 100%;
+  height: content;  
+  padding: 10px 50px;
+  justify-content: center;  
+}
+
+.logo {
+  display: inline-block;
+  min-width: 100px;
+  height: auto;  
+  margin: 10px;
+  background-color: rgb(239, 239, 239);
+  background-image: url('./img/rs_school_js.svg');
+  background-repeat: no-repeat;
+  border: 4px ridge rgba(46, 42, 35, 0.95);
+}
+
+.footer-text {
+  display: inline-block;  
+  width: calc(70vw - 200px);
+  line-height: 1.4rem;
+  text-align: center; 
+
+  & a {
+    text-decoration: none;
+    color: rgba(255, 255, 255);
+  }
+}

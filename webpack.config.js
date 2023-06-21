@@ -34,7 +34,7 @@ module.exports = {
     extensions: ['.js', '.ts', '.json'],
   },
   output: {
-    filename: 'index.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'rss-css-selectors', 'dist'),
   },
   plugins: [

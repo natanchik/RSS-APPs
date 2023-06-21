@@ -1,0 +1,12 @@
+{
+  "1": {
+    "header": "Select the plates",
+    "html-code": "<div><plate /><div><div><plate /><div>",
+    "decription": {
+      "header": "Type Selector",
+      "text": "<p>Select elements by their type</p>A<p>Selects all elements of type A. Type refers to the type of tag, so <code>div</code>, <code>p</code> and <code>ul</code> are all different element types.</p>",
+      "examples-header": "Examples",
+      "examples-text": "<p><code>div</code> selects all <code>div</code> elements.</p><p><code>p</code> selects all <code>p</code> elements</p>"
+    }
+  }
+}

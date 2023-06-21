@@ -1,0 +1,75 @@
+.editor {    
+  display: flex;
+  text-align: left;
+  width: 60vw;
+  margin: 20px;
+  border: solid 10px rgba(0, 0, 0, 0.35);  
+  overflow: hidden;
+  font-family: menlo, monospace;
+  font-size: 14px;
+  line-height: 150%;   
+}
+
+.editor-panel {
+  display: inline-block;
+  width: 30vw;
+  border: 1px solid rgb(48, 48, 47);
+}
+
+.editor-header {  
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: space-between;  
+  padding: 10px 15px;
+  background: rgb(39, 36, 30);
+}
+
+.editor-numColumn {
+  float: left;
+  font-family: menlo, monospace;
+  width: 18px;
+  padding: 10px 10px;
+  height: content;
+  line-height: 150%;
+  text-align: right; 
+  border: 1px solid rgb(48, 48, 47);
+}
+
+.css-editor {  
+  background-color: rgb(239, 239, 239);
+  color: rgb(170, 170, 170);  
+
+  & .editor-numColumn {
+    background-color: rgb(221, 221, 221);
+    color: rgb(153, 153, 153);
+    border: none;
+  }
+}
+
+.html-viewer {
+  background-color: rgb(32, 29, 24);
+}
+
+.css-input {
+  display: inline-block;
+  margin: 5px;
+  padding: 2px;
+  width: calc(30vw - 110px);
+  border: none;
+  line-height: 1.4rem;
+  letter-spacing: 1.5px;
+  color: rgb(123, 123, 123);  
+}
+
+.css-input:hover, .css-input:focus, .css-input:active {
+    border-color: rgb(239, 239, 239);
+}
+
+.css-button {
+  padding: 5px;
+  border: 1px solid rgb(195, 195, 195);
+  box-shadow: 3px 3px 0px rgb(153, 153, 153);
+  color: rgb(123, 123, 123);
+  float: right;
+  margin: 2px;
+}
