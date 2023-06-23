@@ -5,7 +5,7 @@ export const editor = document.createElement('div');
 editor.classList.add('editor');
 
 let numbers = '';
-for (let i = 1; i < 21; i += 1) { numbers += `${i}\n`; };
+for (let i = 1; i < 11; i += 1) { numbers += `${i}\n`; };
 
 // CSS Editor
 

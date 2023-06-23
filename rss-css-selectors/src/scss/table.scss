@@ -1,20 +1,57 @@
-.h1 {  
-  color: rgba(255,255,255,.3);
-  font-size: 45px;
-  margin: 20px;
-  font-weight: 400;
-  text-align: center;
-  padding: 20px 30px;
+@keyframes moveThings {  
+  0%   {transform: skew(5deg, 5deg);}    
+  100% {transform: skew(-5deg, -5deg);}
 }
 
-.table {
-  transform-style: preserve-3d;
-  outline: solid 1px transparent;
-  margin: 0px auto 0px auto;
-  min-height: 142px;
-  padding: 15px 15px 22px 15px;
-  display: inline-block;
-  z-index: 999;
+.title {  
+  color: rgba(255,255,255,.3);
+  font-size: 45px;  
+  margin: 10px auto;
+  font-weight: 400;
+  text-align: center;  
+}
+
+.table {  
   position: relative;
-  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  min-width: 500px;
+  width: content;
+  height: 280px;
+  border: 4px ridge rgba(46, 42, 35, 0.95); 
+  background-image: repeating-linear-gradient(#CDA434, #ED760E 15%, #47402E 10%);
+  opacity: 95%;  
+  transform: perspective(200px);   
+}
+
+.napkin,
+.book,
+.cat {  
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 20px;  
+  background-repeat: no-repeat;
+  background-size: cover;  
+}
+
+.animated {
+  animation-name: moveThings;
+  animation-direction: alternate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.napkin {
+  background-image: url('./img/napkin.svg'); 
+}
+
+.book {
+  background-image: url('./img/book-red.svg');
+}
+
+.cat {
+  background-image: url('./img/cat-grey.svg');
 }
