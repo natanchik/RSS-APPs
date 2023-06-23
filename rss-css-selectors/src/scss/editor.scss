@@ -5,7 +5,7 @@
   margin: 20px;
   border: solid 10px rgba(0, 0, 0, 0.35);  
   overflow: hidden;
-  font-family: menlo, monospace;
+  font-family: 'Menlo', monospace;
   font-size: 14px;
   line-height: 150%;   
 }
@@ -62,7 +62,7 @@
 }
 
 .css-input:hover, .css-input:focus, .css-input:active {
-    border-color: rgb(239, 239, 239);
+  border-color: rgb(239, 239, 239);
 }
 
 .css-button {
