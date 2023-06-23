@@ -1,0 +1,32 @@
+.level-block {
+  position: fixed;
+  right: 0;
+  width: 25vw;
+  height: 100vh;  
+  padding: 1rem;
+  margin-left: 1rem;  
+  background-color: #1b1813;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+.level-header {
+  margin: 10px auto;
+}
+
+.level-panel {
+  display: flex;
+  flex-wrap: wrap;
+  height: content;
+  padding: 15px;  
+  flex-direction: column;
+  align-items: center;
+}
+
+.level-button {
+  display: inline-block;
+  width: 200px;
+  padding: 5px;
+  margin: 10px;
+  border: 4px ridge rgba(46, 42, 35, 0.95); 
+}
