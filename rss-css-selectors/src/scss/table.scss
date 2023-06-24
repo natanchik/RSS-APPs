@@ -3,7 +3,7 @@
   100% {transform: skew(-5deg, -5deg);}
 }
 
-.title {  
+.tableHeader {  
   color: rgba(255,255,255,.3);
   font-size: 45px;  
   margin: 10px auto;
@@ -16,7 +16,7 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: center;
+  align-items: end;
   min-width: 500px;
   width: content;
   height: 280px;
@@ -26,15 +26,20 @@
   transform: perspective(200px);   
 }
 
-.napkin,
-.book,
-.cat {  
+.table-items {  
   display: inline-block;
+  position: relative;
+  top: -50px;
   width: 100px;
   height: 100px;
   margin: 20px;  
   background-repeat: no-repeat;
   background-size: cover;  
+}
+
+.small {
+    width: 70px;
+    height: 70px;
 }
 
 .animated {
@@ -52,6 +57,21 @@
   background-image: url('./assets/book-red.svg');
 }
 
+.bookGreen {
+  background-image: url('./assets/book-green.svg');
+}
+
 .cat {
   background-image: url('./assets/cat-grey.svg');
+  right: 25px;
+}
+
+.catOrange {
+  background-image: url('./assets/cat-orange.svg');
+  right: 25px;
+}
+
+.letter {
+  background-image: url('./assets/letter.svg');
+  right: 25px;
 }

@@ -1,13 +1,27 @@
-export const editorCss = document.createElement('div');
-editorCss.classList.add('editor-css');
+export const cssPanel = document.createElement('div');
+cssPanel.classList.add('editor-panel');
+cssPanel.classList.add('css-editor');
 
-const cssInput = document.createElement('input');
+const cssHeader = document.createElement('div');
+cssHeader.classList.add('editor-header');
+cssHeader.innerHTML = '<p>CSS Editor</p><p>style.css</p>';
+cssPanel.appendChild(cssHeader);
+
+export const cssNumColumn = document.createElement('div');
+cssNumColumn.classList.add('editor-numColumn');
+cssPanel.appendChild(cssNumColumn);   
+
+const editorCss = document.createElement('div');
+editorCss.classList.add('editor-css');
+cssPanel.appendChild(editorCss);
+
+export const cssInput = document.createElement('input');
 cssInput.classList.add('css-input');
 cssInput.autofocus = true;
 editorCss.appendChild(cssInput); 
 cssInput.placeholder = 'Try in a CSS selector'
 
-const cssButton = document.createElement('button');
+export const cssButton = document.createElement('button');
 cssButton.classList.add('css-button');
 cssButton.innerText = 'Enter';
 editorCss.appendChild(cssButton); 
