@@ -57,3 +57,36 @@ export const catOrangeAnim = document.createElement('div');
 catOrangeAnim.classList.add('table-items');
 catOrangeAnim.classList.add('catOrange');
 catOrangeAnim.classList.add('animated');
+
+export const catSmall = document.createElement('div');
+catSmall.classList.add('table-items');
+catSmall.classList.add('cat');
+catSmall.classList.add('small');
+
+export const catSmallAnim = document.createElement('div');
+catSmallAnim.classList.add('table-items');
+catSmallAnim.classList.add('cat');
+catSmallAnim.classList.add('small');
+catSmallAnim.classList.add('animated');
+
+export const catOrangeSmall = document.createElement('div');
+catOrangeSmall.classList.add('table-items');
+catOrangeSmall.classList.add('catOrange');
+catOrangeSmall.classList.add('small');
+
+export const catOrangeSmallAnim = document.createElement('div');
+catOrangeSmallAnim.classList.add('table-items');
+catOrangeSmallAnim.classList.add('catOrange');
+catOrangeSmallAnim.classList.add('small');
+catOrangeSmallAnim.classList.add('animated');
+
+export const letterSmall = document.createElement('div');
+letterSmall.classList.add('table-items');
+letterSmall.classList.add('letter');
+letterSmall.classList.add('small');
+
+export const letterSmallAnim = document.createElement('div');
+letterSmallAnim.classList.add('table-items');
+letterSmallAnim.classList.add('letter');
+letterSmallAnim.classList.add('small');
+letterSmallAnim.classList.add('animated');

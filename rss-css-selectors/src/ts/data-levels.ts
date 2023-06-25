@@ -1,4 +1,6 @@
-import { napkin, book, cat, napkinAnim, catOrange, catOrangeAnim, bookAnim, catAnim, bookGreen, bookGreenAnim, letter, letterAnim } from './table';
+import { napkin, book, cat, napkinAnim, catOrange, catOrangeAnim, bookAnim, catAnim, 
+    bookGreen, bookGreenAnim, letter, letterAnim, catSmall, catSmallAnim, catOrangeSmall, 
+    catOrangeSmallAnim, letterSmall, letterSmallAnim } from './table';
 
 export const levelsData = [
   { // 0
@@ -33,8 +35,38 @@ export const levelsData = [
   },
   { // 5
     'header': 'Select the letter on the green book',
-    'tableItems': [[napkin, catOrange], [bookGreen, letterAnim], [book, cat]],
-    'cssCode': '#green cat',
-    'htmlCode': '<napkin><cat class="orange" /</napkin><book id="green"><letter /></book><book><cat /></book>',
+    'tableItems': [[napkin, catOrange], [bookGreen, letterAnim], [book, letter]],
+    'cssCode': '#green letter',
+    'htmlCode': '<napkin><cat class="orange" /</napkin><book id="green"><letter /></book><book><letter /></book>',
+  },
+  { // 6
+    'header': 'Select the small orange cats',
+    'tableItems': [catOrangeSmallAnim, cat, [napkin, catOrangeSmallAnim], [napkin, book]],
+    'cssCode': '.small',
+    'htmlCode': '<cat class="small" /><cat /><napkin><cat class="small" /></napkin><book /><napkin />',
+  },
+  { // 7
+    'header': 'Select the small orange cats',
+    'tableItems': [cat, catSmall, [napkin, catOrangeSmallAnim], [book, catOrange], [book, catOrangeSmallAnim]],
+    'cssCode': 'cat.orange.small',
+    'htmlCode': '<cat /><cat class="small" /><napkin><cat class="orange small" /></napkin><book><cat class="orange" /><book /><book><cat class="orange small" /><book />',
+  },
+  { // 8
+    'header': 'Select the small orange cats on the napkins',
+    'tableItems': [[napkin, cat], catOrangeSmall, [napkin, catOrangeSmallAnim], [napkin, catSmall], [napkin, catOrangeSmallAnim]],
+    'cssCode': 'napkin cat.orange.small',
+    'htmlCode': '<napkin><cat /><napkin><cat class="orange small" /><napkin><cat class="orange small" /></napkin><napkin><cat class="small" /></napkin><napkin><cat class="orange small" /></napkin>',
+  },
+  { // 9
+    'header': 'Select the books and napkins',
+    'tableItems': [letterSmall, letter, [bookAnim, letter], [napkinAnim, letter], [bookAnim, letter], letter, letterSmall],
+    'cssCode': ['book, napkin', 'napkin, book'],
+    'htmlCode': '<letter class="small /><letter /><book><letter /></book><napkin><letter /></napkin><book><letter /></book><letter /><letter class="small />',
+  },
+  { // 10
+    'header': 'Select all the things',
+    'tableItems': [catAnim, [bookAnim, catOrangeSmall], napkinAnim, [napkinAnim, catOrangeAnim], [napkinAnim, catSmall], bookGreenAnim],
+    'cssCode': '*',
+    'htmlCode': '<cat /><book><cat class="orange small" /></book><napkin /><napkin><cat class="orange" /></napkin><napkin><cat class="small" /></napkin><book id="green" />',
   }
 ]

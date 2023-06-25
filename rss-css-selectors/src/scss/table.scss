@@ -15,8 +15,9 @@
   position: relative;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: end;
+  padding: 20px;
   min-width: 500px;
   width: content;
   height: 280px;
@@ -29,10 +30,10 @@
 .table-items {  
   display: inline-block;
   position: relative;
-  top: -50px;
+  top: -40px;
   width: 100px;
   height: 100px;
-  margin: 20px;  
+  margin: 15px;  
   background-repeat: no-repeat;
   background-size: cover;  
 }
@@ -51,10 +52,12 @@
 
 .napkin {
   background-image: url('./assets/napkin.svg'); 
+  right: -10px;
 }
 
 .book {
   background-image: url('./assets/book-red.svg');
+  // right: 10px;
 }
 
 .bookGreen {
@@ -63,15 +66,20 @@
 
 .cat {
   background-image: url('./assets/cat-grey.svg');
-  right: 25px;
+  right: 10px;
 }
 
 .catOrange {
   background-image: url('./assets/cat-orange.svg');
-  right: 25px;
+  right: 10px;
+}
+
+.cat.small,
+.catOrange.small {
+  right: 0;
 }
 
 .letter {
-  background-image: url('./assets/letter.svg');
-  right: 25px;
+  background-image: url('./assets/letter-white.svg');
+  right: 15px;
 }
