@@ -4,11 +4,12 @@
 }
 
 .tableHeader {  
-  color: rgba(255,255,255,.3);
+  color: rgba(114, 236, 98, 0.6);
   font-size: 45px;  
   margin: 10px auto;
   font-weight: 400;
-  text-align: center;  
+  text-align: center; 
+  text-shadow: .07em 0 black; 
 }
 
 .table {  
@@ -20,10 +21,11 @@
   padding: 20px;
   min-width: 500px;
   width: content;
-  height: 280px;
-  border: 4px ridge rgba(46, 42, 35, 0.95); 
-  background-image: repeating-linear-gradient(#CDA434, #ED760E 15%, #47402E 10%);
-  opacity: 95%;  
+  height: 260px;
+  border: 4px ridge rgba(114, 236, 98, 0.95);
+  border-radius: 5px;
+  background-image: linear-gradient(135deg, #FDE910, #00FF00, #FDE910, #00FF00);
+  opacity: 90%;  
   transform: perspective(200px);   
 }
 
@@ -57,7 +59,7 @@
 
 .book {
   background-image: url('./assets/book-red.svg');
-  // right: 10px;
+  right: 5px;
 }
 
 .bookGreen {

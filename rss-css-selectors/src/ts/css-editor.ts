@@ -31,7 +31,6 @@ cssText.classList.add('css-text');
 cssText.innerText = `{
 /* Styles would go here. */
 }
-
 /*
 Type a number to skip to a level.
 Ex → "5" for level 5

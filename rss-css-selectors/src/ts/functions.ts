@@ -1,7 +1,7 @@
 import { levelsData } from './data-levels';
 import { tableHeader, table} from './table';
 import { htmlText } from './html-viewer';
-import { levelHeader } from './levels';
+import { levelHeader, levelPanel } from './levels';
 
 type tableItemsList = HTMLDivElement | Array<HTMLDivElement | Array<HTMLDivElement | Array<HTMLDivElement>>>
 
@@ -43,6 +43,14 @@ const parseLevelsData = function(level: string) {
 }
 
 export const changeLevel = function(level: string) {
+  const activeLevelButton = levelPanel.querySelector('.activeLevel');
+  if (activeLevelButton && activeLevelButton instanceof HTMLButtonElement) {
+    activeLevelButton.classList.remove('activeLevel');
+  }
+  const newLevelButton = document.getElementById(`level-${level}`)
+  if (newLevelButton && newLevelButton instanceof HTMLButtonElement) {
+    newLevelButton.classList.add('activeLevel');
+  }
   levelHeader.innerText = `Level ${level} of 10`;
   parseLevelsData(level);  
 }

@@ -3,8 +3,8 @@
 @import './scss/wrapper.scss';
 @import './scss/table.scss';
 @import './scss/editor.scss';
-@import './scss/footer.scss';
 @import './scss/levels.scss';
+@import './scss/footer.scss';
 
 @font-face {
   font-family: 'Menlo';
@@ -12,7 +12,6 @@
   font-weight: 400;
   font-style: normal;
 }
-
 
 html {
   padding: 0;

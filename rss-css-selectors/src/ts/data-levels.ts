@@ -53,7 +53,7 @@ export const levelsData = [
   },
   { // 8
     'header': 'Select the small orange cats on the napkins',
-    'tableItems': [[napkin, cat], catOrangeSmall, [napkin, catOrangeSmallAnim], [napkin, catSmall], [napkin, catOrangeSmallAnim]],
+    'tableItems': [[napkin, cat], catOrangeSmall, [napkin, catOrangeSmallAnim], [napkin, [book, catSmall]], [napkin, catOrangeSmallAnim]],
     'cssCode': 'napkin cat.orange.small',
     'htmlCode': '<napkin><cat /><napkin><cat class="orange small" /><napkin><cat class="orange small" /></napkin><napkin><cat class="small" /></napkin><napkin><cat class="orange small" /></napkin>',
   },

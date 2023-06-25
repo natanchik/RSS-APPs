@@ -3,7 +3,8 @@
   text-align: left;
   width: 60vw;
   margin: 20px;
-  border: solid 10px rgba(0, 0, 0, 0.35);  
+  border: solid 10px rgba(0, 0, 0, 0.35); 
+  border-radius: 5px; 
   overflow: hidden;
   font-family: 'Menlo', monospace;
   font-size: 14px;
@@ -25,12 +26,11 @@
 }
 
 .editor-numColumn {
-  float: left;
-  font-family: menlo, monospace;
+  float: left;  
+  padding: 0 5px;
+  font-family: 'Menlo', monospace;
   width: 18px;
-  padding: 10px 10px;
-  height: content;
-  line-height: 150%;
+  height: content;  
   text-align: right; 
   border: 1px solid rgb(48, 48, 47);
 }

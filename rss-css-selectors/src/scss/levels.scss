@@ -6,12 +6,14 @@
   padding: 1rem;
   margin-left: 1rem;  
   background-color: #1b1813;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(114, 236, 98, 0.6);
   text-align: center;
 }
 
 .level-header {
   margin: 10px auto;
+  letter-spacing: 2px;
+  text-shadow: .07em 0 rgb(46, 42, 35, 0.95); 
 }
 
 .level-panel {
@@ -25,8 +27,13 @@
 
 .level-button {
   display: inline-block;
-  width: 200px;
+  width: 150px;  
   padding: 5px;
   margin: 10px;
-  border: 4px ridge rgba(46, 42, 35, 0.95); 
+  border: 4px ridge rgba(114, 236, 98, 0.95);
+  border-radius: 5px;; 
+}
+
+.activeLevel {
+  background-image: linear-gradient(135deg, #FDE910, #00FF00, #FDE910, #00FF00);
 }
