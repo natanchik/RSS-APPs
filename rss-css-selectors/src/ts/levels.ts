@@ -3,7 +3,6 @@ levelBlock.classList.add('level-block');
 
 export const levelHeader = document.createElement('h2');
 levelHeader.classList.add('level-header');
-levelHeader.innerText = 'Level 1 of 10';
 levelBlock.appendChild(levelHeader);
 
 export const levelPanel = document.createElement('div');
@@ -17,3 +16,4 @@ for (let i = 1; i < 11; i += 1) {
   levelButton.innerText = `Level ${i}`;
   levelPanel.appendChild(levelButton);  
 }
+

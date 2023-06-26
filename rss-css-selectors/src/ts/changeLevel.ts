@@ -1,9 +1,12 @@
 import { levelsData } from './data-levels';
 import { tableHeader, table} from './table';
 import { htmlText } from './html-viewer';
+import { cssInput } from './css-editor';
 import { levelHeader, levelPanel } from './levels';
 
 type tableItemsList = HTMLDivElement | Array<HTMLDivElement | Array<HTMLDivElement | Array<HTMLDivElement>>>
+
+export let cssAnswer: string | string[];
 
 const drawItems = function(thing: tableItemsList, table: HTMLDivElement) {   
   let upThing = table; 
@@ -30,8 +33,8 @@ const drawItems = function(thing: tableItemsList, table: HTMLDivElement) {
   }   
 }
 
-const parseLevelsData = function(level: string) {
-  const levelData = levelsData[+level];
+const parseLevelsData = function(level: number) {
+  const levelData = levelsData[level];
   tableHeader.innerText = levelData.header;
   table.innerHTML = '';
   const things = levelData.tableItems;
@@ -39,10 +42,11 @@ const parseLevelsData = function(level: string) {
     let thing = things[i];    
     drawItems(thing, table);
   }
+  cssAnswer = levelData.cssCode;
   htmlText.innerText = `<div class="table">${levelData.htmlCode}</div>`;
 }
 
-export const changeLevel = function(level: string) {
+export const changeLevel = function(level: number) {
   const activeLevelButton = levelPanel.querySelector('.activeLevel');
   if (activeLevelButton && activeLevelButton instanceof HTMLButtonElement) {
     activeLevelButton.classList.remove('activeLevel');
@@ -52,5 +56,7 @@ export const changeLevel = function(level: string) {
     newLevelButton.classList.add('activeLevel');
   }
   levelHeader.innerText = `Level ${level} of 10`;
+  cssInput.value = '';
   parseLevelsData(level);  
 }
+

@@ -1,3 +1,6 @@
+export let numbers = '';
+for (let i = 1; i < 11; i += 1) { numbers += `${i}\n`; };
+
 export const cssPanel = document.createElement('div');
 cssPanel.classList.add('editor-panel');
 cssPanel.classList.add('css-editor');
@@ -9,7 +12,8 @@ cssPanel.appendChild(cssHeader);
 
 export const cssNumColumn = document.createElement('div');
 cssNumColumn.classList.add('editor-numColumn');
-cssPanel.appendChild(cssNumColumn);   
+cssNumColumn.innerText = numbers.slice(0, -1);
+cssPanel.appendChild(cssNumColumn);  
 
 const editorCss = document.createElement('div');
 editorCss.classList.add('editor-css');
@@ -18,8 +22,8 @@ cssPanel.appendChild(editorCss);
 export const cssInput = document.createElement('input');
 cssInput.classList.add('css-input');
 cssInput.autofocus = true;
+cssInput.placeholder = 'Try in a CSS selector';
 editorCss.appendChild(cssInput); 
-cssInput.placeholder = 'Try in a CSS selector'
 
 export const cssButton = document.createElement('button');
 cssButton.classList.add('css-button');
