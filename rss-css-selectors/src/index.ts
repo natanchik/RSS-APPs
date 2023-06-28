@@ -74,7 +74,7 @@ cssButton.addEventListener('click', function() {
       }      
     }      
   } else {
-    answerWrong();
+    answerWrong(editor);
   }
 })
 
