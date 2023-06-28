@@ -45,7 +45,7 @@ const updatelevelsPassed = function() {
   passedLevelButton?.classList.add('passed');
 }
 
-cssButton.addEventListener('click', function() {
+const inputAnswer = function() {
   const customAnswer = cssInput.value;
   if (String(parseInt(customAnswer, 10)) === customAnswer && parseInt(customAnswer, 10) > 0 && 
       parseInt(customAnswer, 10) <= maxLevel) {
@@ -76,6 +76,16 @@ cssButton.addEventListener('click', function() {
   } else {
     answerWrong(editor);
   }
+}
+
+cssButton.addEventListener('click', function() {
+  inputAnswer();  
+})
+
+cssInput.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    inputAnswer();  
+  }  
 })
 
 changeLevel(level)
