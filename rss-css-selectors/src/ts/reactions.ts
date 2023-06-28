@@ -24,10 +24,10 @@ export const win = function(table: HTMLDivElement) {
   table.appendChild(congratulations);
   table.animate(
     [
-      { background: "repeating-linear-gradient(90deg, #00FF00, #FDE910, #00FF00, #FDE910)" },
+      { background: "repeating-linear-gradient(45deg, #00FF00, #FDE910, #00FF00, #FDE910)" },
       { background: "repeating-linear-gradient(135deg, #FDE910, #00FF00, #FDE910, #00FF00)" },
-      { background: "repeating-linear-gradient(270deg, #00FF00, #FDE910, #00FF00, #FDE910)" },
-      { background: "repeating-linear-gradient(360deg, #FDE910, #00FF00, #FDE910, #00FF00)" },
+      { background: "repeating-linear-gradient(225deg, #00FF00, #FDE910, #00FF00, #FDE910)" },
+      { background: "repeating-linear-gradient(315deg, #FDE910, #00FF00, #FDE910, #00FF00)" },
     ],
     {
       duration: 2000,
