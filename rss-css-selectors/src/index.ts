@@ -58,7 +58,7 @@ cssButton.addEventListener('click', function() {
       updatelevelsPassed()
       level += 1;
       if (level === maxLevel + 1 && levelsPassed.size === maxLevel) {
-        win();
+        win(table);
       } else {
         if (level <= maxLevel) {
           changeLevel(level);

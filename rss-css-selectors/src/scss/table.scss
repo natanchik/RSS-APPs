@@ -85,3 +85,12 @@
   background-image: url('./assets/letter-white.svg');
   right: 15px;
 }
+
+.congratulations {
+  position: relative;
+  bottom: 70px;
+  font-size: 36px;
+  line-height: 1.4;
+  color:rgba(114, 236, 98, 0.6);
+  text-shadow: .07em 0 black; 
+}
