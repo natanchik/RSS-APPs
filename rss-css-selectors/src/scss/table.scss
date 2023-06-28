@@ -9,7 +9,7 @@
   margin: 10px auto;
   font-weight: 400;
   text-align: center; 
-  text-shadow: .07em 0 black; 
+  text-shadow: 0.07em 0 black; 
 }
 
 .table {  
@@ -38,6 +38,7 @@
   margin: 15px;  
   background-repeat: no-repeat;
   background-size: cover;  
+  cursor: pointer;
 }
 
 .small {

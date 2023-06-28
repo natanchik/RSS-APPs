@@ -28,17 +28,26 @@
 .level-button {
   display: inline-block;
   width: 150px;  
-  padding: 5px;
+  padding: 8px;
   margin: 10px;
-  border: 4px ridge rgba(114, 236, 98, 0.95);
-  border-radius: 5px;; 
+  outline: 4px ridge rgba(114, 236, 98, 0.95);
+  outline-offset: -4px;
+  border-radius: 5px;  
 }
 
 .activeLevel {
   background-image: linear-gradient(135deg, #FDE910, #00FF00, #FDE910, #00FF00);
+  outline: 6px ridge rgb(88, 182, 75);
+  outline-offset: -6px;
 }
 
 .passed {
   background-color: #00FF00;
   opacity: 80%;
+}
+
+.level-button:hover {
+  background-color: #bafbba;  
+  outline: 6px ridge rgba(114, 236, 98, 0.95);
+  outline-offset: -6px;
 }
