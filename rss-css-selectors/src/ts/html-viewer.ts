@@ -1,4 +1,4 @@
-import { numbers } from './css-editor'
+import { numbers } from './css-editor';
 
 export const htmlPanel = document.createElement('div');
 htmlPanel.classList.add('editor-panel');
@@ -11,7 +11,7 @@ htmlPanel.appendChild(htmlHeader);
 
 export const htmlNumColumn = document.createElement('div');
 htmlNumColumn.classList.add('editor-numColumn');
-htmlPanel.appendChild(htmlNumColumn); 
+htmlPanel.appendChild(htmlNumColumn);
 htmlNumColumn.innerText = numbers.slice(0, -1);
 
 export const htmlText = document.createElement('div');

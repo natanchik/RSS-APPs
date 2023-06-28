@@ -90,3 +90,8 @@ letterSmallAnim.classList.add('table-items');
 letterSmallAnim.classList.add('letter');
 letterSmallAnim.classList.add('small');
 letterSmallAnim.classList.add('animated');
+
+export const congratulations = document.createElement('pre');
+congratulations.classList.add('congratulations');
+congratulations.innerText = `Congratulations!!!
+You are winner!!!`;
