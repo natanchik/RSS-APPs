@@ -118,7 +118,8 @@ helpButton.addEventListener('click', () => {
   showAnswer();
 });
 
-resetButton.addEventListener('click', () => {  
+resetButton.addEventListener('click', () => { 
+  levelsPassed.clear();
   location. reload()
 });
 
