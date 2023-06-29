@@ -1,15 +1,13 @@
 import './style.scss';
-import { tableHeader, table, congratulations } from './ts/table';
+import { tableHeader, table } from './ts/table';
 import { htmlPanel } from './ts/html-viewer';
 import { cssPanel, cssInput, cssButton, helpButton } from './ts/css-editor';
 import { levelBlock, levelPanel, resetButton } from './ts/levels';
 import { footer } from './ts/footer';
-import { changeLevel, cssAnswer } from './ts/changeLevel';
-import { answerWrong, answerRight } from './ts/reactions';
+import { changeLevel } from './ts/funcs/changeLevel';
+import { inputAnswer, showAnswer, resetGame } from './ts/funcs/css-funcs';
 
-export let level = 1;
-const maxLevel = 10;
-let levelsPassed = new Map();
+let level = 1;
 
 const wrapper = document.createElement('div');
 wrapper.classList.add('wrapper');
@@ -39,88 +37,22 @@ levelPanel.addEventListener('click', (event: Event) => {
   }
 });
 
-function updatelevelsPassed() {
-  levelsPassed.set(level, 'passed');
-  const passedLevelButton = document.getElementById(`level-${level}`);
-  passedLevelButton?.classList.add('passed');
-}
-
-function win() {
-  table.innerHTML = '';
-  table.appendChild(congratulations);
-  table.animate(
-    [
-      { background: 'repeating-linear-gradient(45deg, #00FF00, #FDE910, #00FF00, #FDE910)' },
-      { background: 'repeating-linear-gradient(135deg, #FDE910, #00FF00, #FDE910, #00FF00)' },
-      { background: 'repeating-linear-gradient(225deg, #00FF00, #FDE910, #00FF00, #FDE910)' },
-      { background: 'repeating-linear-gradient(315deg, #FDE910, #00FF00, #FDE910, #00FF00)' },
-    ],
-    {
-      duration: 2000,
-      iterations: Infinity,
-    },
-  );
-}
-
-function inputAnswer() {
-  const customAnswer = cssInput.value;
-  if (
-    String(parseInt(customAnswer, 10)) === customAnswer &&
-    parseInt(customAnswer, 10) > 0 &&
-    parseInt(customAnswer, 10) <= maxLevel
-  ) {
-    level = parseInt(customAnswer, 10);
-    changeLevel(level);
-  } else if (customAnswer === cssAnswer || cssAnswer.includes(customAnswer)) {
-    answerRight();
-    if (![...levelsPassed.keys()].includes(level)) {
-      updatelevelsPassed();
-      level += 1;
-      if (levelsPassed.size === maxLevel) {
-        win();
-      } else if (level <= maxLevel) {
-        changeLevel(level);
-      } else {
-        for (let i = 1; i <= maxLevel; i += 1) {
-          if (![...levelsPassed.keys()].includes(i)) {
-            level = i;
-            changeLevel(level);
-            break;
-          }
-        }
-      }
-    }
-  } else {
-    answerWrong(editor);
-  }
-}
-
 cssButton.addEventListener('click', () => {
-  inputAnswer();
+  inputAnswer(level);
 });
 
 cssInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
-    inputAnswer();
+    inputAnswer(level);
   }
 });
 
-function showAnswer() {
-  cssInput.style.transition = "all 2s";
-  const ans = typeof cssAnswer === 'string' ? cssAnswer : cssAnswer[0];  
-  cssInput.value = ans;   
-  setTimeout(() => {
-    cssInput.value = '';
-  }, 1500)  
-}
-
 helpButton.addEventListener('click', () => {
-  showAnswer();
+  showAnswer(level);
 });
 
-resetButton.addEventListener('click', () => { 
-  levelsPassed.clear();
-  location.reload()
+resetButton.addEventListener('click', () => {
+  resetGame();
 });
 
 changeLevel(level);

@@ -14,11 +14,11 @@ for (let i = 1; i < 11; i += 1) {
   levelButton.classList.add('level-button');
   levelButton.setAttribute('id', `level-${i}`);
   levelButton.innerText = `Level ${i}`;
-  levelPanel.appendChild(levelButton);  
+  levelPanel.appendChild(levelButton);
 }
 
 export const resetButton = document.createElement('button');
 resetButton.classList.add('level-button');
 resetButton.classList.add('reset-button');
 resetButton.innerText = 'Reset Progress';
-levelPanel.appendChild(resetButton); 
+levelPanel.appendChild(resetButton);

@@ -1,12 +1,12 @@
-import { levelsData } from './data-levels';
-import { tableHeader, table } from './table';
-import { htmlText } from './html-viewer';
-import { cssInput } from './css-editor';
-import { levelHeader, levelPanel } from './levels';
+import { levelsData } from '../data-levels';
+import { tableHeader, table } from '../table';
+import { htmlText } from '../html-viewer';
+import { cssInput } from '../css-editor';
+import { levelHeader, levelPanel } from '../levels';
 
 type TableItemsList = HTMLDivElement | (HTMLDivElement | (HTMLDivElement | HTMLDivElement[])[])[];
 
-export let cssAnswer: string | string[];
+export const rightAnswer: { code: string | string[] } = { code: '' };
 
 function drawItems(thing: TableItemsList, tableBlock: HTMLDivElement) {
   let upThing = tableBlock;
@@ -42,7 +42,8 @@ function parseLevelsData(level: number) {
     const thing = things[i];
     drawItems(thing, table);
   }
-  cssAnswer = levelData.cssCode;
+  rightAnswer.code = levelData.cssCode;
+  console.log(rightAnswer.code);
   htmlText.innerText = `<div class="table">${levelData.htmlCode}</div>`;
 }
 
