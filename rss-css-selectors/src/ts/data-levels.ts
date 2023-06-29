@@ -61,7 +61,7 @@ export const levelsData = [
       [bookGreen, letterAnim],
       [book, letter],
     ],
-    cssCode: ['#green letter', 'book#green letter', 'book#green > letter'],
+    cssCode: ['#green letter', 'book#green letter', 'book#green > letter', '#green > letter'],
     htmlCode: '<napkin><cat class="orange" /</napkin><book id="green"><letter /></book><book><letter /></book>',
   },
   {
@@ -69,7 +69,7 @@ export const levelsData = [
     header: 'Select the small orange cats',
     tableItems: [catOrangeSmallAnim, cat, [napkin, catOrangeSmallAnim], [napkin, book]],
     cssCode: ['.small', '.orange', 'cat.small', 'cat.orange', 'cat.orange.small', 'cat.small.orange'],
-    htmlCode: '<cat class="small" /><cat /><napkin><cat class="small" /></napkin><book /><napkin />',
+    htmlCode: '<cat class="orange small" /><cat /><napkin><cat class="orange small" /></napkin><napkin><book /></napkin>',
   },
   {
     // 7
@@ -77,7 +77,7 @@ export const levelsData = [
     tableItems: [cat, catSmall, [napkin, catOrangeSmallAnim], [book, catOrange], [book, catOrangeSmallAnim]],
     cssCode: ['cat.orange.small', 'cat.small.orange', '.small.orange', '.orange.small'],
     htmlCode:
-      '<cat /><cat class="small" /><napkin><cat class="orange small" /></napkin><book><cat class="orange" /><book /><book><cat class="orange small" /><book />',
+      '<cat /><cat class="small" /><napkin><cat class="orange small" /></napkin><book><cat class="orange" /></book><book><cat class="orange small" /></book>',
   },
   {
     // 8
@@ -103,7 +103,7 @@ export const levelsData = [
       'napkin > .orange.small',
     ],
     htmlCode:
-      '<napkin><cat /><napkin><cat class="orange small" /><napkin><cat class="orange small" /></napkin><napkin><cat class="small" /></napkin><napkin><cat class="orange small" /></napkin>',
+      '<napkin><cat /></napkin><cat class="orange small" /><napkin><cat class="orange small" /></napkin><napkin><book><cat class="small" /></book></napkin><napkin><cat class="orange small" /></napkin>',
   },
   {
     // 9
