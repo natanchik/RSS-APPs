@@ -120,7 +120,7 @@ helpButton.addEventListener('click', () => {
 
 resetButton.addEventListener('click', () => { 
   levelsPassed.clear();
-  location. reload()
+  location.reload()
 });
 
 changeLevel(level);
