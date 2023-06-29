@@ -1,4 +1,5 @@
 import { table, congratulations } from '../table';
+import { levels } from './changeLevel';
 
 export async function answerWrong() {
   const editor = document.querySelector('.editor');
@@ -38,4 +39,10 @@ export function win() {
       iterations: Infinity,
     },
   );
+}
+
+export function resetGame() {
+  levels.passed.length = 0;
+  levels.helped.length = 0;
+  location.reload();
 }

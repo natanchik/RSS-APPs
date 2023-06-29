@@ -4,8 +4,9 @@ import { htmlPanel } from './ts/html-viewer';
 import { cssPanel, cssInput, cssButton, helpButton } from './ts/css-editor';
 import { levelBlock, levelPanel, resetButton } from './ts/levels';
 import { footer } from './ts/footer';
-import { levels, changeLevel } from './ts/funcs/changeLevel';
-import { inputAnswer, showAnswer, resetGame } from './ts/funcs/css-funcs';
+import { changeLevel, changeLevelByClick } from './ts/funcs/changeLevel';
+import { inputAnswer, showAnswer } from './ts/funcs/css-funcs';
+import { resetGame } from './ts/funcs/reactions';
 
 const wrapper = document.createElement('div');
 wrapper.classList.add('wrapper');
@@ -26,13 +27,7 @@ editor.appendChild(htmlPanel);
 wrapper.appendChild(footer);
 
 levelPanel.addEventListener('click', (event: Event) => {
-  const { target } = event;
-  if (target && target instanceof HTMLButtonElement) {
-    if (target.classList.contains('level-button')) {
-      levels.active = +target.id.slice(6);
-      changeLevel();
-    }
-  }
+  changeLevelByClick(event);
 });
 
 cssButton.addEventListener('click', () => {

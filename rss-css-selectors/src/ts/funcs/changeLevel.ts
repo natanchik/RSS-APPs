@@ -4,15 +4,19 @@ import { htmlText } from '../html-viewer';
 import { cssInput } from '../css-editor';
 import { levelHeader, levelPanel } from '../levels';
 
-export const levels = {
+type TableItemsList = HTMLDivElement | (HTMLDivElement | (HTMLDivElement | HTMLDivElement[])[])[];
+
+type Levels = {
+  active: number;
+  passed: number[];
+  helped: number[];
+};
+
+export const levels: Levels = {
   active: 1,
   passed: [],
   helped: [],
 };
-
-const level = levels.active;
-
-type TableItemsList = HTMLDivElement | (HTMLDivElement | (HTMLDivElement | HTMLDivElement[])[])[];
 
 export const rightAnswer: { code: string | string[] } = { code: '' };
 
@@ -41,7 +45,7 @@ function drawItems(thing: TableItemsList, upBlock: HTMLDivElement) {
 }
 
 function parseLevelsData() {
-  const levelData = levelsData[level];
+  const levelData = levelsData[levels.active];
   tableHeader.innerText = levelData.header;
   table.innerHTML = '';
   const things = levelData.tableItems;
@@ -58,11 +62,21 @@ export function changeLevel() {
   if (activeLevelButton && activeLevelButton instanceof HTMLButtonElement) {
     activeLevelButton.classList.remove('activeLevel');
   }
-  const newLevelButton = document.getElementById(`level-${level}`);
+  const newLevelButton = document.getElementById(`level-${levels.active}`);
   if (newLevelButton && newLevelButton instanceof HTMLButtonElement) {
     newLevelButton.classList.add('activeLevel');
   }
-  levelHeader.innerText = `Level ${level} of 10`;
+  levelHeader.innerText = `Level ${levels.active} of 10`;
   cssInput.value = '';
   parseLevelsData();
+}
+
+export function changeLevelByClick(event: Event) {
+  const { target } = event;
+  if (target && target instanceof HTMLButtonElement) {
+    if (target.classList.contains('level-button')) {
+      levels.active = +target.id.slice(6);
+      changeLevel();
+    }
+  }
 }
