@@ -17,5 +17,6 @@ export async function answerRight() {
   wrapper?.appendChild(textBlock);
   setTimeout(() => {
     wrapper?.removeChild(textBlock);
-  }, 1500);
+  }, 1000);
 }
+

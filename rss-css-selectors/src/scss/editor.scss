@@ -57,19 +57,20 @@
   width: calc(30vw - 110px);
   border: none;
   line-height: 1.4rem;
-  letter-spacing: 1.5px;
-  color: rgb(123, 123, 123);  
+  letter-spacing: 1.5px;  
+  color: rgb(45, 44, 44);  
 }
 
 .css-input:hover, .css-input:focus, .css-input:active {
-  border-color: rgb(239, 239, 239);
+  border: none;
 }
 
 .css-button {
   padding: 5px;
   border: 1px solid rgb(195, 195, 195);
+  border-radius: 5px;
   box-shadow: 3px 3px 0px rgb(153, 153, 153);
-  color: rgb(123, 123, 123);
+  color: rgb(45, 44, 44);
   float: right;
   margin: 2px;
 }

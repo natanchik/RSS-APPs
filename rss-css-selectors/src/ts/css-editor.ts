@@ -33,6 +33,11 @@ cssButton.classList.add('css-button');
 cssButton.innerText = 'Enter';
 editorCss.appendChild(cssButton);
 
+export const helpButton = document.createElement('button');
+helpButton.classList.add('css-button');
+helpButton.innerText = 'Help';
+editorCss.appendChild(helpButton);
+
 const cssText = document.createElement('pre');
 cssText.classList.add('css-text');
 cssText.innerText = `{

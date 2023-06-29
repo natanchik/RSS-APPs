@@ -1,7 +1,7 @@
 import './style.scss';
 import { tableHeader, table, congratulations } from './ts/table';
 import { htmlPanel } from './ts/html-viewer';
-import { cssPanel, cssInput, cssButton } from './ts/css-editor';
+import { cssPanel, cssInput, cssButton, helpButton } from './ts/css-editor';
 import { levelBlock, levelPanel } from './ts/levels';
 import { footer } from './ts/footer';
 import { changeLevel, cssAnswer } from './ts/changeLevel';
@@ -71,12 +71,12 @@ function inputAnswer() {
   ) {
     level = parseInt(customAnswer, 10);
     changeLevel(level);
-  } else if (typeof customAnswer === 'string' && (customAnswer === cssAnswer || cssAnswer.includes(customAnswer))) {
+  } else if (customAnswer === cssAnswer || cssAnswer.includes(customAnswer)) {
     answerRight();
     if (![...levelsPassed.keys()].includes(level)) {
       updatelevelsPassed();
       level += 1;
-      if (level === maxLevel + 1 && levelsPassed.size === maxLevel) {
+      if (levelsPassed.size === maxLevel) {
         win();
       } else if (level <= maxLevel) {
         changeLevel(level);
@@ -103,6 +103,24 @@ cssInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     inputAnswer();
   }
+});
+
+async function showAnswer() {
+  cssInput.style.transition = "all 2s";
+  const ans = typeof cssAnswer === 'string' ? cssAnswer : cssAnswer[0];  
+  cssInput.value = ans;  
+  // for (let i = 0; i < ans.length; i += 1) {
+  //   setTimeout(() => {
+  //     cssInput.value += ans[i];       
+  //   }, 1500)
+  // }  
+  setTimeout(() => {
+    cssInput.value = '';
+  }, 1500)  
+}
+
+helpButton.addEventListener('click', () => {
+  showAnswer();
 });
 
 changeLevel(level);
