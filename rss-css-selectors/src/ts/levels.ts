@@ -17,3 +17,8 @@ for (let i = 1; i < 11; i += 1) {
   levelPanel.appendChild(levelButton);  
 }
 
+export const resetButton = document.createElement('button');
+resetButton.classList.add('level-button');
+resetButton.classList.add('reset-button');
+resetButton.innerText = 'Reset Progress';
+levelPanel.appendChild(resetButton); 

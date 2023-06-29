@@ -2,14 +2,14 @@ import './style.scss';
 import { tableHeader, table, congratulations } from './ts/table';
 import { htmlPanel } from './ts/html-viewer';
 import { cssPanel, cssInput, cssButton, helpButton } from './ts/css-editor';
-import { levelBlock, levelPanel } from './ts/levels';
+import { levelBlock, levelPanel, resetButton } from './ts/levels';
 import { footer } from './ts/footer';
 import { changeLevel, cssAnswer } from './ts/changeLevel';
 import { answerWrong, answerRight } from './ts/reactions';
 
 export let level = 1;
 const maxLevel = 10;
-export const levelsPassed = new Map();
+let levelsPassed = new Map();
 
 const wrapper = document.createElement('div');
 wrapper.classList.add('wrapper');
@@ -105,15 +105,10 @@ cssInput.addEventListener('keydown', (event) => {
   }
 });
 
-async function showAnswer() {
+function showAnswer() {
   cssInput.style.transition = "all 2s";
   const ans = typeof cssAnswer === 'string' ? cssAnswer : cssAnswer[0];  
-  cssInput.value = ans;  
-  // for (let i = 0; i < ans.length; i += 1) {
-  //   setTimeout(() => {
-  //     cssInput.value += ans[i];       
-  //   }, 1500)
-  // }  
+  cssInput.value = ans;   
   setTimeout(() => {
     cssInput.value = '';
   }, 1500)  
@@ -121,6 +116,10 @@ async function showAnswer() {
 
 helpButton.addEventListener('click', () => {
   showAnswer();
+});
+
+resetButton.addEventListener('click', () => {  
+  location. reload()
 });
 
 changeLevel(level);

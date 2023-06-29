@@ -29,10 +29,16 @@
   display: inline-block;
   width: 150px;  
   padding: 8px;
-  margin: 10px;
+  margin: 5px;
   outline: 4px ridge rgba(114, 236, 98, 0.95);
   outline-offset: -4px;
-  border-radius: 5px;  
+  border-radius: 5px; 
+  
+  &:hover {
+    background-color: #bafbba;  
+    outline: 6px ridge rgba(114, 236, 98, 0.95);
+    outline-offset: -6px;
+  }
 }
 
 .activeLevel {
@@ -46,8 +52,13 @@
   opacity: 80%;
 }
 
-.level-button:hover {
-  background-color: #bafbba;  
-  outline: 6px ridge rgba(114, 236, 98, 0.95);
-  outline-offset: -6px;
+.reset-button {
+  outline: none;
+  opacity: 50%;
+
+  &:hover {
+    outline: none;
+    background-color: white;
+    opacity: 60%;
+  }
 }
