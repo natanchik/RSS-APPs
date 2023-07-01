@@ -3,20 +3,9 @@ import { tableHeader, table } from '../table';
 import { htmlText } from '../html-viewer';
 import { cssInput } from '../css-editor';
 import { levelHeader, levelPanel } from '../levels';
+import { levels } from '../local-storage';
 
 type TableItemsList = HTMLDivElement | (HTMLDivElement | (HTMLDivElement | HTMLDivElement[])[])[];
-
-type Levels = {
-  active: number;
-  passed: number[];
-  helped: number[];
-};
-
-export const levels: Levels = {
-  active: 1,
-  passed: [],
-  helped: [],
-};
 
 export const rightAnswer: { code: string | string[] } = { code: '' };
 
@@ -59,13 +48,14 @@ function parseLevelsData() {
 
 export function changeLevel() {
   const activeLevelButton = levelPanel.querySelector('.activeLevel');
-  if (activeLevelButton && activeLevelButton instanceof HTMLButtonElement) {
+  if (activeLevelButton) {
     activeLevelButton.classList.remove('activeLevel');
   }
   const newLevelButton = document.getElementById(`level-${levels.active}`);
-  if (newLevelButton && newLevelButton instanceof HTMLButtonElement) {
+  if (newLevelButton) {
     newLevelButton.classList.add('activeLevel');
   }
+  localStorage.setItem('level-active', `${levels.active}`);
   levelHeader.innerText = `Level ${levels.active} of 10`;
   cssInput.value = '';
   parseLevelsData();
