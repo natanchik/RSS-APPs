@@ -1,11 +1,13 @@
 import { cssInput } from '../css-editor';
 import { answerWrong, answerRight, win } from './reactions';
-import { levels, changeLevel, rightAnswer } from './changeLevel';
+import { changeLevel, rightAnswer } from './change-level';
+import { levels } from '../local-storage';
 
 const maxLevel = 10;
 
 function updatelevelsPassed() {
   levels.passed.push(levels.active);
+  localStorage.setItem('levels-passed', JSON.stringify(levels.passed));
   const passedLevelButton = document.getElementById(`level-${levels.active}`);
   passedLevelButton?.classList.add('passed');
 }
@@ -57,5 +59,6 @@ export function showAnswer() {
   if (levelButton && levelButton instanceof HTMLButtonElement) {
     levelButton.classList.add('helped');
     levels.helped.push(levels.active);
+    localStorage.setItem('levels-helped', JSON.stringify(levels.helped));
   }
 }
