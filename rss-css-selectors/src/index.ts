@@ -4,9 +4,10 @@ import { htmlPanel } from './ts/html-viewer';
 import { cssPanel, cssInput, cssButton, helpButton } from './ts/css-editor';
 import { levelBlock, levelPanel, resetButton } from './ts/levels';
 import { footer } from './ts/footer';
-import { changeLevel, changeLevelByClick } from './ts/funcs/changeLevel';
+import { changeLevelByClick } from './ts/funcs/change-level';
 import { inputAnswer, showAnswer } from './ts/funcs/css-funcs';
-import { resetGame } from './ts/funcs/reactions';
+import { startGame } from './ts/funcs/start-game';
+import { resetGame } from './ts/funcs/reset-game';
 
 const wrapper = document.createElement('div');
 wrapper.classList.add('wrapper');
@@ -48,4 +49,4 @@ resetButton.addEventListener('click', () => {
   resetGame();
 });
 
-changeLevel();
+startGame();
