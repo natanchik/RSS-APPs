@@ -131,8 +131,6 @@ export const levelsData = new Map<number, LevelData>([
       header: 'Select the books and napkins',
       tableItems: [
         letterSmall,
-        letter,
-        [bookAnim, letter],
         [napkinAnim, letter],
         [bookAnim, letter],
         letter,
@@ -140,7 +138,7 @@ export const levelsData = new Map<number, LevelData>([
       ],
       cssCode: ['book, napkin', 'napkin, book'],
       htmlCode:
-        '<letter class="small /><letter /><book><letter /></book><napkin><letter /></napkin><book><letter /></book><letter /><letter class="small />',
+        '<letter class="small /><napkin><letter /></napkin><book><letter /></book><letter /><letter class="small />',
     },
   ],
   [
@@ -150,7 +148,6 @@ export const levelsData = new Map<number, LevelData>([
       tableItems: [
         catAnim,
         [bookAnim, catOrangeSmall],
-        napkinAnim,
         [napkinAnim, catOrangeAnim],
         [napkinAnim, catSmall],
       ],
@@ -164,7 +161,7 @@ export const levelsData = new Map<number, LevelData>([
         'cat, napkin, book',
       ],
       htmlCode:
-        '<cat /><book><cat class="orange small" /></book><napkin /><napkin><cat class="orange" /></napkin><napkin><cat class="small" /></napkin>',
+        '<cat /><book><cat class="orange small" /></book><napkin><cat class="orange" /></napkin><napkin><cat class="small" /></napkin>',
     },
   ],
 ]);

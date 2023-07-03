@@ -18,7 +18,7 @@
   flex-wrap: nowrap;
   justify-content: space-around;
   align-items: end;
-  padding: 20px;
+  padding: 10px 20px;
   min-width: 500px;
   width: content;
   height: 260px;
@@ -32,10 +32,10 @@
 .table-items {  
   display: inline-block;
   position: relative;
-  top: -40px;
+  top: -35px;
   width: 100px;
   height: 100px;
-  margin: 15px;  
+  margin: 10px 10px 0;  
   background-repeat: no-repeat;
   background-size: cover;  
   cursor: pointer;
@@ -84,7 +84,7 @@
 
 .letter {
   background-image: url('./assets/letter-white.svg');
-  right: 15px;
+  right: 10px;
 }
 
 .congratulations {
