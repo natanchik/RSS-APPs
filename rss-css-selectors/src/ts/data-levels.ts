@@ -129,13 +129,7 @@ export const levelsData = new Map<number, LevelData>([
     9,
     {
       header: 'Select the books and napkins',
-      tableItems: [
-        letterSmall,
-        [napkinAnim, letter],
-        [bookAnim, letter],
-        letter,
-        letterSmall,
-      ],
+      tableItems: [letterSmall, [napkinAnim, letter], [bookAnim, letter], letter, letterSmall],
       cssCode: ['book, napkin', 'napkin, book'],
       htmlCode:
         '<letter class="small /><napkin><letter /></napkin><book><letter /></book><letter /><letter class="small />',
@@ -145,12 +139,7 @@ export const levelsData = new Map<number, LevelData>([
     10,
     {
       header: 'Select all the things',
-      tableItems: [
-        catAnim,
-        [bookAnim, catOrangeSmall],
-        [napkinAnim, catOrangeAnim],
-        [napkinAnim, catSmall],
-      ],
+      tableItems: [catAnim, [bookAnim, catOrangeSmall], [napkinAnim, catOrangeAnim], [napkinAnim, catSmall]],
       cssCode: [
         '*',
         'napkin, book, cat',
