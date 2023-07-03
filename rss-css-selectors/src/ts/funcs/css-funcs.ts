@@ -26,25 +26,25 @@ export function inputAnswer() {
   } else if (
     (typeof correctAnswer === 'string' && customAnswer === correctAnswer) ||
     (correctAnswer instanceof Array && correctAnswer.includes(customAnswer))
-  ) {
+    ) {
     answerRight();
-    if (!levels.passed.includes(levels.active)) {
-      updatelevelsPassed();
-      levels.active += 1;
-      if (levels.passed.length === maxLevel) {
-        win();
-      } else if (levels.active <= maxLevel) {
-        changeLevel();
-      } else {
-        for (let i = 1; i <= maxLevel; i += 1) {
-          if (!levels.passed.includes(i)) {
-            levels.active = i;
-            changeLevel();
-            break;
-          }
+    if (!levels.passed.includes(levels.active)) { updatelevelsPassed(); }
+    levels.active += 1;
+    if (levels.passed.length === maxLevel) {
+      win();
+    } else if (levels.active <= maxLevel) {
+      while (levels.passed.includes(levels.active)) { levels.active += 1; }        
+      changeLevel();
+    }
+    if (levels.active > maxLevel) {
+      for (let i = 1; i <= maxLevel; i += 1) {
+        if (!levels.passed.includes(i)) {
+          levels.active = i;
+          changeLevel();
+          break;
         }
       }
-    }
+    }    
   } else {
     answerWrong();
   }
