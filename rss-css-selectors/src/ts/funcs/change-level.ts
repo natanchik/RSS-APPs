@@ -34,16 +34,18 @@ function drawItems(thing: TableItemsList, upBlock: HTMLDivElement) {
 }
 
 function parseLevelsData() {
-  const levelData = levelsData[levels.active];
-  tableHeader.innerText = levelData.header;
-  table.innerHTML = '';
-  const things = levelData.tableItems;
-  for (let i = 0; i < things.length; i += 1) {
-    const thing = things[i];
-    drawItems(thing, table);
+  const levelData = levelsData.get(levels.active);
+  if (levelData) {
+    tableHeader.innerText = levelData.header;
+    table.innerHTML = '';
+    const things = levelData.tableItems;
+    for (let i = 0; i < things.length; i += 1) {
+      const thing = things[i];
+      drawItems(thing, table);
+    }
+    rightAnswer.code = levelData.cssCode;
+    htmlText.innerText = `<div class="table">${levelData.htmlCode}</div>`;
   }
-  rightAnswer.code = levelData.cssCode;
-  htmlText.innerText = `<div class="table">${levelData.htmlCode}</div>`;
 }
 
 export function changeLevel() {
