@@ -5,7 +5,8 @@ import { cssPanel, cssInput, cssButton, helpButton } from './ts/css-editor';
 import { levelBlock, levelPanel, resetButton } from './ts/levels';
 import { footer } from './ts/footer';
 import { changeLevelByClick } from './ts/funcs/change-level';
-import { inputAnswer, showAnswer } from './ts/funcs/css-funcs';
+import { inputAnswer } from './ts/funcs/input-answer';
+import { showAnswer } from './ts/funcs/show-answer';
 import { startGame } from './ts/funcs/start-game';
 import { resetGame } from './ts/funcs/reset-game';
 

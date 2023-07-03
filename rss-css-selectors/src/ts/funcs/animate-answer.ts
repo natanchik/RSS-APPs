@@ -1,6 +1,6 @@
 import { table, congratulations } from '../table';
 
-export async function answerWrong() {
+export async function doIfAnswerWrong() {
   const editor = document.querySelector('.editor');
   editor?.animate([{ transform: 'translate(3px, 0)' }, { transform: 'translate(-3px, 0)' }], {
     duration: 50,
