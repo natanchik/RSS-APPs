@@ -22,3 +22,7 @@ resetButton.classList.add('level-button');
 resetButton.classList.add('reset-button');
 resetButton.innerText = 'Reset Progress';
 levelPanel.appendChild(resetButton);
+
+export const menuButton = document.createElement('div');
+menuButton.classList.add('menu-button');
+menuButton.innerText = 'Levels';

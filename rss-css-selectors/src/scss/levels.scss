@@ -66,3 +66,20 @@
 .helped {  
   opacity: 50%;
 }
+
+.menu-button {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #1b1813;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+
+  &:hover {
+  opacity: 60%;
+  }
+}

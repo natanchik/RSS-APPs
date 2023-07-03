@@ -2,13 +2,14 @@ import './style.scss';
 import { tableHeader, table } from './ts/blocks/table';
 import { htmlPanel } from './ts/blocks/html-viewer';
 import { cssPanel, cssInput, cssButton, helpButton } from './ts/blocks/css-editor';
-import { levelBlock, levelPanel, resetButton } from './ts/blocks/levels';
+import { levelBlock, levelPanel, resetButton, menuButton } from './ts/blocks/levels';
 import { footer } from './ts/blocks/footer';
 import { changeLevelByClick } from './ts/funcs/change-level';
 import { inputAnswer } from './ts/funcs/input-answer';
 import { showAnswer } from './ts/funcs/show-answer';
 import { startGame } from './ts/funcs/start-game';
 import { resetGame } from './ts/funcs/reset-game';
+import { showLevels } from './ts/funcs/show-levels';
 
 const wrapper = document.createElement('div');
 wrapper.classList.add('wrapper');
@@ -18,6 +19,7 @@ const editor = document.createElement('div');
 editor.classList.add('editor');
 
 document.body.appendChild(levelBlock);
+wrapper.appendChild(menuButton);
 
 wrapper.appendChild(tableHeader);
 wrapper.appendChild(table);
@@ -48,6 +50,10 @@ helpButton.addEventListener('click', () => {
 
 resetButton.addEventListener('click', () => {
   resetGame();
+});
+
+menuButton.addEventListener('click', () => {
+  showLevels();
 });
 
 startGame();

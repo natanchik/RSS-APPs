@@ -1,0 +1,47 @@
+@keyframes hideAside {
+  to {
+    transform: translateX(25vw);
+  }
+}
+
+@keyframes shrinkWrapper {
+  0% { width: 75vw; }
+  100% { width: 100vw; }
+}
+
+@media (max-width: 850px) {
+  .level-block {    
+    animation-name: hideAside;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;  
+    transition-delay: 2s;
+    transition-property: right;
+    right: -25vw;  
+    
+    &.pushed {
+      transition-delay: 0s;
+      transition-property: right;
+      right: 0;  
+    }
+  }
+  .wrapper {
+    animation-name: shrinkWrapper;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;  
+    transition-delay: 4s;
+    transition-property: width;
+    width: 100vw;
+  }
+  .table-items {      
+    top: -35px;
+    width: 80px;
+    height: 80px;
+    margin: 8px 8px 0;      
+  }
+  .menu-button {        
+    display: block;
+    z-index: 100;
+  }
+}
