@@ -1,5 +1,6 @@
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
+import { SourcesResObj } from '../../types/types';
 
 class App {
   private controller;
@@ -11,11 +12,16 @@ class App {
     this.view = new AppView();
   }
 
+  private handleNewsClick = (e: MouseEvent) => this.controller.getNews(e, (data) => this.view.drawNews(data));
+
+  private handleDrawSources = (data: SourcesResObj) => this.view.drawSources(data);
+
   public start() {
-    (document.querySelector('.sources') as HTMLElement).addEventListener('click', (e) =>
-      this.controller.getNews(e, (data) => this.view.drawNews(data)),
-    );
-    this.controller.getSources((data) => this.view.drawSources(data));
+    const divSources = document.querySelector('.sources') as HTMLDivElement | null;
+    if (divSources) {
+      divSources.addEventListener('click', this.handleNewsClick);
+    }
+    this.controller.getSources(this.handleDrawSources);
   }
 }
 
