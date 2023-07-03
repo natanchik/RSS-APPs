@@ -24,7 +24,7 @@ export function startGame() {
   if (localStorage.length === 0) {
     createDataInLocStor();
   }
-  getDataFromLocStor();  
+  getDataFromLocStor();
   markLevels();
   changeLevel();
 }
