@@ -5,11 +5,11 @@ import { levels } from '../local-storage';
 
 const maxLevel = 10;
 
-function updatelevelsPassed() {
+function updatelevelsPassed() {  
   levels.passed.push(levels.active);
   localStorage.setItem('levels-passed', JSON.stringify(levels.passed));
   const passedLevelButton = document.getElementById(`level-${levels.active}`);
-  passedLevelButton?.classList.add('passed');
+  passedLevelButton?.classList.add('passed');  
 }
 
 export function inputAnswer() {
@@ -56,7 +56,7 @@ export function showAnswer() {
     cssInput.value = '';
   }, 1500);
   const levelButton = document.getElementById(`level-${levels.active}`);
-  if (levelButton && levelButton instanceof HTMLButtonElement) {
+  if (levelButton && !levels.helped.includes(levels.active)) {
     levelButton.classList.add('helped');
     levels.helped.push(levels.active);
     localStorage.setItem('levels-helped', JSON.stringify(levels.helped));

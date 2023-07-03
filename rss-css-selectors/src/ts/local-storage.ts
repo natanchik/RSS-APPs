@@ -10,7 +10,7 @@ export const levels: Levels = {
   helped: [],
 };
 
-export async function createDataInLocStor() {
+export function createDataInLocStor() {
   localStorage.setItem('level-active', '1');
   localStorage.setItem('levels-passed', JSON.stringify([]));
   localStorage.setItem('levels-helped', JSON.stringify([]));
@@ -21,12 +21,12 @@ export function getDataFromLocStor() {
   if (levelActive) {
     levels.active = +levelActive;
   }
-  // const levelPassed = localStorage.getItem('levels-passed');
-  // if (levelPassed) {
-  //     JSON.parse(levelPassed).forEach((x: number) => levels.helped.push(x));
-  //   }
-  // const levelHelped = localStorage.getItem('levels-helped');
-  // if (levelHelped) {
-  //   JSON.parse(levelHelped).forEach((x: number) => levels.helped.push(x));
-  // }
+  const levelPassed = localStorage.getItem('levels-passed');
+  if (levelPassed) {
+      JSON.parse(levelPassed).forEach((x: number) => levels.passed.push(x));
+    }
+  const levelHelped = localStorage.getItem('levels-helped');
+  if (levelHelped) {
+    JSON.parse(levelHelped).forEach((x: number) => levels.helped.push(x));
+  }
 }
