@@ -27,15 +27,20 @@ class Loader {
     return res;
   }
 
-  private makeUrl(options: Partial<SourcesReqParams>, endpoint: string) {    
+  private makeUrl(options: Partial<SourcesReqParams>, endpoint: string) {
     const urlOptions = { ...this.options, ...options };
     const queryParams = Object.entries(urlOptions)
-        .map(([key, value]) => `${key}=${value}`)
-        .join('&');
+      .map(([key, value]) => `${key}=${value}`)
+      .join('&');
     return `${this.baseLink}${endpoint}?${queryParams}`;
   }
 
-  private load<T>(method: string, endpoint: string, callback: (data: T) => void, options: Partial<SourcesReqParams> = {}) {
+  private load<T>(
+    method: string,
+    endpoint: string,
+    callback: (data: T) => void,
+    options: Partial<SourcesReqParams> = {},
+  ) {
     fetch(this.makeUrl(options, endpoint), { method })
       .then(this.errorHandler)
       .then((res) => res.json())
