@@ -1,9 +1,9 @@
 import './style.scss';
-import { tableHeader, table } from './ts/table';
-import { htmlPanel } from './ts/html-viewer';
-import { cssPanel, cssInput, cssButton, helpButton } from './ts/css-editor';
-import { levelBlock, levelPanel, resetButton } from './ts/levels';
-import { footer } from './ts/footer';
+import { tableHeader, table } from './ts/blocks/table';
+import { htmlPanel } from './ts/blocks/html-viewer';
+import { cssPanel, cssInput, cssButton, helpButton } from './ts/blocks/css-editor';
+import { levelBlock, levelPanel, resetButton } from './ts/blocks/levels';
+import { footer } from './ts/blocks/footer';
 import { changeLevelByClick } from './ts/funcs/change-level';
 import { inputAnswer } from './ts/funcs/input-answer';
 import { showAnswer } from './ts/funcs/show-answer';

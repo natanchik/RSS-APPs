@@ -1,4 +1,4 @@
-import { cssInput } from '../css-editor';
+import { cssInput } from '../blocks/css-editor';
 import { rightAnswer } from './change-level';
 import { levels } from '../local-storage';
 

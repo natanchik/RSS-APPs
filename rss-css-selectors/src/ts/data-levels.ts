@@ -15,7 +15,7 @@ import {
   catOrangeSmall,
   catOrangeSmallAnim,
   letterSmall,
-} from './table';
+} from './blocks/table';
 
 export const levelsData = [
   {

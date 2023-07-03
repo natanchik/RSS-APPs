@@ -1,4 +1,4 @@
-import { table, congratulations } from '../table';
+import { table, congratulations } from '../blocks/table';
 
 export async function doIfAnswerWrong() {
   const editor = document.querySelector('.editor');

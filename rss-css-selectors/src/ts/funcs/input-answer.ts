@@ -1,4 +1,4 @@
-import { cssInput } from '../css-editor';
+import { cssInput } from '../blocks/css-editor';
 import { doIfAnswerWrong } from './animate-answer';
 import { maxLevel, doIfAnswerRight } from './do-if-ans-right';
 import { changeLevel, rightAnswer } from './change-level';
