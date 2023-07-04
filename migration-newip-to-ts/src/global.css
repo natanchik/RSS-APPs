@@ -1,7 +1,11 @@
 body {
+    margin: 0;
+    padding: 0;
     color: #fff;
+    background-color: #277cf8;
     background: url('./img/news_placeholder.jpg');
-    background-size: cover;
+    background-repeat: repeat;
+    background-size: cover;        
     font-family: sans-serif;
 }
 
@@ -10,14 +14,16 @@ header {
     top: 0;
     left: 0;
     width: 100vw;
-    padding: 0 30px;
+    height: 80px;
+    padding: 0;
     text-align: center;  
-    background: linear-gradient(90deg, rgb(8, 23, 53, 0.6), rgb(36, 141, 250, 0.5));
-    z-index: 10;  
+    background: linear-gradient(90deg, rgb(8, 23, 53), rgb(36, 141, 250));
+    z-index: 100;
 }
 
 header h1 {
-    font-size: 40px;
+    margin: 10px auto;
+    font-size: 36px;
     font-weight: 800;    
 }
 
@@ -26,15 +32,14 @@ footer {
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 80px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     color: white;
     font-size: 14px;  
-    border: 10px sold;      
-    border-image: linear-gradient(to right top, rgb(8, 23, 53, 0.6) 0%, rgb(36, 141, 250, 0.5) 15%) 1; 
-    background: linear-gradient(135deg, rgb(8, 23, 53, 0.6) 0%, rgb(36, 141, 250, 0.5) 15%);
+    border: 10px sold;  
+    background: linear-gradient(90deg, rgb(36, 141, 250), rgb(8, 23, 53));
     z-index: 10;
 }
 
@@ -48,8 +53,8 @@ footer {
 }
 
 .footer_logo {
-    width: 200px;
-    height: 50px;
+    width: 150px;
+    height: 40px;
     background: url('./img/rs_school_js.svg');
     background-size: hover;
     background-repeat: no-repeat;
