@@ -1,6 +1,6 @@
 @keyframes hideAside {
   to {
-    transform: translateX(25vw);
+    transform: translateX(200px);
   }
 }
 
@@ -10,14 +10,17 @@
 }
 
 @media (max-width: 850px) {
-  .level-block {    
+  .level-block {  
+    width: 200px;  
+    margin: 0 auto;
+    padding: 30px 6px 10px;
     animation-name: hideAside;
     animation-duration: 4s;
     animation-iteration-count: 1;
     animation-direction: alternate;  
     transition-delay: 2s;
     transition-property: right;
-    right: -25vw;  
+    right: -200px;  
     
     &.pushed {
       transition-delay: 0s;
@@ -25,6 +28,7 @@
       right: 0;  
     }
   }
+
   .wrapper {
     animation-name: shrinkWrapper;
     animation-duration: 4s;
@@ -34,12 +38,14 @@
     transition-property: width;
     width: 100vw;
   }
+
   .table-items {      
     top: -35px;
     width: 80px;
     height: 80px;
     margin: 8px 8px 0;      
   }
+
   .menu-button {        
     display: block;
     z-index: 100;

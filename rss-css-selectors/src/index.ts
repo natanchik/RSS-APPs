@@ -1,4 +1,5 @@
 import './style.scss';
+import { wrapper } from './ts/blocks/wrapper';
 import { tableHeader, table } from './ts/blocks/table';
 import { htmlPanel } from './ts/blocks/html-viewer';
 import { cssPanel, cssInput, cssButton, helpButton } from './ts/blocks/css-editor';
@@ -11,8 +12,6 @@ import { startGame } from './ts/funcs/start-game';
 import { resetGame } from './ts/funcs/reset-game';
 import { showLevels } from './ts/funcs/show-levels';
 
-const wrapper = document.createElement('div');
-wrapper.classList.add('wrapper');
 document.body.appendChild(wrapper);
 
 const editor = document.createElement('div');
