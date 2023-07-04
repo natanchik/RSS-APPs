@@ -13,6 +13,7 @@
     justify-content: space-between;
     background: linear-gradient(90deg, rgb(8, 23, 53, 0.6), rgb(36, 141, 250, 0.5));   
     border: 2px solid #30c5ff;
+    z-index: 100;
 }
 /* width */
 .sources::-webkit-scrollbar {
@@ -35,8 +36,8 @@
     background: darkblue;
 }
 
-
-.source__item {
+.source__item,
+.menu {
     display: inline-block;
     background: none;
     border: 2px solid #30c5ff;
@@ -50,6 +51,22 @@
     cursor: pointer;
 }
 
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;  
+    display: none;  
+}
+
+.menu:hover {
+    opacity: 60%;
+}
+
+.sources.pushed {
+    display: block;
+}
+
 .source__item:hover,
 .source__item:focus {
     border-color: #3fcc59;
@@ -61,4 +78,19 @@
 .source__item-name {
     font-weight: 400;
     white-space: nowrap;
+}
+
+@media (max-width: 1025px) {    
+    .sources {
+        width: 200px;
+    }
+}
+
+@media (max-width: 915px) {  
+    .menu {
+        display: block;
+    }  
+    .sources {
+        display: none;
+    }
 }

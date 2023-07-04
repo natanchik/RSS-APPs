@@ -20,3 +20,13 @@ class Sources {
 }
 
 export default Sources;
+
+const menuButton = document.getElementById('menu');
+
+const showSources = () => {
+  document.getElementById('aside')?.classList.toggle('pushed')
+}
+
+if (menuButton) {
+  menuButton.addEventListener('click', showSources)
+}
