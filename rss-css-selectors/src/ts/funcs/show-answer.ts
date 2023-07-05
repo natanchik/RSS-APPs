@@ -1,6 +1,6 @@
 import { cssInput } from '../blocks/css-editor';
 import { rightAnswer } from './change-level';
-import { levels } from '../local-storage';
+import { levels } from './local-storage';
 
 function markLevelHelped() {
   const levelButton = document.getElementById(`level-${levels.active}`);

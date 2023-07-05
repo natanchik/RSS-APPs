@@ -1,4 +1,4 @@
-import { levels, createDataInLocStor, getDataFromLocStor } from '../local-storage';
+import { levels, createDataInLocStor, getDataFromLocStor } from './local-storage';
 import { changeLevel } from './change-level';
 
 function markLevels() {

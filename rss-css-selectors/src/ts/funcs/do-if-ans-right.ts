@@ -1,6 +1,6 @@
 import { animateRightAnswer } from './animate-right-ans';
 import { win } from './win';
-import { levels } from '../local-storage';
+import { levels } from './local-storage';
 import { changeLevel } from './change-level';
 
 export const maxLevel = 10;

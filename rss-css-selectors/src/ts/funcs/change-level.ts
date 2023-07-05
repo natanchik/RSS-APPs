@@ -3,7 +3,7 @@ import { tableHeader, table } from '../blocks/table';
 import { htmlText } from '../blocks/html-viewer';
 import { cssInput } from '../blocks/css-editor';
 import { levelHeader, levelPanel } from '../blocks/levels';
-import { levels } from '../local-storage';
+import { levels } from './local-storage';
 
 type TableItemsList = HTMLDivElement | (HTMLDivElement | (HTMLDivElement | HTMLDivElement[])[])[];
 

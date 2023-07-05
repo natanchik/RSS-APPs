@@ -2,7 +2,7 @@ import { cssInput } from '../blocks/css-editor';
 import { doIfAnswerWrong } from './do-if-ans-wrong';
 import { maxLevel, doIfAnswerRight } from './do-if-ans-right';
 import { changeLevel, rightAnswer } from './change-level';
-import { levels } from '../local-storage';
+import { levels } from './local-storage';
 
 function isAnswerLevelNumber(answer: string, ansNumb: number) {
   return String(ansNumb) === answer && ansNumb > 0 && ansNumb <= maxLevel;
