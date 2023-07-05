@@ -1,5 +1,5 @@
 import { cssInput } from '../blocks/css-editor';
-import { doIfAnswerWrong } from './animate-answer';
+import { doIfAnswerWrong } from './do-if-ans-wrong';
 import { maxLevel, doIfAnswerRight } from './do-if-ans-right';
 import { changeLevel, rightAnswer } from './change-level';
 import { levels } from '../local-storage';
@@ -16,19 +16,29 @@ function isAnswerRight(answer: string) {
   );
 }
 
+function checkAnswer(answer: string) {
+  const customNumber = parseInt(answer, 10);
+  if (isAnswerLevelNumber(answer, customNumber)) {
+    levels.active = customNumber;
+    changeLevel();
+  } else if (isAnswerRight(answer)) {
+    doIfAnswerRight();
+  } else {
+    doIfAnswerWrong();
+  }
+}
+
 export function inputAnswer() {
   const customAnswer = cssInput.value;
   if (!customAnswer) {
     doIfAnswerWrong();
     return;
   }
-  const customNumber = parseInt(customAnswer, 10);
-  if (isAnswerLevelNumber(customAnswer, customNumber)) {
-    levels.active = customNumber;
-    changeLevel();
-  } else if (isAnswerRight(customAnswer)) {
-    doIfAnswerRight();
-  } else {
-    doIfAnswerWrong();
+  checkAnswer(customAnswer);
+}
+
+export function inputByEnter(event: KeyboardEvent) {
+  if (event.key === 'Enter') {
+    inputAnswer();
   }
 }

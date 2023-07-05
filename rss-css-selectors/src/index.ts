@@ -6,7 +6,7 @@ import { cssPanel, cssInput, cssButton, helpButton } from './ts/blocks/css-edito
 import { levelBlock, levelPanel, resetButton, menuButton } from './ts/blocks/levels';
 import { footer } from './ts/blocks/footer';
 import { changeLevelByClick } from './ts/funcs/change-level';
-import { inputAnswer } from './ts/funcs/input-answer';
+import { inputAnswer, inputByEnter } from './ts/funcs/input-answer';
 import { showAnswer } from './ts/funcs/show-answer';
 import { startGame } from './ts/funcs/start-game';
 import { resetGame } from './ts/funcs/reset-game';
@@ -29,30 +29,16 @@ editor.appendChild(htmlPanel);
 
 wrapper.appendChild(footer);
 
-levelPanel.addEventListener('click', (event: Event) => {
-  changeLevelByClick(event);
-});
+levelPanel.addEventListener('click', changeLevelByClick);
 
-cssButton.addEventListener('click', () => {
-  inputAnswer();
-});
+cssButton.addEventListener('click', inputAnswer);
 
-cssInput.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    inputAnswer();
-  }
-});
+cssInput.addEventListener('keydown', inputByEnter);
 
-helpButton.addEventListener('click', () => {
-  showAnswer();
-});
+helpButton.addEventListener('click', showAnswer);
 
-resetButton.addEventListener('click', () => {
-  resetGame();
-});
+resetButton.addEventListener('click', resetGame);
 
-menuButton.addEventListener('click', () => {
-  showLevels();
-});
+menuButton.addEventListener('click', showLevels);
 
 startGame();

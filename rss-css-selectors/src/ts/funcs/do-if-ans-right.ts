@@ -1,14 +1,17 @@
-import { answerRight, win } from './animate-answer';
+import { animateRightAnswer } from './animate-right-ans';
+import { win } from './win';
 import { levels } from '../local-storage';
 import { changeLevel } from './change-level';
 
 export const maxLevel = 10;
 
-function updatePassed() {
-  levels.passed.push(levels.active);
-  localStorage.setItem('levels-passed', JSON.stringify(levels.passed));
-  const passedLevelButton = document.getElementById(`level-${levels.active}`);
-  passedLevelButton?.classList.add('passed');
+function updatePassedLevels() {
+  if (!levels.passed.includes(levels.active)) {
+    levels.passed.push(levels.active);
+    localStorage.setItem('levels-passed', JSON.stringify(levels.passed));
+    const passedLevelButton = document.getElementById(`level-${levels.active}`);
+    passedLevelButton?.classList.add('passed');
+  }  
 }
 
 function doIfLevelNotHigherMax() {
@@ -29,10 +32,8 @@ function doIfLevelHigherMax() {
 }
 
 export function doIfAnswerRight() {
-  answerRight();
-  if (!levels.passed.includes(levels.active)) {
-    updatePassed();
-  }
+  animateRightAnswer();
+  updatePassedLevels();
   levels.active += 1;
   if (levels.passed.length === maxLevel) {
     win();
