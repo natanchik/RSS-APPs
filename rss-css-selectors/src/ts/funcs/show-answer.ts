@@ -16,5 +16,5 @@ export function showAnswer() {
   setTimeout(() => {
     cssInput.value = '';
   }, 1500);
-  markLevelHelped()
+  markLevelHelped();
 }

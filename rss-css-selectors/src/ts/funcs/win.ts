@@ -10,7 +10,7 @@ const backgroundWinAnimation = [
 const optionsWinAnimation = {
   duration: 2000,
   iterations: Infinity,
-}
+};
 
 export function win() {
   table.innerHTML = '';

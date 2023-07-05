@@ -8,7 +8,7 @@ textYouAreRight.classList.add('textYouAreRight');
 textYouAreRight.innerText = 'You are right!\nNext Level';
 textBlock.appendChild(textYouAreRight);
 
-export async function animateRightAnswer() {    
+export async function animateRightAnswer() {
   wrapper.appendChild(textBlock);
   setTimeout(() => {
     wrapper.removeChild(textBlock);

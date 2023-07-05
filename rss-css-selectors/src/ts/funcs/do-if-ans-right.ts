@@ -11,7 +11,7 @@ function updatePassedLevels() {
     localStorage.setItem('levels-passed', JSON.stringify(levels.passed));
     const passedLevelButton = document.getElementById(`level-${levels.active}`);
     passedLevelButton?.classList.add('passed');
-  }  
+  }
 }
 
 function doIfLevelNotHigherMax() {
