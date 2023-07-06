@@ -69,7 +69,13 @@ export const levelsData = new Map<number, LevelData>([
     7,
     {
       header: 'Select the small orange cats',
-      tableItems: ['cat', 'cat-small', ['napkin', 'cat-orange-small-anim'], ['book', 'cat-orange'], ['book', 'cat-orange-small-anim']],
+      tableItems: [
+        'cat',
+        'cat-small',
+        ['napkin', 'cat-orange-small-anim'],
+        ['book', 'cat-orange'],
+        ['book', 'cat-orange-small-anim'],
+      ],
       cssCode: ['.orange.small', '.small.orange', 'cat.orange.small', 'cat.small.orange'],
       htmlCode:
         '<cat /><cat class="small" /><napkin><cat class="orange small" /></napkin><book><cat class="orange" /></book><book><cat class="orange small" /></book>',
@@ -120,7 +126,12 @@ export const levelsData = new Map<number, LevelData>([
     10,
     {
       header: 'Select all the things',
-      tableItems: ['cat-anim', ['book-anim', 'cat-orange-small'], ['napkin-anim', 'cat-orange-anim'], ['napkin-anim', 'cat-small']],
+      tableItems: [
+        'cat-anim',
+        ['book-anim', 'cat-orange-small'],
+        ['napkin-anim', 'cat-orange-anim'],
+        ['napkin-anim', 'cat-small'],
+      ],
       cssCode: [
         '*',
         'napkin, book, cat',

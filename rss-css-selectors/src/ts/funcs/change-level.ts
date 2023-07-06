@@ -28,7 +28,7 @@ function parseLevelsData() {
     tableHeader.innerText = levelData.header;
     table.innerHTML = '';
     const things = levelData.tableItems;
-    for (let i = 0; i < things.length; i += 1) {      
+    for (let i = 0; i < things.length; i += 1) {
       drawItems(things[i], table);
     }
     rightAnswer.code = levelData.cssCode;
@@ -49,6 +49,6 @@ export function changeLevelByClick(event: Event) {
   const { target } = event;
   if (target && target instanceof HTMLButtonElement && target.classList.contains('level-button')) {
     levels.active = +target.id.slice(6);
-    changeLevel();    
+    changeLevel();
   }
 }
