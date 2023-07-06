@@ -6,5 +6,4 @@ table.classList.add('table');
 
 export const congratulations = document.createElement('pre');
 congratulations.classList.add('congratulations');
-congratulations.innerText = `Congratulations!!!
-You are winner!!!`;
+congratulations.innerText = 'Congratulations!!!\nYou are winner!!!';
