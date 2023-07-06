@@ -4,32 +4,21 @@ import { htmlText } from '../blocks/html-viewer';
 import { cssInput } from '../blocks/css-editor';
 import { levelHeader, levelPanel } from '../blocks/levels';
 import { levels } from './local-storage';
-
-type TableItemsList = HTMLDivElement | (HTMLDivElement | (HTMLDivElement | HTMLDivElement[])[])[];
+import { drawItems } from './draw-items';
 
 export const rightAnswer: { code: string | string[] } = { code: '' };
 
-function drawItems(thing: TableItemsList, upBlock: HTMLDivElement) {
-  let upThing = upBlock;
-  if (thing && thing instanceof HTMLDivElement) {
-    const newThing = thing.cloneNode(true);
-    upThing.appendChild(newThing);
+function unmarkActiveLevelButton() {
+  const activeLevelButton = levelPanel.querySelector('.activeLevel');
+  if (activeLevelButton) {
+    activeLevelButton.classList.remove('activeLevel');
   }
-  if (thing && thing instanceof Array) {
-    for (let j = 0; j < thing.length; j += 1) {
-      let subThing;
-      if (j === 0) {
-        if (thing[0] && thing[0] instanceof HTMLDivElement) {
-          subThing = thing[0].cloneNode(true);
-          upThing.appendChild(subThing);
-          if (subThing && subThing instanceof HTMLDivElement) {
-            upThing = subThing;
-          }
-        }
-      } else {
-        drawItems(thing[j], upThing);
-      }
-    }
+}
+
+function markNewActiveLevelButton() {
+  const newLevelButton = document.getElementById(`level-${levels.active}`);
+  if (newLevelButton) {
+    newLevelButton.classList.add('activeLevel');
   }
 }
 
@@ -39,9 +28,8 @@ function parseLevelsData() {
     tableHeader.innerText = levelData.header;
     table.innerHTML = '';
     const things = levelData.tableItems;
-    for (let i = 0; i < things.length; i += 1) {
-      const thing = things[i];
-      drawItems(thing, table);
+    for (let i = 0; i < things.length; i += 1) {      
+      drawItems(things[i], table);
     }
     rightAnswer.code = levelData.cssCode;
     htmlText.innerText = `<div class="table">${levelData.htmlCode}</div>`;
@@ -49,14 +37,8 @@ function parseLevelsData() {
 }
 
 export function changeLevel() {
-  const activeLevelButton = levelPanel.querySelector('.activeLevel');
-  if (activeLevelButton) {
-    activeLevelButton.classList.remove('activeLevel');
-  }
-  const newLevelButton = document.getElementById(`level-${levels.active}`);
-  if (newLevelButton) {
-    newLevelButton.classList.add('activeLevel');
-  }
+  unmarkActiveLevelButton();
+  markNewActiveLevelButton();
   localStorage.setItem('level-active', `${levels.active}`);
   levelHeader.innerText = `Level ${levels.active} of 10`;
   cssInput.value = '';
@@ -65,10 +47,8 @@ export function changeLevel() {
 
 export function changeLevelByClick(event: Event) {
   const { target } = event;
-  if (target && target instanceof HTMLButtonElement) {
-    if (target.classList.contains('level-button')) {
-      levels.active = +target.id.slice(6);
-      changeLevel();
-    }
+  if (target && target instanceof HTMLButtonElement && target.classList.contains('level-button')) {
+    levels.active = +target.id.slice(6);
+    changeLevel();    
   }
 }
