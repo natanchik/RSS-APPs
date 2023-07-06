@@ -1,25 +1,6 @@
-import {
-  napkin,
-  book,
-  cat,
-  napkinAnim,
-  catOrange,
-  catOrangeAnim,
-  bookAnim,
-  catAnim,
-  bookGreen,
-  bookGreenAnim,
-  letter,
-  letterAnim,
-  catSmall,
-  catOrangeSmall,
-  catOrangeSmallAnim,
-  letterSmall,
-} from './blocks/table';
-
 interface LevelData extends Object {
   header: string;
-  tableItems: (HTMLDivElement | (HTMLDivElement | HTMLDivElement[])[])[];
+  tableItems: (string | (string | string[])[])[];
   cssCode: string | string[];
   htmlCode: string;
 }
@@ -29,7 +10,7 @@ export const levelsData = new Map<number, LevelData>([
     1,
     {
       header: 'Select the books',
-      tableItems: [bookAnim, bookAnim, bookAnim],
+      tableItems: ['book-anim', 'book-anim', 'book-anim'],
       cssCode: 'book',
       htmlCode: '<book /><book /><book />',
     },
@@ -38,7 +19,7 @@ export const levelsData = new Map<number, LevelData>([
     2,
     {
       header: 'Select the napkins',
-      tableItems: [napkinAnim, book, napkinAnim],
+      tableItems: ['napkin-anim', 'book', 'napkin-anim'],
       cssCode: 'napkin',
       htmlCode: '<napkin /><book /><napkin />',
     },
@@ -47,7 +28,7 @@ export const levelsData = new Map<number, LevelData>([
     3,
     {
       header: 'Select the green book',
-      tableItems: [bookGreenAnim, napkin, book],
+      tableItems: ['bookGreen-anim', 'napkin', 'book'],
       cssCode: ['#green', 'book#green'],
       htmlCode: '<book id="green" /><napkin /><book />',
     },
@@ -56,7 +37,7 @@ export const levelsData = new Map<number, LevelData>([
     4,
     {
       header: 'Select the cat on the book',
-      tableItems: [napkin, [book, catAnim], cat],
+      tableItems: ['napkin', ['book', 'cat-anim'], 'cat'],
       cssCode: ['book cat', 'book > cat'],
       htmlCode: '<napkin /><book><cat /></book><cat>',
     },
@@ -66,9 +47,9 @@ export const levelsData = new Map<number, LevelData>([
     {
       header: 'Select the letter on the green book',
       tableItems: [
-        [napkin, catOrange],
-        [bookGreen, letterAnim],
-        [book, letter],
+        ['napkin', 'cat-orange'],
+        ['bookGreen', 'letter-anim'],
+        ['book', 'letter'],
       ],
       cssCode: ['#green letter', 'book#green letter', 'book#green > letter', '#green > letter'],
       htmlCode: '<napkin><cat class="orange" /</napkin><book id="green"><letter /></book><book><letter /></book>',
@@ -78,7 +59,7 @@ export const levelsData = new Map<number, LevelData>([
     6,
     {
       header: 'Select the small orange cats',
-      tableItems: [catOrangeSmallAnim, cat, [napkin, catOrangeSmallAnim], [napkin, book]],
+      tableItems: ['cat-orange-small-anim', 'cat', ['napkin', 'cat-orange-small-anim'], ['napkin', 'book']],
       cssCode: ['.small', '.orange', 'cat.small', 'cat.orange', 'cat.orange.small', 'cat.small.orange'],
       htmlCode:
         '<cat class="orange small" /><cat /><napkin><cat class="orange small" /></napkin><napkin><book /></napkin>',
@@ -88,7 +69,7 @@ export const levelsData = new Map<number, LevelData>([
     7,
     {
       header: 'Select the small orange cats',
-      tableItems: [cat, catSmall, [napkin, catOrangeSmallAnim], [book, catOrange], [book, catOrangeSmallAnim]],
+      tableItems: ['cat', 'cat-small', ['napkin', 'cat-orange-small-anim'], ['book', 'cat-orange'], ['book', 'cat-orange-small-anim']],
       cssCode: ['.orange.small', '.small.orange', 'cat.orange.small', 'cat.small.orange'],
       htmlCode:
         '<cat /><cat class="small" /><napkin><cat class="orange small" /></napkin><book><cat class="orange" /></book><book><cat class="orange small" /></book>',
@@ -99,11 +80,11 @@ export const levelsData = new Map<number, LevelData>([
     {
       header: 'Select the small orange cats on the napkins',
       tableItems: [
-        [napkin, cat],
-        catOrangeSmall,
-        [napkin, catOrangeSmallAnim],
-        [napkin, [book, catSmall]],
-        [napkin, catOrangeSmallAnim],
+        ['napkin', 'cat'],
+        'cat-orange-small',
+        ['napkin', 'cat-orange-small-anim'],
+        ['napkin', ['book', 'cat-small']],
+        ['napkin', 'cat-orange-small-anim'],
       ],
       cssCode: [
         'napkin .orange',
@@ -129,7 +110,7 @@ export const levelsData = new Map<number, LevelData>([
     9,
     {
       header: 'Select the books and napkins',
-      tableItems: [letterSmall, [napkinAnim, letter], [bookAnim, letter], letter, letterSmall],
+      tableItems: ['letter-small', ['napkin-anim', 'letter'], ['book-anim', 'letter'], 'letter', 'letter-small'],
       cssCode: ['book, napkin', 'napkin, book'],
       htmlCode:
         '<letter class="small /><napkin><letter /></napkin><book><letter /></book><letter /><letter class="small />',
@@ -139,7 +120,7 @@ export const levelsData = new Map<number, LevelData>([
     10,
     {
       header: 'Select all the things',
-      tableItems: [catAnim, [bookAnim, catOrangeSmall], [napkinAnim, catOrangeAnim], [napkinAnim, catSmall]],
+      tableItems: ['cat-anim', ['book-anim', 'cat-orange-small'], ['napkin-anim', 'cat-orange-anim'], ['napkin-anim', 'cat-small']],
       cssCode: [
         '*',
         'napkin, book, cat',

@@ -42,11 +42,11 @@
 }
 
 .small {
-    width: 70px;
-    height: 70px;
+  width: 70px;
+  height: 70px;
 }
 
-.animated {
+.anim {
   animation-name: moveThings;
   animation-direction: alternate;
   animation-duration: 1s;
@@ -72,13 +72,13 @@
   right: 10px;
 }
 
-.catOrange {
+.cat.orange {
   background-image: url('./assets/cat-orange.svg');
   right: 10px;
 }
 
 .cat.small,
-.catOrange.small {
+.cat.orange.small {
   right: 0;
 }
 
