@@ -14,13 +14,15 @@ function updatePassedLevels() {
   }
 }
 
-function findUnpassedLevel() {
-  while (levels.passed.includes(levels.active)) {
-    levels.active += 1;
-    if (levels.active > maxLevel) {
-      levels.active = 1;
+export function findUnpassedLevel(levelsList: number[], level: number) {
+  let newLevel = level;
+  while (levelsList.includes(newLevel)) {
+    newLevel += 1;
+    if (newLevel > maxLevel) {
+      newLevel = 1;
     }
   }
+  return newLevel;
 }
 
 export function doIfAnswerRight() {
@@ -29,7 +31,7 @@ export function doIfAnswerRight() {
   if (levels.passed.length === maxLevel) {
     win();
   } else {
-    findUnpassedLevel();
+    levels.active = findUnpassedLevel(levels.passed, levels.active);
     changeLevel();
   }
 }

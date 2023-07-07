@@ -8,17 +8,17 @@ import { drawItems } from './draw-items';
 
 export const rightAnswer: { code: string | string[] } = { code: '' };
 
-function unmarkActiveLevelButton() {
-  const activeLevelButton = levelPanel.querySelector('.activeLevel');
-  if (activeLevelButton) {
-    activeLevelButton.classList.remove('activeLevel');
+function unmarkActiveLevel() {
+  const activeLevel = levelPanel.querySelector('.activeLevel');
+  if (activeLevel) {
+    activeLevel.classList.remove('activeLevel');
   }
 }
 
-function markNewActiveLevelButton() {
-  const newLevelButton = document.getElementById(`level-${levels.active}`);
-  if (newLevelButton) {
-    newLevelButton.classList.add('activeLevel');
+export function markNewActiveLevel(level: number) {
+  const newLevel = document.getElementById(`level-${level}`);
+  if (newLevel) {
+    newLevel.classList.add('activeLevel');
   }
 }
 
@@ -37,8 +37,8 @@ function parseLevelsData() {
 }
 
 export function changeLevel() {
-  unmarkActiveLevelButton();
-  markNewActiveLevelButton();
+  unmarkActiveLevel();
+  markNewActiveLevel(levels.active);
   localStorage.setItem('level-active', `${levels.active}`);
   levelHeader.innerText = `Level ${levels.active} of 10`;
   cssInput.value = '';

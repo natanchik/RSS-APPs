@@ -1,22 +1,19 @@
-import { levels, createDataInLocStor } from './local-storage';
+import { levels } from './local-storage';
 import { changeLevel } from './change-level';
 
-function unMarkLevels() {
-  const buttonsPassedlevels = document.querySelectorAll('.passed');
+export function unMarkLevels(mark: string) {
+  const buttonsPassedlevels = document.querySelectorAll(`.${mark}`);
   for (let i = 0; i < buttonsPassedlevels.length; i += 1) {
-    buttonsPassedlevels[i].classList.remove('passed');
-  }
-  const buttonsHelpedlevels = document.querySelectorAll('.helped');
-  for (let i = 0; i < buttonsHelpedlevels.length; i += 1) {
-    buttonsHelpedlevels[i].classList.remove('helped');
+    buttonsPassedlevels[i].classList.remove(mark);
   }
 }
 
 export function resetGame() {
-  unMarkLevels();
+  unMarkLevels('passed');
+  unMarkLevels('helped');
   levels.passed.length = 0;
   levels.helped.length = 0;
-  createDataInLocStor();
+  localStorage.clear();
   levels.active = 1;
   changeLevel();
 }

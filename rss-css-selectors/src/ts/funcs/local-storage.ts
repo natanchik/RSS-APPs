@@ -1,4 +1,4 @@
-type Levels = {
+export type Levels = {
   active: number;
   passed: number[];
   helped: number[];
@@ -9,12 +9,6 @@ export const levels: Levels = {
   passed: [],
   helped: [],
 };
-
-export function createDataInLocStor() {
-  localStorage.setItem('level-active', '1');
-  localStorage.setItem('levels-passed', JSON.stringify([]));
-  localStorage.setItem('levels-helped', JSON.stringify([]));
-}
 
 export function getDataFromLocStor() {
   const levelActive = localStorage.getItem('level-active');
