@@ -14,19 +14,11 @@ function updatePassedLevels() {
   }
 }
 
-function doIfLevelNotHigherMax() {
+function findUnpassedLevel() {
   while (levels.passed.includes(levels.active)) {
     levels.active += 1;
-  }
-  changeLevel();
-}
-
-function doIfLevelHigherMax() {
-  for (let i = 1; i <= maxLevel; i += 1) {
-    if (!levels.passed.includes(i)) {
-      levels.active = i;
-      changeLevel();
-      break;
+    if (levels.active > maxLevel) {
+      levels.active = 1;
     }
   }
 }
@@ -34,13 +26,10 @@ function doIfLevelHigherMax() {
 export function doIfAnswerRight() {
   animateRightAnswer();
   updatePassedLevels();
-  levels.active += 1;
   if (levels.passed.length === maxLevel) {
     win();
-  } else if (levels.active <= maxLevel) {
-    doIfLevelNotHigherMax();
-  }
-  if (levels.active > maxLevel) {
-    doIfLevelHigherMax();
+  } else {
+    findUnpassedLevel();
+    changeLevel();
   }
 }
