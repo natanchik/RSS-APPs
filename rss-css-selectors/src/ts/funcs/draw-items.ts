@@ -1,6 +1,6 @@
 type TableItemsList = string | (string | (string | string[])[])[];
 
-function createItem(item: string) {
+export function createItem(item: string) {
   const newItem = document.createElement('div');
   newItem.classList.add('table-items');
   const classesList = item.split('-');
