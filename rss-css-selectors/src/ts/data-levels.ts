@@ -1,7 +1,7 @@
 interface LevelData extends Object {
   header: string;
   tableItems: (string | (string | string[])[])[];
-  cssCode: string | string[];
+  cssCode: string[];
   htmlCode: string;
 }
 
@@ -11,7 +11,7 @@ export const levelsData = new Map<number, LevelData>([
     {
       header: 'Select the books',
       tableItems: ['book-anim', 'book-anim', 'book-anim'],
-      cssCode: 'book',
+      cssCode: ['book'],
       htmlCode: '<book /><book /><book />',
     },
   ],
@@ -20,7 +20,7 @@ export const levelsData = new Map<number, LevelData>([
     {
       header: 'Select the napkins',
       tableItems: ['napkin-anim', 'book', 'napkin-anim'],
-      cssCode: 'napkin',
+      cssCode: ['napkin'],
       htmlCode: '<napkin /><book /><napkin />',
     },
   ],

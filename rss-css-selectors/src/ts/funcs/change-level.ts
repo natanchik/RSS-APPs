@@ -6,7 +6,7 @@ import { levelHeader, levelPanel } from '../blocks/levels';
 import { levels } from './local-storage';
 import { drawItems } from './draw-items';
 
-export const rightAnswer: { code: string | string[] } = { code: '' };
+export const rightAnswers: { items: string[] } = { items: [] };
 
 function unmarkActiveLevel() {
   const activeLevel = levelPanel.querySelector('.activeLevel');
@@ -31,7 +31,7 @@ function parseLevelsData() {
     for (let i = 0; i < things.length; i += 1) {
       drawItems(things[i], table);
     }
-    rightAnswer.code = levelData.cssCode;
+    rightAnswers.items = levelData.cssCode;
     htmlText.innerText = `<div class="table">${levelData.htmlCode}</div>`;
   }
 }
