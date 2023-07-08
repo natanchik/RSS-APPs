@@ -10,7 +10,7 @@ export function createItem(item: string) {
   return newItem;
 }
 
-function doIfItemString(item: TableItemsList, upThing: HTMLDivElement) {
+export function doIfItemString(item: TableItemsList, upThing: HTMLDivElement) {
   if (item && typeof item === 'string') {
     const newItem = createItem(item);
     upThing.appendChild(newItem);

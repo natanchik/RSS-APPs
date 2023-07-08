@@ -1,4 +1,4 @@
-import { createItem } from '../funcs/draw-items';
+import { createItem, doIfItemString } from '../funcs/draw-items';
 
 describe('createItem function', () => {
   it('should create new div', () => {
@@ -12,5 +12,29 @@ describe('createItem function', () => {
     const newItem = createItem(item);
     expect(newItem.classList).toContain('small');
     expect(newItem.classList).not.toContain('book');
+  });
+});
+
+describe('doIfItemString function', () => {
+  document.body.innerHTML = '';
+  const upBlock = document.createElement('div');
+  document.body.appendChild(upBlock);
+
+  it('should call function createItem and add new div if item is string', () => {
+    const item = 'book-red';
+    doIfItemString(item, upBlock);
+    const newItem = upBlock.querySelector('.book');
+
+    expect(newItem).not.toBeNull();
+    expect(newItem).toBeInstanceOf(HTMLDivElement);
+    expect(newItem?.classList).toContain('red');
+  });
+
+  it('should do nothing if item is array', () => {
+    const item = ['cat-orange-small', 'napkin'];
+    doIfItemString(item, upBlock);
+    const newItem = upBlock.querySelector('.cat');
+
+    expect(newItem).toBeNull();
   });
 });

@@ -9,7 +9,7 @@ export function isAnswerLevelNumber(answer: string) {
   return String(ansNumb) === answer && ansNumb > 0 && ansNumb <= maxLevel;
 }
 
-function isAnswerRight(answer: string) {  
+function isAnswerRight(answer: string) {
   return rightAnswers.items.includes(answer);
 }
 
@@ -27,10 +27,10 @@ function checkAnswer(answer: string) {
 export function inputAnswer() {
   const customAnswer = cssInput.value;
   if (!customAnswer) {
-    doIfAnswerWrong();    
+    doIfAnswerWrong();
   } else {
     checkAnswer(customAnswer);
-  }  
+  }
 }
 
 export function inputByEnter(event: KeyboardEvent) {
