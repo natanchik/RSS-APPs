@@ -1,5 +1,5 @@
 import { cssInput } from '../blocks/css-editor';
-import { rightAnswer } from './change-level';
+import { rightAnswers } from './change-level';
 import { levels } from './local-storage';
 
 function markLevelHelped() {
@@ -12,7 +12,7 @@ function markLevelHelped() {
 }
 
 export function showAnswer() {
-  cssInput.value = typeof rightAnswer.code === 'string' ? rightAnswer.code : rightAnswer.code[0];
+  cssInput.value = rightAnswers.items[0];
   setTimeout(() => {
     cssInput.value = '';
   }, 1500);
