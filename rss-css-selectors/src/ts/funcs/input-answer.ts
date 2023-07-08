@@ -4,7 +4,8 @@ import { maxLevel, doIfAnswerRight } from './do-if-ans-right';
 import { changeLevel, rightAnswer } from './change-level';
 import { levels } from './local-storage';
 
-function isAnswerLevelNumber(answer: string, ansNumb: number) {
+export function isAnswerLevelNumber(answer: string) {
+  const ansNumb = parseInt(answer, 10);
   return String(ansNumb) === answer && ansNumb > 0 && ansNumb <= maxLevel;
 }
 
@@ -17,9 +18,8 @@ function isAnswerRight(answer: string) {
 }
 
 function checkAnswer(answer: string) {
-  const customNumber = parseInt(answer, 10);
-  if (isAnswerLevelNumber(answer, customNumber)) {
-    levels.active = customNumber;
+  if (isAnswerLevelNumber(answer)) {
+    levels.active = parseInt(answer, 10);
     changeLevel();
   } else if (isAnswerRight(answer)) {
     doIfAnswerRight();
