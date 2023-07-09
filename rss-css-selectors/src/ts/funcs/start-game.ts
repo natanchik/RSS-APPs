@@ -1,5 +1,6 @@
 import { levels, getDataFromLocStor } from './local-storage';
 import { changeLevel } from './change-level';
+import { createGame } from './create-game';
 
 export function markLevels(levelsList: number[], mark: string) {
   if (levelsList) {
@@ -12,9 +13,14 @@ export function markLevels(levelsList: number[], mark: string) {
   }
 }
 
-export function startGame() {
+function startGame() {
   getDataFromLocStor();
   markLevels(levels.passed, 'passed');
   markLevels(levels.helped, 'helped');
   changeLevel();
+}
+
+export function start() {
+  createGame();
+  startGame();
 }

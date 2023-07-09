@@ -1,11 +1,5 @@
-import { startGame } from './funcs/start-game';
-import { createGame } from './funcs/create-game';
+import { start } from './funcs/start-game';
 
 export class App {
-
-  public start = () => {
-    createGame();
-    startGame();
-  }
-
+  public start = start;
 }
