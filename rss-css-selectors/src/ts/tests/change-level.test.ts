@@ -1,4 +1,20 @@
-import { markNewActiveLevel } from '../funcs/change-level';
+import { unmarkActiveLevel, markNewActiveLevel } from '../funcs/change-level';
+import { levelPanel } from '../blocks/levels';
+
+describe('unmarkActiveLevel function', () => {
+  document.body.innerHTML = '';
+  document.body.appendChild(levelPanel);
+  const activeDiv = document.createElement('div');
+  activeDiv.classList.add('activeLevel');
+  levelPanel.appendChild(activeDiv);
+
+  it('should unmark active div', () => {
+    unmarkActiveLevel();
+    const checkDiv = document.querySelector('.activeLevel');
+    expect(checkDiv).toBeNull();
+    expect(activeDiv.classList).not.toContain('activeLevel');
+  });
+});
 
 describe('markNewActiveLevel function', () => {
   beforeEach(() => {

@@ -8,7 +8,7 @@ import { drawItems } from './draw-items';
 
 export const rightAnswers: { items: string[] } = { items: [] };
 
-function unmarkActiveLevel() {
+export function unmarkActiveLevel() {
   const activeLevel = levelPanel.querySelector('.activeLevel');
   if (activeLevel) {
     activeLevel.classList.remove('activeLevel');
