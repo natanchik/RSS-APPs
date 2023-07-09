@@ -17,10 +17,10 @@ export function getDataFromLocStor() {
   }
   const levelPassed = localStorage.getItem('levels-passed');
   if (levelPassed) {
-    JSON.parse(levelPassed).forEach((x: number) => levels.passed.push(x));
+    levels.passed = JSON.parse(levelPassed);
   }
   const levelHelped = localStorage.getItem('levels-helped');
   if (levelHelped) {
-    JSON.parse(levelHelped).forEach((x: number) => levels.helped.push(x));
+    levels.helped = JSON.parse(levelHelped);
   }
 }
