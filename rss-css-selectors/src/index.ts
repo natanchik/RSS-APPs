@@ -1,11 +1,10 @@
 import './style.scss';
 import { App } from './ts/app';
 
-const app = new App()
+const app = new App();
 
-app.createGame()
+app.createGame();
 
-app.addHandlers()
+app.addHandlers();
 
-app.startGame()
-
+app.startGame();

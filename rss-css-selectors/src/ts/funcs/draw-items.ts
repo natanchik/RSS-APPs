@@ -33,4 +33,4 @@ export const drawItems = function draw(thing: TableItemsList, upBlock: HTMLDivEl
       }
     }
   }
-}
+};
