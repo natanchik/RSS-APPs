@@ -15,5 +15,7 @@ module.exports = {
     'src/**/*.mts',
     '!src/**/*.d.ts',
     '!src/**/*.d.mts',
-  ],
+  ],  
+  "resetMocks": false,
+  "setupFiles": ["jest-localstorage-mock"]  
 };
