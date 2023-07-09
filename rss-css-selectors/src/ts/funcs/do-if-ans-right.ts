@@ -6,7 +6,7 @@ import { changeLevel } from './change-level';
 export const maxLevel = 10;
 
 function updatePassedLevels() {
-  if (!levels.passed.includes(levels.active)) {
+  if (!levels.passed.includes(levels.active) && levels.active > 0 && levels.active <= maxLevel) {
     levels.passed.push(levels.active);
     localStorage.setItem('levels-passed', JSON.stringify(levels.passed));
     const passedLevelButton = document.getElementById(`level-${levels.active}`);
