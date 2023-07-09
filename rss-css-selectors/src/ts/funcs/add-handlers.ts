@@ -2,7 +2,7 @@ import { cssInput, cssButton, helpButton } from '../blocks/css-editor';
 import { levelPanel, resetButton, menuButton } from '../blocks/levels';
 import { changeLevelByClick } from './change-level';
 import { inputAnswer, inputByEnter } from './input-answer';
-import { showAnswer } from './show-answer';
+import { help } from './help';
 import { resetGame } from './reset-game';
 import { showLevels } from './show-levels';
 
@@ -13,7 +13,7 @@ export function addHandlers() {
 
   cssInput.addEventListener('keydown', inputByEnter);
 
-  helpButton.addEventListener('click', showAnswer);
+  helpButton.addEventListener('click', help);
 
   resetButton.addEventListener('click', resetGame);
 

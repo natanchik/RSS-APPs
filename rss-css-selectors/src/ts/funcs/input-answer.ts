@@ -1,6 +1,7 @@
 import { cssInput } from '../blocks/css-editor';
+import { maxLevel } from './mark-level';
 import { doIfAnswerWrong } from './do-if-ans-wrong';
-import { maxLevel, doIfAnswerRight } from './do-if-ans-right';
+import { doIfAnswerRight } from './do-if-ans-right';
 import { changeLevel, rightAnswers } from './change-level';
 import { levels } from './local-storage';
 
