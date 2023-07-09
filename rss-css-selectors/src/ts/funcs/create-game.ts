@@ -4,8 +4,9 @@ import { htmlPanel } from '../blocks/html-viewer';
 import { cssPanel } from '../blocks/css-editor';
 import { levelBlock, menuButton } from '../blocks/levels';
 import { footer } from '../blocks/footer';
+import { addHandlers } from './add-handlers';
 
-export function createGame() {
+function createGameBase() {
   document.body.appendChild(wrapper);
 
   const editor = document.createElement('div');
@@ -22,4 +23,9 @@ export function createGame() {
   editor.appendChild(htmlPanel);
 
   wrapper.appendChild(footer);
+}
+
+export function createGame() {
+  createGameBase();
+  addHandlers();
 }
