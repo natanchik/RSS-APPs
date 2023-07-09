@@ -4,11 +4,11 @@ import { createGame } from './funcs/create-game';
 import { addHandlers } from './funcs/add-handlers';
 
 export class App {
-  createGame = createGame;
+  public createGame = createGame;
 
-  addHandlers = addHandlers;
+  public addHandlers = addHandlers;
 
-  startGame = startGame;
+  public startGame = startGame;
 
-  resetGame = resetGame;
+  public resetGame = resetGame;
 }
