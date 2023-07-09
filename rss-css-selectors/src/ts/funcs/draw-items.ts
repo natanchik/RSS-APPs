@@ -17,7 +17,7 @@ export function doIfItemString(item: TableItemsList, upThing: HTMLDivElement) {
   }
 }
 
-export function drawItems(thing: TableItemsList, upBlock: HTMLDivElement) {
+export const drawItems = function draw(thing: TableItemsList, upBlock: HTMLDivElement) {
   let upThing = upBlock;
   doIfItemString(thing, upThing);
   if (thing && thing instanceof Array) {
@@ -29,7 +29,7 @@ export function drawItems(thing: TableItemsList, upBlock: HTMLDivElement) {
           upThing = subThing;
         }
       } else {
-        drawItems(thing[j], upThing);
+        draw(thing[j], upThing);
       }
     }
   }
