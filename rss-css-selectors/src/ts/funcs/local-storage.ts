@@ -10,17 +10,16 @@ export const levels: Levels = {
   helped: [],
 };
 
-export function getDataFromLocStor() {
+export function getActiveLevel() {
   const levelActive = localStorage.getItem('level-active');
   if (levelActive) {
     levels.active = +levelActive;
-  }
-  const levelPassed = localStorage.getItem('levels-passed');
-  if (levelPassed) {
-    levels.passed = JSON.parse(levelPassed);
-  }
-  const levelHelped = localStorage.getItem('levels-helped');
-  if (levelHelped) {
-    levels.helped = JSON.parse(levelHelped);
+  }  
+}
+
+export function getMarkedLevels(levelsList: number[], mark: string) {
+  const markedLevels = localStorage.getItem(`levels-${mark}`);
+  if (markedLevels) {
+    JSON.parse(markedLevels).forEach((lvl: number) => levelsList.push(lvl));
   }
 }
