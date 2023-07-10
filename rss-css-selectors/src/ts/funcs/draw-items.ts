@@ -1,4 +1,4 @@
-type TableItemsList = string | (string | (string | string[])[])[];
+type TableItems = string | TableItems[];
 
 export function createItem(item: string) {
   const newItem = document.createElement('div');
@@ -10,14 +10,14 @@ export function createItem(item: string) {
   return newItem;
 }
 
-export function doIfItemString(item: TableItemsList, upThing: HTMLDivElement) {
+export function doIfItemString(item: TableItems, upThing: HTMLDivElement) {
   if (item && typeof item === 'string') {
     const newItem = createItem(item);
     upThing.appendChild(newItem);
   }
 }
 
-export const drawItems = function draw(thing: TableItemsList, upBlock: HTMLDivElement) {
+export const drawItems = function draw(thing: TableItems, upBlock: HTMLDivElement) {
   let upThing = upBlock;
   doIfItemString(thing, upThing);
   if (thing && thing instanceof Array) {
