@@ -14,7 +14,7 @@ export function getActiveLevel() {
   const levelActive = localStorage.getItem('level-active');
   if (levelActive) {
     levels.active = +levelActive;
-  }  
+  }
 }
 
 export function getMarkedLevels(levelsList: number[], mark: string) {
