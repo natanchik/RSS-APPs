@@ -1,0 +1,13 @@
+@import './styles/normalize.scss';
+
+html {
+  padding: 0;
+  background-color: black;
+
+  & * {
+    margin: 0;
+    padding: 0;  
+    box-sizing: border-box;  
+  }
+}
+
