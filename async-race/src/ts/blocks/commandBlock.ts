@@ -11,9 +11,7 @@ export function createCommandBlock() {
   commandRow1.classList.add('commandRow');
   commandBlock.appendChild(commandRow1);
 
-  const marksInput = createMarks(Marks);
-  marksInput.classList.add('commandItem');
-  commandRow1.appendChild(marksInput);
+  createMarks(commandRow1, Marks);
 
   const btnColor = createColor();
   btnColor.classList.add('commandItem');
@@ -58,7 +56,3 @@ export function createCommandBlock() {
 
   return commandBlock;
 }
-
-// toGarageBtn.addEventListener('click', () => showGarage)
-
-// toWinnerBtn.addEventListener('click', () => showWinners)

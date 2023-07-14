@@ -10,8 +10,12 @@ document.body.appendChild(createCommandBlock());
 
 document.body.appendChild(garageBlock);
 
-document.body.appendChild(createRaceStrip('Tesla'));
-
-document.body.appendChild(createRaceStrip('Opel'));
-
-document.body.appendChild(createRaceStrip('Lada'));
+const createBtn = document.querySelector('.createBtn');
+createBtn?.addEventListener('click', () => {
+  const colorBtn = document.querySelector('.colorBtn');
+  const markInput = document.querySelector('.markInput');
+  if (colorBtn && markInput && colorBtn instanceof HTMLInputElement && markInput instanceof HTMLInputElement) {
+    document.body.appendChild(createRaceStrip(markInput.value, colorBtn.value));
+    markInput.innerText = '';
+  }
+});
