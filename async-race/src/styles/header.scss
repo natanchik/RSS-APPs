@@ -1,0 +1,16 @@
+.button {
+  padding: 4px;
+  margin: 10px;
+  background-color: bisque;
+  border: 2px solid rgb(239, 199, 151);
+  box-shadow: 4px 4px 2px 2px rgba(255, 228, 196, 0.4);
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+  opacity: 0.6;
+  box-shadow: 4px 4px 2px 2px rgba(255, 228, 196);
+}

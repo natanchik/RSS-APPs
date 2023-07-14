@@ -1,0 +1,21 @@
+.commandBlock {
+  margin: 40px 0;  
+}
+
+.commandRow {
+  padding: 5px;
+  width: 310px;  
+  display: flex;
+  justify-content: space-between;
+}
+
+.commandItem {
+  display: inline-block;
+  margin: 1px;
+  margin-left: 5px;
+}
+
+.markInput,
+.inputBtn {
+  width: 155px;
+}
