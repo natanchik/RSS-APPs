@@ -23,7 +23,7 @@ function createRaceStripRowUp(name: string) {
   return raceStripRow;
 }
 
-function createRaceStripRowCar(color: string) {
+function createRaceStripRowCar(color: string, id: number) {
   const raceStripRow = document.createElement('div');
   raceStripRow.classList.add('race-strip-row');
 
@@ -33,18 +33,18 @@ function createRaceStripRowCar(color: string) {
   abBlock.appendChild(createBtnAB('b'));
 
   raceStripRow.appendChild(abBlock);
-  raceStripRow.appendChild(drawCar(color));
+  raceStripRow.appendChild(drawCar(color, id));
   raceStripRow.appendChild(drawFlag());
 
   return raceStripRow;
 }
 
-export function createRaceStrip(name: string, color: string) {
+export function createRaceStrip(name: string, color: string, id: number) {
   const raceStrip = document.createElement('div');
   raceStrip.classList.add('race-strip');
 
   document.body.appendChild(createRaceStripRowUp(name));
-  document.body.appendChild(createRaceStripRowCar(color));
+  document.body.appendChild(createRaceStripRowCar(color, id));
 
   return raceStrip;
 }
