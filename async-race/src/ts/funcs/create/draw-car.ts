@@ -1,10 +1,9 @@
-import { paintCar } from '../../blocks/car-image';
+import { paintCar } from './paint-car';
 
-export function drawCar(color: string, id: number) {
+export function drawCar(color: string) {
   const car = document.createElement('div');
   car.classList.add('race-strip-row-item');
   car.classList.add('car');
-  car.setAttribute('id', `car-${id}`);
 
   const carImg = document.createElement('div');
   carImg.classList.add('car-image');

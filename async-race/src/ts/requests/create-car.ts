@@ -1,7 +1,7 @@
 import { createRaceStrip } from '../blocks/race-strip';
 
 export async function createCar() {
-  const colorBtn = document.querySelector('.colorBtn');
+  const colorBtn = document.querySelectorAll('.colorBtn')[0];
   const markInput = document.querySelector('.markInput');
   if (colorBtn && markInput && colorBtn instanceof HTMLInputElement && markInput instanceof HTMLInputElement) {
     const car = { name: markInput.value, color: colorBtn.value };
