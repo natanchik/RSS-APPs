@@ -4,6 +4,7 @@ import { createBtn } from '../funcs/create/create-btn';
 import { Marks } from '../marks';
 import { createCar } from '../requests/create-car';
 import { updateCar } from '../requests/update-car';
+import { driveCar } from '../requests/drive-car';
 
 export const commandBlock = document.createElement('div');
 commandBlock.classList.add('commandBlock');
@@ -57,6 +58,16 @@ commandBlock.appendChild(commandRow3);
 const btnRace = createBtn('race');
 btnRace.classList.add('commandItem');
 commandRow3.appendChild(btnRace);
+
+btnRace.addEventListener('click', () => {
+  const cars = document.querySelectorAll('.race-strip');
+  for (let i = 0; i < cars.length; i += 1) {
+    const car = cars[i];
+    if (car instanceof HTMLDivElement) {
+      driveCar(car);
+    }
+  }
+});
 
 const btnReset = createBtn('reset');
 btnReset.classList.add('commandItem');
