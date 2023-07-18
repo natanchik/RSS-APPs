@@ -25,14 +25,14 @@ export function markNewActiveLevel(level: number) {
 function parseLevelsData() {
   const levelData = levelsData.get(levels.active);
   if (levelData) {
-    tableHeader.innerText = levelData.header;
+    tableHeader.textContent = levelData.header;
     table.innerHTML = '';
     const things = levelData.tableItems;
     for (let i = 0; i < things.length; i += 1) {
       drawItems(things[i], table);
     }
     rightAnswers.items = levelData.cssCode;
-    htmlText.innerText = `<div class="table">${levelData.htmlCode}</div>`;
+    htmlText.textContent = `<div class="table">${levelData.htmlCode}</div>`;
   }
 }
 
@@ -40,7 +40,7 @@ export function changeLevel() {
   unmarkActiveLevel();
   markNewActiveLevel(levels.active);
   localStorage.setItem('level-active', `${levels.active}`);
-  levelHeader.innerText = `Level ${levels.active} of 10`;
+  levelHeader.textContent = `Level ${levels.active} of 10`;
   cssInput.value = '';
   parseLevelsData();
 }

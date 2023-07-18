@@ -13,16 +13,16 @@ for (let i = 1; i < 11; i += 1) {
   const levelButton = document.createElement('button');
   levelButton.classList.add('level-button');
   levelButton.setAttribute('id', `level-${i}`);
-  levelButton.innerText = `Level ${i}`;
+  levelButton.textContent = `Level ${i}`;
   levelPanel.appendChild(levelButton);
 }
 
 export const resetButton = document.createElement('button');
 resetButton.classList.add('level-button');
 resetButton.classList.add('reset-button');
-resetButton.innerText = 'Reset Progress';
+resetButton.textContent = 'Reset Progress';
 levelPanel.appendChild(resetButton);
 
 export const menuButton = document.createElement('div');
 menuButton.classList.add('menu-button');
-menuButton.innerText = 'Levels';
+menuButton.textContent = 'Levels';

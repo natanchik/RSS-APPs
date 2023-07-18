@@ -5,7 +5,7 @@ textBlock.classList.add('textBlock');
 
 const textYouAreRight = document.createElement('pre');
 textYouAreRight.classList.add('textYouAreRight');
-textYouAreRight.innerText = 'You are right!\nNext Level';
+textYouAreRight.textContent = 'You are right!\nNext Level';
 textBlock.appendChild(textYouAreRight);
 
 export async function animateRightAnswer() {

@@ -15,7 +15,7 @@ cssPanel.appendChild(cssHeader);
 
 export const cssNumColumn = document.createElement('div');
 cssNumColumn.classList.add('editor-numColumn');
-cssNumColumn.innerText = numbers.slice(0, -1);
+cssNumColumn.textContent = numbers.slice(0, -1);
 cssPanel.appendChild(cssNumColumn);
 
 const editorCss = document.createElement('div');
@@ -30,17 +30,17 @@ editorCss.appendChild(cssInput);
 
 export const cssButton = document.createElement('button');
 cssButton.classList.add('css-button');
-cssButton.innerText = 'Enter';
+cssButton.textContent = 'Enter';
 editorCss.appendChild(cssButton);
 
 export const helpButton = document.createElement('button');
 helpButton.classList.add('css-button');
-helpButton.innerText = 'Help';
+helpButton.textContent = 'Help';
 editorCss.appendChild(helpButton);
 
 const cssText = document.createElement('pre');
 cssText.classList.add('css-text');
-cssText.innerText = `{
+cssText.textContent = `{
 /* Styles would go here. */
 }
 /*
