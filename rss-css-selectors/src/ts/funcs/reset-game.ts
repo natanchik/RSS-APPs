@@ -11,8 +11,8 @@ export function unMarkLevels(mark: string) {
 export function resetGame() {
   unMarkLevels('passed');
   unMarkLevels('helped');
-  levels.passed.length = 0;
-  levels.helped.length = 0;
+  levels.passed = [];
+  levels.helped = [];
   localStorage.clear();
   levels.active = 1;
   changeLevel();
