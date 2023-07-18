@@ -10,15 +10,11 @@ export function isAnswerLevelNumber(answer: string) {
   return String(ansNumb) === answer && ansNumb > 0 && ansNumb <= maxLevel;
 }
 
-function isAnswerRight(answer: string) {
-  return rightAnswers.items.includes(answer);
-}
-
 function checkAnswer(answer: string) {
   if (isAnswerLevelNumber(answer)) {
     levels.active = parseInt(answer, 10);
     changeLevel();
-  } else if (isAnswerRight(answer)) {
+  } else if (rightAnswers.items.includes(answer)) {
     doIfAnswerRight();
   } else {
     doIfAnswerWrong();
