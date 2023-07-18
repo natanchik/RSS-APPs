@@ -3,14 +3,12 @@ import { changeLevel } from './change-level';
 import { createGame } from './create-game';
 
 export function markLevels(levelsList: number[], mark: string) {
-  if (levelsList) {
-    for (let i = 0; i < levelsList.length; i += 1) {
-      const markedlevel = document.getElementById(`level-${levelsList[i]}`);
-      if (markedlevel) {
-        markedlevel.classList.add(mark);
-      }
+  levelsList.forEach((level) => {
+    const markedLevel = document.getElementById(`level-${level}`);
+    if (markedLevel) {
+      markedLevel.classList.add(mark);
     }
-  }
+  });
 }
 
 function startGame() {
