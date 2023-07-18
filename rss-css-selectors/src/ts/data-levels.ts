@@ -1,6 +1,8 @@
+export type TableItems = string | TableItems[];
+
 interface LevelData extends Object {
   header: string;
-  tableItems: (string | (string | string[])[])[];
+  tableItems: TableItems;
   cssCode: string[];
   htmlCode: string;
 }

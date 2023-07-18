@@ -1,4 +1,4 @@
-type TableItems = string | TableItems[];
+import { TableItems } from '../data-levels';
 
 export function createItem(item: string) {
   const newItem = document.createElement('div');

@@ -1,4 +1,4 @@
-import { levelsData } from '../data-levels';
+import { TableItems, levelsData } from '../data-levels';
 import { tableHeader, table } from '../blocks/table';
 import { htmlText } from '../blocks/html-viewer';
 import { cssInput } from '../blocks/css-editor';
@@ -22,15 +22,18 @@ export function markNewActiveLevel(level: number) {
   }
 }
 
+function renderTableItems(items: TableItems, container: HTMLDivElement) {
+  for (let i = 0; i < items.length; i += 1) {
+    drawItems(items[i], container);
+  }
+}
+
 function parseLevelsData() {
   const levelData = levelsData.get(levels.active);
   if (levelData) {
     tableHeader.textContent = levelData.header;
     table.innerHTML = '';
-    const things = levelData.tableItems;
-    for (let i = 0; i < things.length; i += 1) {
-      drawItems(things[i], table);
-    }
+    renderTableItems(levelData.tableItems, table);
     rightAnswers.items = levelData.cssCode;
     htmlText.textContent = `<div class="table">${levelData.htmlCode}</div>`;
   }
