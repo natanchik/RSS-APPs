@@ -2,10 +2,10 @@ import { levels } from './local-storage';
 import { changeLevel } from './change-level';
 
 export function unMarkLevels(mark: string) {
-  const buttonsPassedlevels = document.querySelectorAll(`.${mark}`);
-  for (let i = 0; i < buttonsPassedlevels.length; i += 1) {
-    buttonsPassedlevels[i].classList.remove(mark);
-  }
+  const buttonsPassedLevels = document.querySelectorAll(`.${mark}`);
+  buttonsPassedLevels.forEach((button) => {
+    button.classList.remove(mark);
+  });
 }
 
 export function resetGame() {
