@@ -11,16 +11,12 @@ export function markLevels(levelsList: number[], mark: string) {
   });
 }
 
-function startGame() {
+export function start() {
+  createGame();
   getActiveLevel();
   getMarkedLevels(levels.passed, 'passed');
   getMarkedLevels(levels.helped, 'helped');
   markLevels(levels.passed, 'passed');
   markLevels(levels.helped, 'helped');
   changeLevel();
-}
-
-export function start() {
-  createGame();
-  startGame();
 }
