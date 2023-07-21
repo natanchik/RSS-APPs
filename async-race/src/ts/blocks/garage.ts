@@ -1,9 +1,11 @@
+export const carsAmount = { cars: 0 };
+
 export const garageBlock = document.createElement('div');
 garageBlock.classList.add('garage-block');
 
-const garageTitle = document.createElement('h2');
+export const garageTitle = document.createElement('h2');
 garageTitle.classList.add('garage-title');
-garageTitle.innerText = `Garage`;
+garageTitle.textContent = `Garage (${carsAmount.cars})`;
 garageBlock.appendChild(garageTitle);
 
 const garagePageTitle = document.createElement('h3');
