@@ -1,10 +1,12 @@
-import { createMarks } from '../funcs/create/create-marks';
+import { markInput, markList } from './marks-field';
 import { createColor } from '../funcs/create/create-color';
 import { createBtn } from '../funcs/create/create-btn';
-import { Marks } from '../marks';
-import { createCar } from '../requests/create-car';
-import { updateCar } from '../requests/update-car';
-import { driveCar } from '../requests/drive-car';
+import { createCar } from '../funcs/requests/create-car';
+import { updateCar } from '../funcs/requests/update-car';
+import { startCar } from '../funcs/requests/start-car';
+import { driveCar } from '../funcs/requests/drive-car';
+import { generateCars } from '../funcs/requests/generate-cars';
+import { returnCars } from '../funcs/return-car';
 
 export const commandBlock = document.createElement('div');
 commandBlock.classList.add('commandBlock');
@@ -13,7 +15,8 @@ const commandRow1 = document.createElement('div');
 commandRow1.classList.add('commandRow');
 commandBlock.appendChild(commandRow1);
 
-createMarks(commandRow1, Marks);
+commandRow1.appendChild(markInput);
+commandRow1.appendChild(markList);
 
 const btnColor = createColor();
 btnColor.classList.add('commandItem');
@@ -22,10 +25,6 @@ commandRow1.appendChild(btnColor);
 const btnCreate = createBtn('create');
 btnCreate.classList.add('commandItem');
 commandRow1.appendChild(btnCreate);
-
-btnCreate.addEventListener('click', () => {
-  createCar();
-});
 
 const commandRow2 = document.createElement('div');
 commandRow2.classList.add('commandRow');
@@ -44,13 +43,6 @@ const btnUpdate = createBtn('update');
 btnUpdate.classList.add('commandItem');
 commandRow2.appendChild(btnUpdate);
 
-btnUpdate.addEventListener('click', () => {
-  const activeCar = document.querySelector('.active');
-  if (activeCar && activeCar instanceof HTMLDivElement) {
-    updateCar(activeCar);
-  }
-});
-
 const commandRow3 = document.createElement('div');
 commandRow3.classList.add('commandRow');
 commandBlock.appendChild(commandRow3);
@@ -59,16 +51,6 @@ const btnRace = createBtn('race');
 btnRace.classList.add('commandItem');
 commandRow3.appendChild(btnRace);
 
-btnRace.addEventListener('click', () => {
-  const cars = document.querySelectorAll('.race-strip');
-  for (let i = 0; i < cars.length; i += 1) {
-    const car = cars[i];
-    if (car instanceof HTMLDivElement) {
-      driveCar(car);
-    }
-  }
-});
-
 const btnReset = createBtn('reset');
 btnReset.classList.add('commandItem');
 commandRow3.appendChild(btnReset);
@@ -76,3 +58,34 @@ commandRow3.appendChild(btnReset);
 const btnGenerateCars = createBtn('generate cars');
 btnGenerateCars.classList.add('commandItem');
 commandRow3.appendChild(btnGenerateCars);
+
+async function driveCars() {
+  const cars = document.querySelectorAll('.race-strip');
+  for (let i = 0; i < cars.length; i += 1) {
+    const car = cars[i];
+    if (car instanceof HTMLDivElement) {
+      startCar(car).then(() => driveCar(car));
+    }
+  }
+}
+
+function updateActiveCar() {
+  const activeCar = document.querySelector('.active');
+  if (activeCar && activeCar instanceof HTMLDivElement) {
+    updateCar(activeCar);
+  }
+}
+
+btnCreate.addEventListener('click', () => {
+  createCar(markInput.value, btnColor.value);
+});
+
+btnUpdate.addEventListener('click', updateActiveCar);
+
+btnRace.addEventListener('click', driveCars);
+
+btnGenerateCars.addEventListener('click', generateCars);
+
+btnReset.addEventListener('click', () => {
+  returnCars();
+});
