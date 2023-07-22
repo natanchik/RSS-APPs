@@ -1,4 +1,4 @@
-import { paintCar } from '../funcs/create/paint-car';
+import { paintCar } from '../create/paint-car';
 
 export async function updateCar(raceStrip: HTMLDivElement) {
   const colorBtn = document.querySelectorAll('.colorBtn')[1];

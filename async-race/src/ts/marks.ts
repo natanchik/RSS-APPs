@@ -1,4 +1,4 @@
-export const Marks = [
+export const marks = [
   'Ford',
   'Honda',
   'Hyundai',

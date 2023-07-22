@@ -1,4 +1,4 @@
-import { carsAmount, garageTitle } from '../blocks/garage';
+import { carsAmount, garageTitle } from '../../blocks/garage';
 
 export async function deleteCar(raceStrip: HTMLDivElement) {
   fetch(`http://127.0.0.1:3000/garage/${raceStrip.id}`, {
