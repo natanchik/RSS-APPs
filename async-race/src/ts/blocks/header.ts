@@ -1,4 +1,10 @@
-export const header = document.createElement('div');
+import { commandBlock } from './commandBlock';
+import { garageBlock } from './garage';
+import { getCars } from '../funcs/requests/get-cars';
+import { winnersBlock } from './winners';
+import { getWinners } from '../funcs/requests/get-winners';
+
+const header = document.createElement('div');
 header.classList.add('header');
 document.body.appendChild(header);
 
@@ -14,10 +20,21 @@ toWinnerBtn.classList.add('toWinnerBtn');
 toWinnerBtn.innerText = 'TO WINNERS';
 header.appendChild(toWinnerBtn);
 
-function showGarage() {}
+export function showGarage() {
+  document.body.innerHTML = '';
+  document.body.appendChild(header);
+  document.body.appendChild(commandBlock);
+  document.body.appendChild(garageBlock);
+  getCars();
+}
 
-function showWinners() {}
+function showWinners() {
+  document.body.innerHTML = '';
+  document.body.appendChild(header);
+  document.body.appendChild(winnersBlock);
+  getWinners();
+}
 
-toGarageBtn.addEventListener('click', () => showGarage);
+toGarageBtn.addEventListener('click', showGarage);
 
-toWinnerBtn.addEventListener('click', () => showWinners);
+toWinnerBtn.addEventListener('click', showWinners);
