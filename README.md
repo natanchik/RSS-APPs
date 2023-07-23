@@ -11,3 +11,5 @@
 
 
 [RSS-CSS-Selectors](https://rolling-scopes-school.github.io/natanchik-JSFE2023Q1/rss-css-selectors/)
+
+[Async Race](https://rolling-scopes-school.github.io/natanchik-JSFE2023Q1/async-race/)
