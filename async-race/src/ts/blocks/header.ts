@@ -1,7 +1,7 @@
 import { commandBlock } from './commandBlock';
 import { garageBlock } from './garage';
 import { getCars } from '../funcs/requests/get-cars';
-import { winnersBlock } from './winners';
+import { winBlock, winTitle, winPageTitle, createWinTable } from './winners';
 import { getWinners } from '../funcs/requests/get-winners';
 
 const header = document.createElement('div');
@@ -28,13 +28,17 @@ export function showGarage() {
   getCars();
 }
 
-function showWinners() {
+function showwin() {
   document.body.innerHTML = '';
   document.body.appendChild(header);
-  document.body.appendChild(winnersBlock);
+  document.body.appendChild(winBlock);
+  winBlock.innerHTML = '';
+  winBlock.appendChild(winTitle);
+  winBlock.appendChild(winPageTitle);
+  createWinTable();
   getWinners();
 }
 
 toGarageBtn.addEventListener('click', showGarage);
 
-toWinnerBtn.addEventListener('click', showWinners);
+toWinnerBtn.addEventListener('click', showwin);

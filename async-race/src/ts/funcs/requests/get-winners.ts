@@ -1,4 +1,4 @@
-import { winners, winnersBlock, winnersTitle, tBody } from '../../blocks/winners';
+import { winBlock, winTitle } from '../../blocks/winners';
 import { carsInfo } from './get-cars';
 import { drawCar } from '../create/draw-car';
 
@@ -8,22 +8,24 @@ export async function getWinners() {
   })
     .then((response) => response.json())
     .then((result) => {
-      tBody.innerHTML = '';
-      winners.amount = result.length;
-      winnersTitle.textContent = `Winners (${winners.amount})`;
-      for (let i = 0; i < result.length; i += 1) {
-        const carInfo = carsInfo.get(result[i].id);
-        const tItems = [i + 1, '', carInfo.name, result[i].wins, result[i].time];
-        const row = tBody.insertRow(i);
-        for (let j = 0; j < 5; j += 1) {
-          const cell = row.insertCell(j);
-          cell.classList.add('tb');
-          cell.textContent = `${tItems[j]}`;
+      winTitle.textContent = `Winners (${result.length})`;
+      const winTable = winBlock.querySelector('.win-table');
+      if (winTable instanceof HTMLTableElement) {
+        const tBody = winTable.createTBody();
+        for (let i = 0; i < result.length; i += 1) {
+          const carInfo = carsInfo.get(result[i].id);
+          const tItems = [i + 1, '', carInfo.name, result[i].wins, result[i].time];
+          const row = tBody.insertRow(i);
+          for (let j = 0; j < 5; j += 1) {
+            const cell = row.insertCell(j);
+            cell.classList.add('tb');
+            cell.textContent = `${tItems[j]}`;
+          }
+          const carIcon = drawCar(carInfo.color);
+          carIcon.classList.add('car-icon');
+          carIcon.style.top = `${165 + 40 * i}px`;
+          winBlock.appendChild(carIcon);
         }
-        const carIcon = drawCar(carInfo.color);
-        carIcon.classList.add('car-icon');
-        carIcon.style.top = `${160 + 40 * i}px`;
-        winnersBlock.appendChild(carIcon);
       }
     })
     .catch((e) => `Something is wrong, error: ${e}`);
