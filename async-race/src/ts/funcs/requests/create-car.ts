@@ -1,6 +1,7 @@
 import { createRaceStrip } from '../../blocks/race-strip';
 import { raceBlock, carsAmount, garageTitle } from '../../blocks/garage';
 import { carsInfo } from './get-cars';
+import { startCar } from './start-car';
 
 export async function createCar(mark: string, color: string) {
   const car = { name: mark, color };
@@ -12,9 +13,12 @@ export async function createCar(mark: string, color: string) {
     .then((response) => response.json())
     .then((result) => {
       carsInfo.set(result.id, { name: result.name, color: result.color, wins: 0 });
-      raceBlock.appendChild(createRaceStrip(result.name, result.color, result.id));
+      const newCRaceStrip = createRaceStrip(result.name, result.color, result.id);
+      raceBlock.appendChild(newCRaceStrip);
       carsAmount.cars += 1;
       garageTitle.textContent = `Garage (${carsAmount.cars})`;
+      return newCRaceStrip;
     })
+    .then((racestrip) => startCar(racestrip))
     .catch((e) => `Something is wrong, error: ${e}`);
 }

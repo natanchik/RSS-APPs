@@ -10,3 +10,13 @@ export async function startCar(raceStrip: HTMLDivElement) {
     })
     .catch((e) => `Something is wrong, error: ${e}`);
 }
+
+export async function startCars() {
+  const cars = document.querySelectorAll('.race-strip');
+  for (let i = 0; i < cars.length; i += 1) {
+    const car = cars[i];
+    if (car instanceof HTMLDivElement) {
+      startCar(car);
+    }
+  }
+}

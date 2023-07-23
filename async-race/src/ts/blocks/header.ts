@@ -28,7 +28,7 @@ export function showGarage() {
   getCars();
 }
 
-function showwin() {
+function showWin() {
   document.body.innerHTML = '';
   document.body.appendChild(header);
   document.body.appendChild(winBlock);
@@ -41,4 +41,4 @@ function showwin() {
 
 toGarageBtn.addEventListener('click', showGarage);
 
-toWinnerBtn.addEventListener('click', showwin);
+toWinnerBtn.addEventListener('click', showWin);

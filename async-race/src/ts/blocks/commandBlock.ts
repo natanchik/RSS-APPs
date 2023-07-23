@@ -1,12 +1,12 @@
-import { markInput, markList } from './marks-field';
+import { markInput, markList } from './marks-input';
 import { createColor } from '../funcs/create/create-color';
 import { createBtn } from '../funcs/create/create-btn';
 import { createCar } from '../funcs/requests/create-car';
 import { updateCar } from '../funcs/requests/update-car';
-import { startCar } from '../funcs/requests/start-car';
+import { startCars } from '../funcs/requests/start-car';
 import { driveCar } from '../funcs/requests/drive-car';
 import { generateCars } from '../funcs/requests/generate-cars';
-import { returnCars } from '../funcs/return-car';
+import { resetCars } from '../funcs/reset-cars';
 
 export const commandBlock = document.createElement('div');
 commandBlock.classList.add('commandBlock');
@@ -64,9 +64,14 @@ async function driveCars() {
   for (let i = 0; i < cars.length; i += 1) {
     const car = cars[i];
     if (car instanceof HTMLDivElement) {
-      startCar(car).then(() => driveCar(car));
+      driveCar(car);
     }
   }
+}
+
+async function raceCars() {
+  startCars();
+  driveCars();
 }
 
 function updateActiveCar() {
@@ -82,10 +87,13 @@ btnCreate.addEventListener('click', () => {
 
 btnUpdate.addEventListener('click', updateActiveCar);
 
-btnRace.addEventListener('click', driveCars);
+btnRace.addEventListener('click', raceCars);
 
-btnGenerateCars.addEventListener('click', generateCars);
+btnGenerateCars.addEventListener('click', () => {
+  generateCars();
+  startCars();
+});
 
 btnReset.addEventListener('click', () => {
-  returnCars();
+  resetCars(document);
 });

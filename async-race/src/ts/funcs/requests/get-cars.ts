@@ -1,5 +1,6 @@
 import { createRaceStrip } from '../../blocks/race-strip';
 import { raceBlock, carsAmount, garageTitle } from '../../blocks/garage';
+import { startCar } from './start-car';
 
 export const carsInfo = new Map();
 
@@ -14,7 +15,9 @@ export async function getCars() {
       raceBlock.innerHTML = '';
       for (let i = 0; i < result.length; i += 1) {
         carsInfo.set(result[i].id, { name: result[i].name, color: result[i].color, wins: 0 });
-        raceBlock.appendChild(createRaceStrip(result[i].name, result[i].color, result[i].id));
+        const newCar = createRaceStrip(result[i].name, result[i].color, result[i].id);
+        raceBlock.appendChild(newCar);
+        startCar(newCar);
       }
     })
     .catch((e) => `Something is wrong, error: ${e}`);

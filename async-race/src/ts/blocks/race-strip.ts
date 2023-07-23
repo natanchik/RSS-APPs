@@ -5,7 +5,7 @@ import { selectCar } from '../funcs/select-car';
 import { deleteCar } from '../funcs/requests/delete-car';
 import { driveCar } from '../funcs/requests/drive-car';
 import { startCar } from '../funcs/requests/start-car';
-import { returnCar } from '../funcs/return-car';
+import { resetCars } from '../funcs/reset-cars';
 
 function createRaceStripRowUp(name: string) {
   const raceStripRow = document.createElement('div');
@@ -55,7 +55,7 @@ async function handlerRaceStrip(event: Event, raceStrip: HTMLDivElement) {
       await startCar(raceStrip);
       driveCar(raceStrip);
     } else if (target.hasAttribute('id') && target.id === 'btn-b') {
-      returnCar(raceStrip);
+      resetCars(raceStrip);
     }
   }
 }
