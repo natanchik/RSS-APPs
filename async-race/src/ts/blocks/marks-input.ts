@@ -1,4 +1,6 @@
-import { marks } from '../marks';
+import { carModels } from '../car-models';
+
+const marks = Object.keys(carModels);
 
 export const markInput = document.createElement('input');
 markInput.setAttribute('list', 'markList');
