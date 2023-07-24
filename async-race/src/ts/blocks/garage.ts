@@ -16,3 +16,7 @@ garageBlock.appendChild(garagePageTitle);
 export const raceBlock = document.createElement('div');
 raceBlock.classList.add('race-block');
 garageBlock.appendChild(raceBlock);
+
+export const winAlert = document.createElement('div');
+winAlert.classList.add('win-alert');
+garageBlock.appendChild(winAlert);

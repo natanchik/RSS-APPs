@@ -1,6 +1,20 @@
 import { winBlock, winTitle } from '../../blocks/winners';
-import { carsInfo } from './get-cars';
+import { carsInfo } from './drive-car';
 import { drawCar } from '../create/draw-car';
+import { winners } from './create-winner';
+
+export async function loadWinners() {
+  fetch('http://127.0.0.1:3000/winners', {
+    method: 'GET',
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      for (let i = 0; i < result.length; i += 1) {
+        winners.set(result[i].id, { wins: result[i].wins, time: result[i].time });
+      }
+    })
+    .catch((e) => `Something is wrong, error: ${e}`);
+}
 
 export async function getWinners() {
   fetch('http://127.0.0.1:3000/winners', {
@@ -14,6 +28,7 @@ export async function getWinners() {
         const tBody = winTable.createTBody();
         for (let i = 0; i < result.length; i += 1) {
           const carInfo = carsInfo.get(result[i].id);
+          winners.set(result[i].id, { wins: result[i].wins, time: result[i].time });
           const tItems = [i + 1, '', carInfo.name, result[i].wins, result[i].time];
           const row = tBody.insertRow(i);
           for (let j = 0; j < 5; j += 1) {

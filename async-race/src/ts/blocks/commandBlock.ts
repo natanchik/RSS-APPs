@@ -4,7 +4,7 @@ import { createBtn } from '../funcs/create/create-btn';
 import { createCar } from '../funcs/requests/create-car';
 import { updateCar } from '../funcs/requests/update-car';
 import { startCars } from '../funcs/requests/start-car';
-import { driveCar } from '../funcs/requests/drive-car';
+import { driveCar, winner } from '../funcs/requests/drive-car';
 import { generateCars } from '../funcs/requests/generate-cars';
 import { resetCars } from '../funcs/reset-cars';
 
@@ -70,6 +70,7 @@ async function driveCars() {
 }
 
 async function raceCars() {
+  winner.id = 0;
   startCars();
   driveCars();
 }
