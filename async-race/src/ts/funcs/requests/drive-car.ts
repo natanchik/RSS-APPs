@@ -21,7 +21,7 @@ async function showWinAlert(carName: string, time: number) {
   winAlert.textContent = `${carName} went first (${time})`;
   setTimeout(function hideAlert() {
     winAlert.textContent = '';
-  }, 2000);
+  }, 5000);
 }
 
 async function finishRace(strip: HTMLDivElement, duration: number) {
