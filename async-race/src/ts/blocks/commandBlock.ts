@@ -4,7 +4,7 @@ import { createBtn } from '../funcs/create/create-btn';
 import { createCar } from '../funcs/requests/create-car';
 import { updateCar } from '../funcs/requests/update-car';
 import { startCars } from '../funcs/requests/start-car';
-import { driveCar, winner } from '../funcs/requests/drive-car';
+import { driveCars, winner } from '../funcs/requests/drive-car';
 import { generateCars } from '../funcs/requests/generate-cars';
 import { resetCars } from '../funcs/reset-cars';
 
@@ -59,20 +59,10 @@ const btnGenerateCars = createBtn('generate cars');
 btnGenerateCars.classList.add('commandItem');
 commandRow3.appendChild(btnGenerateCars);
 
-async function driveCars() {
-  const cars = document.querySelectorAll('.race-strip');
-  for (let i = 0; i < cars.length; i += 1) {
-    const car = cars[i];
-    if (car instanceof HTMLDivElement) {
-      driveCar(car);
-    }
-  }
-}
-
-async function raceCars() {
+export async function raceCars() {
   winner.id = 0;
-  startCars();
-  driveCars();
+  await startCars();
+  await driveCars();
 }
 
 function updateActiveCar() {

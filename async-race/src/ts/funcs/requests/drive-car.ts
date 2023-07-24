@@ -66,3 +66,12 @@ export async function driveCar(raceStrip: HTMLDivElement) {
     stopCar(raceStrip);
   });
 }
+
+export async function driveCars() {
+  const cars = document.querySelectorAll('.race-strip');
+  cars.forEach((car) => {
+    if (car instanceof HTMLDivElement) {
+      driveCar(car);
+    }
+  });
+}

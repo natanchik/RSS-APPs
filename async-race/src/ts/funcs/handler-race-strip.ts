@@ -13,7 +13,7 @@ export async function handlerRaceStrip(event: Event, raceStrip: HTMLDivElement) 
       deleteCar(raceStrip);
     } else if (target.hasAttribute('id') && target.id === 'btn-a') {
       await startCar(raceStrip);
-      driveCar(raceStrip);
+      await driveCar(raceStrip);
     } else if (target.hasAttribute('id') && target.id === 'btn-b') {
       resetCars(raceStrip);
     }
