@@ -1,11 +1,6 @@
 import { createBtn, createBtnAB } from '../funcs/create/create-btn';
 import { drawCar } from '../funcs/create/draw-car';
 import { drawFlag } from '../funcs/create/draw-flag';
-import { selectCar } from '../funcs/select-car';
-import { deleteCar } from '../funcs/requests/delete-car';
-import { driveCar } from '../funcs/requests/drive-car';
-import { startCar } from '../funcs/requests/start-car';
-import { resetCars } from '../funcs/reset-cars';
 
 function createRaceStripRowUp(name: string) {
   const raceStripRow = document.createElement('div');
@@ -44,22 +39,6 @@ function createRaceStripRowCar(color: string) {
   return raceStripRow;
 }
 
-async function handlerRaceStrip(event: Event, raceStrip: HTMLDivElement) {
-  const { target } = event;
-  if (target && target instanceof HTMLButtonElement) {
-    if (target.classList.contains('selectBtn')) {
-      selectCar(raceStrip);
-    } else if (target.classList.contains('removeBtn')) {
-      deleteCar(raceStrip);
-    } else if (target.hasAttribute('id') && target.id === 'btn-a') {
-      await startCar(raceStrip);
-      driveCar(raceStrip);
-    } else if (target.hasAttribute('id') && target.id === 'btn-b') {
-      resetCars(raceStrip);
-    }
-  }
-}
-
 export function createRaceStrip(name: string, color: string, id: number) {
   const raceStrip = document.createElement('div');
   raceStrip.classList.add('race-strip');
@@ -67,10 +46,6 @@ export function createRaceStrip(name: string, color: string, id: number) {
 
   raceStrip.appendChild(createRaceStripRowUp(name));
   raceStrip.appendChild(createRaceStripRowCar(color));
-
-  raceStrip.addEventListener('click', (event) => {
-    handlerRaceStrip(event, raceStrip);
-  });
 
   return raceStrip;
 }
