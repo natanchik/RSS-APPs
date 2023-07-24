@@ -1,4 +1,7 @@
 import './style.scss';
-import { showGarage } from './ts/blocks/header';
+import { header } from './ts/blocks/header';
+import { wrapper, loadGarage } from './ts/funcs/show-page';
 
-showGarage();
+document.body.appendChild(header);
+document.body.appendChild(wrapper);
+loadGarage();
