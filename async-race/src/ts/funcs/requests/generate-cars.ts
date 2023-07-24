@@ -14,7 +14,7 @@ function getRndColor() {
 }
 
 export async function generateCars() {
-  for (let i = 0; i < 10; i += 1) {
+  for (let i = 0; i < 100; i += 1) {
     const mark = Object.entries(carModels)[getRndInt(0, 10)];
     const model = `${mark[0]} ${mark[1][getRndInt(0, 9)]}`;
     const color = getRndColor();
