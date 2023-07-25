@@ -15,6 +15,7 @@ export async function createWinner(winner: Winner) {
     }).catch((e) => e);
   } else {
     const newWinner = { id: winner.id, wins: 1, time: winner.time };
+    winners.set(winner.id, { wins: 1, time: winner.time });
     fetch('http://127.0.0.1:3000/winners', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

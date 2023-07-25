@@ -2,7 +2,7 @@ import { commandBlock, btnRace } from '../blocks/command-block';
 import { garageBlock } from '../blocks/garage';
 import { getCars } from './requests/get-cars';
 import { winBlock, winTitle, winPageTitle, createWinTable } from '../blocks/winners';
-import { loadWinners, getWinners } from './requests/get-winners';
+import { getWinners, loadTable } from './requests/get-winners';
 
 export const wrapper = document.createElement('div');
 
@@ -11,7 +11,7 @@ export async function loadGarage() {
   wrapper.appendChild(commandBlock);
   wrapper.appendChild(garageBlock);
   getCars();
-  loadWinners();
+  getWinners();
   btnRace.disabled = false;
 }
 
@@ -28,5 +28,5 @@ export async function showWin() {
   winBlock.appendChild(winTitle);
   winBlock.appendChild(winPageTitle);
   createWinTable();
-  getWinners();
+  loadTable();
 }
