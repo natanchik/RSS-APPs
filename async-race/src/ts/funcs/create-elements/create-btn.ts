@@ -8,9 +8,12 @@ export function createBtn(text: string) {
 
 export function createBtnAB(text: string) {
   const btn = document.createElement('button');
-  btn.setAttribute('id', `btn-${text}`);
+  btn.classList.add(`btn-${text}`);
   btn.classList.add('button-ab');
   btn.classList.add('race-strip-row-item');
   btn.innerText = text.toUpperCase();
+  if (text === 'b') {
+    btn.disabled = true;
+  }
   return btn;
 }

@@ -1,7 +1,6 @@
 import { createRaceStrip } from '../../blocks/race-strip';
 import { raceBlock, carsAmount, garageTitle } from '../../blocks/garage';
 import { carsInfo } from './drive-car';
-import { startCar } from './start-car';
 
 export async function createCar(mark: string, color: string) {
   const car = { name: mark, color };
@@ -19,6 +18,5 @@ export async function createCar(mark: string, color: string) {
       garageTitle.textContent = `Garage (${carsAmount.cars})`;
       return newCRaceStrip;
     })
-    .then((racestrip) => startCar(racestrip))
     .catch((e) => `Something is wrong, error: ${e}`);
 }

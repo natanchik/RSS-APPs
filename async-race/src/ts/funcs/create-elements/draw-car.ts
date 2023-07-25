@@ -7,3 +7,11 @@ export function paintCar(color: string) {
   </g>
   </svg>`;
 }
+
+export function drawCar(color: string) {
+  const car = document.createElement('div');
+  car.classList.add('race-strip-row-item');
+  car.classList.add('car');
+  car.innerHTML = paintCar(color);
+  return car;
+}

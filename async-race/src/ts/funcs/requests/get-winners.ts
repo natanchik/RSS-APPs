@@ -1,6 +1,6 @@
 import { winBlock, winTitle } from '../../blocks/winners';
 import { carsInfo } from './drive-car';
-import { drawCar } from '../create/draw-car';
+import { drawCar } from '../create-elements/draw-car';
 import { winners } from './create-winner';
 
 export async function loadWinners() {

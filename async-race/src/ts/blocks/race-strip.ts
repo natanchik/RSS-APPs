@@ -1,6 +1,6 @@
-import { createBtn, createBtnAB } from '../funcs/create/create-btn';
-import { drawCar } from '../funcs/create/draw-car';
-import { drawFlag } from '../funcs/create/draw-flag';
+import { createBtn, createBtnAB } from '../funcs/create-elements/create-btn';
+import { drawCar } from '../funcs/create-elements/draw-car';
+import { drawFlag } from '../funcs/create-elements/create-flag';
 
 function createRaceStripRowUp(name: string) {
   const raceStripRow = document.createElement('div');

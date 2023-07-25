@@ -1,4 +1,4 @@
-import { paintCar } from '../create/paint-car';
+import { paintCar } from '../create-elements/draw-car';
 
 export async function updateCar(raceStrip: HTMLDivElement) {
   const colorBtn = document.querySelectorAll('.colorBtn')[1];
@@ -12,9 +12,9 @@ export async function updateCar(raceStrip: HTMLDivElement) {
     })
       .then((res) => {
         if (res.status === 200) {
-          const carImg = raceStrip.querySelector('.car-image');
-          if (carImg) {
-            carImg.innerHTML = paintCar(colorBtn.value);
+          const car = raceStrip.querySelector('.car');
+          if (car) {
+            car.innerHTML = paintCar(colorBtn.value);
           }
           const carName = raceStrip.querySelector('.car-name');
           if (carName && carName instanceof HTMLParagraphElement) {

@@ -29,8 +29,7 @@ p.race-strip-row-item {
   color: rgb(247, 139, 8);
   margin: 5px 5px 10px 10px;
 
-  &:hover,
-  &:active {
+  &:hover {
     opacity: 60%;
   }
 }
@@ -51,7 +50,7 @@ p.race-strip-row-item {
 .flag {  
   margin: 0;
   width: 31px;
-  height: 50px;   
-  /*border: 1px solid white;*/
+  height: 50px;    
   transform: translateX(calc(100vw - 400px))   
 }
+

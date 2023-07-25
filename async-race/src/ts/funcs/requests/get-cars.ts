@@ -1,6 +1,5 @@
 import { createRaceStrip } from '../../blocks/race-strip';
 import { raceBlock, carsAmount, garageTitle } from '../../blocks/garage';
-import { startCar } from './start-car';
 import { handlerRaceStrip } from '../handler-race-strip';
 import { carsInfo } from './drive-car';
 
@@ -17,10 +16,9 @@ export async function getCars() {
         carsInfo.set(+result[i].id, { name: result[i].name, color: result[i].color });
         const newCar = createRaceStrip(result[i].name, result[i].color, result[i].id);
         raceBlock.appendChild(newCar);
-        newCar.addEventListener('click', (event) => {
+        newCar.addEventListener('click', async (event) => {
           handlerRaceStrip(event, newCar);
         });
-        startCar(newCar);
       }
     })
     .catch((e) => `Something is wrong, error: ${e}`);

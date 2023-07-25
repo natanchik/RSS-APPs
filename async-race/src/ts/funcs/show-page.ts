@@ -1,4 +1,4 @@
-import { commandBlock } from '../blocks/commandBlock';
+import { commandBlock, btnRace } from '../blocks/command-block';
 import { garageBlock } from '../blocks/garage';
 import { getCars } from './requests/get-cars';
 import { winBlock, winTitle, winPageTitle, createWinTable } from '../blocks/winners';
@@ -12,6 +12,7 @@ export async function loadGarage() {
   wrapper.appendChild(garageBlock);
   getCars();
   loadWinners();
+  btnRace.disabled = false;
 }
 
 export async function showGarage() {
