@@ -11,12 +11,12 @@ export async function createCar(mark: string, color: string) {
   })
     .then((response) => response.json())
     .then((result) => {
-      carsInfo.set(result.id, { name: result.name, color: result.color, wins: 0 });
-      const newCRaceStrip = createRaceStrip(result.name, result.color, result.id);
-      raceBlock.appendChild(newCRaceStrip);
+      carsInfo.set(result.id, { name: result.name, color: result.color });
+      const newRaceStrip = createRaceStrip(result.name, result.color, result.id);
+      raceBlock.appendChild(newRaceStrip);
       carsAmount.cars += 1;
       garageTitle.textContent = `Garage (${carsAmount.cars})`;
-      return newCRaceStrip;
+      // return newRaceStrip;
     })
     .catch((e) => `Something is wrong, error: ${e}`);
 }

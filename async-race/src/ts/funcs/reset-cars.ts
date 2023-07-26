@@ -1,7 +1,7 @@
 import { btnRace } from '../blocks/command-block';
 import { stopCar } from './requests/stop-car';
 
-function disableBtn(block: Document | HTMLDivElement, nameBtn: string, disable: boolean) {
+function disableBtns(block: Document | HTMLDivElement, nameBtn: string, disable: boolean) {
   const btns = block.querySelectorAll(`.${nameBtn}`);
   for (let i = 0; i < btns.length; i += 1) {
     const btn = btns[i];
@@ -21,16 +21,17 @@ export function resetCars(parent: Document | HTMLDivElement) {
     }
   }
 
-  disableBtn(parent, 'btn-a', false);
-  disableBtn(parent, 'btn-b', true);
+  disableBtns(parent, 'btn-a', false);
+  disableBtns(parent, 'btn-b', true);
   btnRace.disabled = false;
-  if (parent && parent instanceof HTMLDivElement) {
+
+  if (parent instanceof HTMLDivElement) {
     stopCar(parent);
   } else {
     const strips = parent.querySelectorAll('.race-strip');
     for (let i = 0; i < strips.length; i += 1) {
       const strip = strips[i];
-      if (strip && strip instanceof HTMLDivElement) {
+      if (strip instanceof HTMLDivElement) {
         stopCar(strip);
       }
     }

@@ -24,12 +24,12 @@ const commandRow2 = document.createElement('div');
 commandRow2.classList.add('commandRow');
 commandBlock.appendChild(commandRow2);
 
-const btnInput = document.createElement('input');
+export const btnInput = document.createElement('input');
 btnInput.classList.add('inputBtn');
 btnInput.classList.add('commandItem');
 commandRow2.appendChild(btnInput);
 
-const btnColor2 = createColor();
+export const btnColor2 = createColor();
 btnColor2.classList.add('commandItem');
 commandRow2.appendChild(btnColor2);
 

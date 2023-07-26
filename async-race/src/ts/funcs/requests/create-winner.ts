@@ -20,8 +20,6 @@ export async function createWinner(winner: Winner) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newWinner),
-    })
-      .then(() => winners.set(winner.id, { wins: 1, time: winner.time }))
-      .catch((e) => e);
+    }).catch((e) => e);
   }
 }
