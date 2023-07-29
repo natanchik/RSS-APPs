@@ -1,5 +1,6 @@
 import { carModels } from '../../car-models';
 import { createCar } from './create-car';
+import { getCars } from './get-cars';
 
 function getRndInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -20,4 +21,5 @@ export async function generateCars() {
     const color = getRndColor();
     createCar(model, color);
   }
+  getCars();
 }

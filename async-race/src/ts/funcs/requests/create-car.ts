@@ -1,6 +1,5 @@
-import { createRaceStrip } from '../../blocks/race-strip';
-import { raceBlock, carsAmount, garageTitle } from '../../blocks/garage';
 import { carsInfo } from './drive-car';
+import { getCars } from './get-cars';
 
 export async function createCar(mark: string, color: string) {
   const car = { name: mark, color };
@@ -12,11 +11,7 @@ export async function createCar(mark: string, color: string) {
     .then((response) => response.json())
     .then((result) => {
       carsInfo.set(result.id, { name: result.name, color: result.color });
-      const newRaceStrip = createRaceStrip(result.name, result.color, result.id);
-      raceBlock.appendChild(newRaceStrip);
-      carsAmount.cars += 1;
-      garageTitle.textContent = `Garage (${carsAmount.cars})`;
-      // return newRaceStrip;
+      getCars();
     })
     .catch((e) => `Something is wrong, error: ${e}`);
 }

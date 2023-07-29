@@ -1,5 +1,6 @@
 import { paintCar } from '../create-elements/draw-car';
 import { btnInput, btnColor2 } from '../../blocks/command-block';
+import { carsInfo } from './drive-car';
 
 export async function updateCar(raceStrip: HTMLDivElement) {
   const data = { name: btnInput.value, color: btnColor2.value };
@@ -18,6 +19,7 @@ export async function updateCar(raceStrip: HTMLDivElement) {
         if (carName && carName instanceof HTMLParagraphElement) {
           carName.innerText = btnInput.value;
         }
+        carsInfo.set(+raceStrip.id, { name: btnInput.value, color: btnColor2.value });
       }
     })
     .catch((e) => `Something is wrong, error: ${e}`);

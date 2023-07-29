@@ -3,7 +3,7 @@
   margin: 10px;
   background-color: bisque;
   border: 2px solid rgb(239, 199, 151);
-  box-shadow: 4px 4px 2px 2px rgba(255, 228, 196, 0.4);
+  box-shadow: 4px 4px 2px 2px rgba(255, 228, 196, 0.5);
   border-radius: 5px;
   font-weight: 600;
 }
@@ -19,8 +19,17 @@
 }
 
 .garage-title,
-.garage-page-title,
 .win-title,
-.win-page-title {
+.page-title {
   margin: 10px;
+}
+
+.header .button,
+.page-btns-block .button {
+  background-color: rgb(224, 224, 125);  
+  box-shadow: 4px 4px 2px 2px rgb(224, 224, 125, 0.6);
+}
+
+.page--btns-block {
+  margin: 20px 0;
 }
