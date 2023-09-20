@@ -1,15 +1,16 @@
-[Shelter](https://rolling-scopes-school.github.io/natanchik-JSFE2023Q1/shelter/)
+[Shelter](https://natanchik.github.io/RSS-Tasks/shelter/)
 
 
-[Minesweeper](https://rolling-scopes-school.github.io/natanchik-JSFE2023Q1/minesweeper/)
+[Minesweeper](https://natanchik.github.io/RSS-Tasks/minesweeper/)
 
 
-[Self-introduction](https://rolling-scopes-school.github.io/natanchik-JSFE2023Q1/self-introduction/)
+[Self-introduction](https://natanchik.github.io/RSS-Tasks/self-introduction/)
 
 
-[Migration News API to Typescript](https://rolling-scopes-school.github.io/natanchik-JSFE2023Q1/migration-newip-to-ts/)
+[Migration News API to Typescript](https://natanchik.github.io/RSS-Tasks/migration-newip-to-ts/)
 
 
-[RSS-CSS-Selectors](https://rolling-scopes-school.github.io/natanchik-JSFE2023Q1/rss-css-selectors/)
+[RSS-CSS-Selectors](https://natanchik.github.io/RSS-Tasks/rss-css-selectors/)
 
-[Async Race](https://rolling-scopes-school.github.io/natanchik-JSFE2023Q1/async-race/)
+
+[Async Race](https://natanchik.github.io/RSS-Tasks/async-race/)
