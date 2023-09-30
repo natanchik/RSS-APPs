@@ -1,5 +1,5 @@
 ## Hello! 
-## Welcome to my RSS Tasks Repository!
+## Welcome to my RSS APPs Repository!
 
 There are next works:
 - Car Racing &#128681; - game, where you can manage the collection of the cars and organize races.  
